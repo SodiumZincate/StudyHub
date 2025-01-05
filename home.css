@@ -106,14 +106,19 @@ footer{
  }
 
  @media (max-width: 560px) {
-    .menus a{
-        font-size: 14px;
-    }
-    .header-menus{
-        gap: 15px;
-        padding-right: 15px;
+    .header{
+        flex-direction: column;
+        padding-top: 20px;
+        gap:10px;
     }
     .header-logo{
-        margin-left:20px;
+        margin: 0px;
+        justify-content: center;
+        align-items: center;
+    }
+    .header-menus{
+        border-top: 1px solid white;
+        width: 100%;
+        align-items: center;
     }
  }
