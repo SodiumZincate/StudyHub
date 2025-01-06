@@ -54,17 +54,35 @@ a{
 }
 .main-section-2{
     width:50%;
+	display: flex;
 }
 .search-bar{
     width:100%;
     border:0.5px solid grey;
     border-radius:20px;
+	border-top-right-radius:10px;
+    border-bottom-right-radius:10px;
     height:38px;
     outline:none;
     text-align:left;
     padding-left:20px;
     color:black;
     background-color: aliceblue;
+    box-shadow:5px 5px 5px rgb(172, 172, 172);
+}
+.search-button{
+    width:20%;
+    border:0.5px solid grey;
+    border-radius:20px;
+    border-top-left-radius:10px;
+    border-bottom-left-radius:10px;
+	font: bold 16px "Arial", sans-serif;
+    height:38px;
+    outline:none;
+    text-align:left;
+    padding-left:20px;
+    color:black;
+    background-color: rgb(219, 216, 255);
     box-shadow:5px 5px 5px rgb(172, 172, 172);
 }
 footer{

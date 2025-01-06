@@ -17,7 +17,7 @@ app.get('/home/search', (req, res) => {
   if (searchQuery) {
     res.send(`You searched for: ${searchQuery}`);
 	if(searchQuery == "test"){
-		const fileName = "../assets/" + searchQuery + ".txt";
+		const fileName = "../public/" + searchQuery + ".txt";
 		const data = fs.readFileSync(fileName, 'utf8');
 		console.log(data);
 
