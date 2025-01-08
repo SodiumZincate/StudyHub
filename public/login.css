@@ -53,6 +53,8 @@ a {
     border-radius: 10px;
     box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.2);
     text-align: center;
+    display: flex;
+    flex-direction: column;
 }
 .login-title {
     font-size: 24px;
@@ -83,6 +85,12 @@ a {
 }
 .login-button:hover {
     background-color: #0a396b;
+}
+.login-message{
+    height: 20px;
+    font-size: 12px;
+    margin-top: 10px;
+    color: red;
 }
 footer {
     height: 75px;
