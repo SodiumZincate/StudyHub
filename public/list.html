@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>StudyHub</title>
+        <link rel="stylesheet" href="list.css">
+    </head>
+    <body>      
+        <div class="header">
+            <div class="header-logo">StudyHub</div>
+            <div class="header-menus">
+                <div class="menus"><a href="home.html">Home</a></div>
+                <div class="menus"><a href="resources.html">Resources</a></div>
+                <div class="menus"><a href="notices.html">Notices</a></div>
+                <div class="menus"><a href="faculties.html">Faculties</a></div>
+                <div class="menus"><a href="contact.html">Contact</a></div>
+            </div>
+        </div>
+
+		<div class="main-section">
+            <div class="main-section-1" id="subject-name"></div>
+            <div class="main-section-2" id="file-list"></div>
+        </div>
+
+		<footer>
+            <div class="copyright">© 2025 StudyHub</div>
+        </footer>
+	
+		<script src="list.js"></script>
+		<script>
+			const urlParams = new URLSearchParams(window.location.search);
+			const semester = urlParams.get('semester');
+	
+			// function to fetch semester files
+			if (semester) {
+				fetchFiles(semester);
+
+				const subjectNameDiv = document.getElementById('subject-name');
+				subjectNameDiv.textContent = semester;
+			}
+		</script>
+    </body>
+</html>
