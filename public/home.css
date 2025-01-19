@@ -71,20 +71,17 @@ a{
     box-shadow:5px 5px 5px rgb(172, 172, 172);
 }
 .search-button{
-    width:20%;
-    border:0.5px solid grey;
-    border-radius:20px;
-    height:38px;
-    outline:none;
-    text-align:center;
-    padding:10px;
-    color:rgb(60,60,60);
-    background-color: rgb(209, 228, 245);
-    box-shadow:5px 5px 5px rgb(172, 172, 172);
+    width:45px;
+    height:45px;
+    border-radius:50%;
+    border:none;
+    margin-left: 10px;
 }
 .search-button:hover{
     cursor:pointer; 
     background-color: rgb(189, 218, 243);
+    box-shadow:5px 5px 10px rgb(172, 172, 172);
+    transition: background-color 0.2s, box-shadow 0.2s;
 }
 footer{
     height:75px;
