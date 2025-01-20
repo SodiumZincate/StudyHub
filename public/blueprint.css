@@ -1,0 +1,14 @@
+.header{
+    display:flex;
+    flex-direction: row;
+    background-color: #082748;
+    height:100px;
+    color:white;
+    align-items:center;
+}
+footer{
+    height:75px;
+    color:white;
+    background-color: #082748;
+    text-align: center;
+}

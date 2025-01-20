@@ -12,14 +12,14 @@ html, body {
 a{
     text-decoration: none;
 }
-.header{
+/* .header{
     display:flex;
     flex-direction: row;
     background-color: #082748;
     height:100px;
     color:white;
     align-items:center;
-}
+} */
 .menus a{
     color:white;
     font-size: large;
@@ -43,7 +43,7 @@ a{
     display:flex;
     flex-direction: row;
     justify-content:center;
-    margin-bottom:100px;
+    margin-bottom:200px;
     gap: 100px;
     padding: 80px 180px 80px 180px;
 }
@@ -96,12 +96,12 @@ a{
     box-shadow: 3px 5px 5px rgba(0, 0, 0, 0.5);
     transition:box-shadow 0.1s;
 }
-footer{
+/* footer{
     height:75px;
     color:white;
     background-color: #082748;
     text-align: center;
-}
+} */
 .copyright{
     padding-top:20px;
 }

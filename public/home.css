@@ -12,14 +12,14 @@ html, body {
 a{
     text-decoration: none;
 }
-.header{
+/* .header{
     display:flex;
     flex-direction: row;
     background-color: #082748;
     height:100px;
     color:white;
     align-items:center;
-}
+} */
 .menus a{
     color:white;
     font-size: 18px;
@@ -83,12 +83,12 @@ a{
     box-shadow:5px 5px 10px rgb(172, 172, 172);
     transition: background-color 0.2s, box-shadow 0.2s;
 }
-footer{
+/* footer{
     height:75px;
     color:white;
     background-color: #082748;
     text-align: center;
-}
+} */
 .copyright{
     padding-top:20px;
 }
