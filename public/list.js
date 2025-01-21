@@ -1,3 +1,10 @@
+// const link=document.createElement('link');
+// link.rel='stylesheet';
+// link.href='/public/list.css';
+
+// document.head.appendChild(link);
+
+
 function fetchFiles(path = '') {
 	if (!path) {
         return;

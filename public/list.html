@@ -5,6 +5,8 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>StudyHub</title>
         <link rel="stylesheet" href="list.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+        
     </head>
     <body>      
         <div class="header">
@@ -18,10 +20,21 @@
             </div>
         </div>
 
-		<div class="main-section">
-            <div class="main-section-1" id="subject-name"></div>
-            <div class="main-section-2" id="file-list"></div>
+        <div class="outermost-container">
+            <div class="main-section">
+                <div class="branch-sem">
+                    <div class="back-button">
+                        <button class="bbutton" onclick="goBack()">
+                            <i class="fa-solid fa-backward"></i></i>
+                        </button>
+                    </div>
+                    <div class="main-section-1" id="subject-name"></div>
+                </div>
+                
+                <div class="main-section-2" id="file-list"></div>
+            </div>
         </div>
+		
 
 		<footer>
             <div class="copyright">© 2025 StudyHub</div>
@@ -39,6 +52,11 @@
 				const subjectNameDiv = document.getElementById('subject-name');
 				subjectNameDiv.textContent = semester;
 			}
+
+            //back button
+            function goBack(){
+                window.history.back();
+            }
 		</script>
     </body>
 </html>
