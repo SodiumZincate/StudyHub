@@ -12,27 +12,35 @@ app.use(express.static(path.join(__dirname, '../resources')));
 // Route to handle search queries
 app.get('/home/search', (req, res) => {
   const searchQuery = req.query.item;
+  const basePath = path.join(__dirname, '../resources/'); // Adjust based on your directory structure
+  const targetPath = path.join(basePath, searchQuery);
+
   console.log('User searched for:', searchQuery);
 
   if (searchQuery) {
-    res.send(`You searched for: ${searchQuery}`);
-	if(searchQuery == "test"){
-		const fileName = "../public/" + searchQuery + ".txt";
-		const data = fs.readFileSync(fileName, 'utf8');
-		console.log(data);
-
-		fs.readFile(fileName, 'utf8', (err, data) => {
-			if (err) {
-			  console.error('Error reading file:', err);
-			  return;
-			}
-			console.log(data);
-		  });
-	}
+    if (fs.existsSync(targetPath)) {
+      if (fs.lstatSync(targetPath).isDirectory()) {
+        // Return the directory contents
+        const files = fs.readdirSync(targetPath).map((file) => {
+          const fullPath = path.join(targetPath, file);
+          return {
+            name: file,
+            isDirectory: fs.lstatSync(fullPath).isDirectory(),
+          };
+        });
+        return res.json({ type: 'directory', files });
+      } else {
+        // Handle case if the search query is a file
+        res.send(`The query '${searchQuery}' is not a directory.`);
+      }
+    } else {
+      res.status(404).send('Directory not found.');
+    }
   } else {
     res.send('Please provide a search query.');
   }
 });
+
 
 // for opening files
 app.get('/openfile/:department/:semester/:subject/:item', (req, res) => {

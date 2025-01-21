@@ -70,3 +70,27 @@ function fetchFiles(path = '') {
 
 // initial call for root path
 fetchFiles();
+
+const searchInput = document.getElementById('search-bar'); // Adjust to your search bar ID
+const searchButton = document.getElementById('search-button'); // Adjust to your search button ID
+
+searchButton.addEventListener('click', () => {
+    const query = searchInput.value;
+    fetch(`/home/search?item=${query}`)
+        .then(response => {
+            if (!response.ok) {
+                throw new Error(`HTTP error! Status: ${response.status}`);
+            }
+            return response.json();
+        })
+        .then(data => {
+            if (data.type === 'directory') {
+                displayFiles(data.files, query);
+            } else {
+                alert(data);
+            }
+        })
+        .catch(error => {
+            console.error('Error fetching search results:', error);
+        });
+});
