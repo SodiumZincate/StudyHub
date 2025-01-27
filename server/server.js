@@ -6,7 +6,7 @@ const app = express();
 
 app.use(express.static(path.join(__dirname, '../public')));
 app.use(express.static(path.join(__dirname, '../assets')));
-app.use(express.static(path.join(__dirname, '../resources')));
+// app.use(express.static(path.join(__dirname, '../resources')));
 
 // Route to handle search queries
 app.get('/home/search', (req, res) => {
