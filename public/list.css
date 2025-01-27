@@ -67,7 +67,7 @@ a{
 .main-section-1{
   font-size: 32px;
   margin-top:8px;
-  margin-left:100px;
+  margin-left:80px;
 }
 .back-button{
     width:50px;
@@ -90,7 +90,7 @@ a{
 .main-section-2{
     font-size: 20px;
     color:black;
-    margin-left:150px;
+    margin-left:100px;
     margin-top:25px;
 }
 
@@ -184,13 +184,14 @@ footer{
 
 .folder, .file {
 	cursor: pointer;
-	padding-left: 20px;  
+	padding-left: 20px;
 }
 .file {
 	color: blue;
 }
 .folder {
 	color: green;
+	line-height: 30px;
 }
 .bbutton:hover{
     font-size:30px;
