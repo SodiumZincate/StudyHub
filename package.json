@@ -1,0 +1,15 @@
+{
+  "name": "studyhub",
+  "version": "1.0.0",
+  "description": "StudyHub, a dedicated online platform designed to promote easier access for students by centralizing departmental study materials and academic resources within one easy-to-access platform.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+
+  }
+}
