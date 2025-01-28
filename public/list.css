@@ -9,35 +9,6 @@ html, body {
     font-family: Arial, sans-serif;
     background-color: white;
 }
-a{
-    text-decoration: none;
-}
-.header{
-    display:flex;
-    flex-direction: row;
-    background-color: #082748;
-    height:100px;
-    color:white;
-    align-items:center;
-}
-.menus a{
-    color:white;
-    font-size: 18px;
-}
-.header-logo{
-    font-size:35px;
-    margin-left:50px;
-    flex:0.5;
-}
-.header-menus{
-    flex:0.5;
-    display:flex;
-    justify-content: space-evenly;
-}
-.header-menus a:hover{
-    cursor:pointer; 
-    color: rgb(200, 200, 200);
-}
 
 .outermost-container{
     display:flex;
@@ -122,65 +93,9 @@ a{
     cursor:pointer; 
     background-color: rgb(189, 218, 243);
 }
-footer{
-    margin-top:300px;
-    height:75px;
-    color:white;
-    background-color: #082748;
-    text-align: center;
-}
-.copyright{
-    padding-top:20px;
-}
 #file-list{
     color:black;
 }
-
- @media (max-width: 1100px) {
-    .menus a{
-        font-size: 16px;
-    }
-    .header-logo{
-        font-size:30px;
-    }
-    .main-section-1{
-        font-size:30px;
-    }
-    .main-section-2{
-        width: 70%;
-    }
- }
-
- @media (max-width: 800px) {
-    .header-menus{
-        gap: 15px;
-        padding-right: 15px;
-    }
-    .header-logo{
-        font-size:25px;
-    }
-    .main-section-1{
-        font-size:25px;
-    }
- }
-
- @media (max-width: 560px) {
-    .header{
-        flex-direction: column;
-        padding-top: 20px;
-        gap:10px;
-    }
-    .header-logo{
-        margin: 0px;
-        justify-content: center;
-        align-items: center;
-    }
-    .header-menus{
-        border-top: 1px solid white;
-        width: 100%;
-        align-items: center;
-    }
- }
 
 .folder, .file {
 	cursor: pointer;
@@ -197,3 +112,23 @@ footer{
     font-size:30px;
     transition:font-size 0.2s;
 }
+
+ @media (max-width: 1100px) {
+    .main-section-1{
+        font-size:30px;
+    }
+    .main-section-2{
+        width: 70%;
+    }
+ }
+
+ @media (max-width: 800px) {
+    .main-section-1{
+        font-size:25px;
+    }
+ }
+
+ @media (max-width: 560px) {
+ }
+
+
