@@ -38,6 +38,7 @@ router.get('/', (req, res) => {
 router.get('/verify', (req, res) => {
     if (req.query.otp == otp) {
         res.status(200).send('success')
+        
     }
     else {
         otp = generateOTP()
