@@ -41,7 +41,7 @@ router.get('/verify', (req, res) => {
     }
     else {
         otp = generateOTP()
-        res.status(200).send('fail')
+        res.status(200).redirect(`/login.html?verification=fail`)
     }
 })
 
