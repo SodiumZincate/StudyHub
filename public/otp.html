@@ -4,7 +4,7 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Login - StudyHub</title>
-        <link rel="stylesheet" href="login.css">
+        <link rel="stylesheet" href="otp.css">
         <link rel="stylesheet" href="common.css">
     </head>
     <body>
@@ -21,19 +21,24 @@
         </div>
 
         <div class="main-section">
-            <div class="login-container">
-                <h2 class="login-title">Login to StudyHub</h2>
-                <form class="login-form" action="/login" method="GET">
-                    <input class="login-input" type="text" name="email" placeholder="KU email" required>
-                    <button class="login-button" type="submit">Login</button>
+            <div class="otp-container">
+                <h2 class="otp-title">OTP verification</h2>
+                <p class="otp-message-default">For verfication, please enter the OTP sent to</p>
+                <p class="otp-message-email"></p>
+                <form class="otp-form" action="/login/verify" method="GET">
+                    <input class="otp-input" type="text" name="otp" placeholder="OTP" required>
+                    <button class="otp-button" type="submit">Verify</button>
                 </form>
-                <p class="login-message"></p>
             </div>
         </div>
 
         <footer>
             <div class="copyright">© 2025 StudyHub</div>
         </footer>
-        <script src="login.js"></script>
+        <script>
+            const URLParams = new URLSearchParams(window.location.search)
+            const email = URLParams.get('email');
+            document.querySelector('.otp-message-email').innerText = `${email}`
+        </script>
     </body>
 </html>
