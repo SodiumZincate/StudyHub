@@ -115,6 +115,10 @@ app.get('/resources/:department/:semester*', (req, res) => {
     });
 });
 
+//login route
+const login = require('./login-route')
+app.use('/login', login)
+
 // Start the Express server
 app.listen(6969, "0.0.0.0", () => {
   console.log('Server is running on http://localhost:6969');
