@@ -119,6 +119,10 @@ app.get('/resources/:department/:semester*', (req, res) => {
 const login = require('./login-route')
 app.use('/login', login)
 
+//data fetch route
+const fetch = require('./fetch-route')
+app.use('/fetch', fetch)
+
 // Start the Express server
 app.listen(6969, "0.0.0.0", () => {
   console.log('Server is running on http://localhost:6969');
