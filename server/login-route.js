@@ -59,7 +59,7 @@ router.post('/create', async (req, res) => {
     try {
         const email = req.body.email
         const user = await User.create({email: email})
-        res.status(200).json({user})
+        res.status(200).redirect(`/verification-success.html?email=${email}`)
     }
     catch(err) {
         console.log(err)
