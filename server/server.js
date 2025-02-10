@@ -8,6 +8,9 @@ app.use(express.static(path.join(__dirname, '../public')));
 app.use(express.static(path.join(__dirname, '../assets')));
 // app.use(express.static(path.join(__dirname, '../resources')));
 
+app.use(express.json());
+app.use(express.urlencoded({extended: false}))
+
 // Route to handle search queries
 app.get('/home/search', (req, res) => {
 	const searchQuery = req.query.item;
@@ -119,11 +122,18 @@ app.get('/resources/:department/:semester*', (req, res) => {
 const login = require('./login-route')
 app.use('/login', login)
 
-//data fetch route
-const fetch = require('./fetch-route')
-app.use('/fetch', fetch)
+const connectDB = require('../db/connect') 
+require('dotenv').config() 
 
-// Start the Express server
-app.listen(6969, "0.0.0.0", () => {
-  console.log('Server is running on http://localhost:6969');
-});
+//First connecting with DB, then starting the Express server
+const start = async () => {
+  try {
+    await connectDB(process.env.MONGO_URI) 
+    app.listen(6969, () => {
+      console.log('Server is running on http://localhost:6969')
+    })
+  } catch (err) {
+    console.log(err)
+  }
+}
+start()

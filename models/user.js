@@ -15,15 +15,4 @@ const userSchema = new mongoose.Schema({
     answers: Array
 })
 
-const questionSchema = new mongoose.Schema({
-    value: String,
-    answers: Array
-})
-
-const answerSchema = new mongoose.Schema({
-    value: String,
-    question: String
-})
-
-module.exports = mongoose.model('user', userSchema)
-module.exports = mongoose.model('question', questionSchema)
+module.exports = mongoose.model('User', userSchema)
