@@ -4,7 +4,7 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Login - StudyHub</title>
-        <link rel="stylesheet" href="otp.css">
+        <link rel="stylesheet" href="new-account.css">
         <link rel="stylesheet" href="common.css">
     </head>
     <body>
@@ -21,14 +21,13 @@
         </div>
 
         <div class="main-section">
-            <div class="otp-container">
-                <h2 class="otp-title">OTP verification</h2>
-                <p class="otp-message-default">For verfication, please enter the OTP sent to</p>
-                <p class="otp-message-email"></p>
-                <form class="otp-form" action='/login/verify' method="GET"> 
-                    <input class="otp-input" type="text" name="otp" placeholder="OTP" required>
+            <div class="container">
+                <h2 class="title">New Account Detected</h2>
+                <p class="message-1">You haven't signed up with this email yet.</p>
+                <p class="message-2">Would you like to create a new account?</p>
+                <form class="form" action="/login/create" method="POST">
                     <input class="email-input" type="text" name="email">
-                    <button class="otp-button" type="submit">Verify</button>
+                    <button class="button" type="submit">Create new Account</button>
                 </form>
             </div>
         </div>
@@ -39,8 +38,6 @@
         <script>
             const URLParams = new URLSearchParams(window.location.search)
             const email = URLParams.get('email');
-            document.querySelector('.otp-message-email').innerText = `${email}`
-
             const hiddenEmailField = document.querySelector('.email-input');
             hiddenEmailField.value = email;
         </script>

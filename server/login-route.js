@@ -3,6 +3,8 @@ const router = express.Router()
 
 const nodemailer = require('nodemailer')
 
+const User = require('../models/user')
+
 let otp;
 
 router.get('/', (req, res) => {
@@ -35,10 +37,17 @@ router.get('/', (req, res) => {
     })
 })
 
-router.get('/verify', (req, res) => {
+const generateOTP = function() { return Math.floor(Math.random() * 1000000) }
+
+router.get('/verify', async (req, res) => {
     if (req.query.otp == otp) {
-        res.status(200).send('success')
-        
+        const user = await User.findOne({email: req.query.email})
+        if(!user) {
+            res.status(200).redirect(`/new-account.html?email=${req.query.email}`)
+        }
+        else {
+            res.status(200).redirect(`/verification-success.html?email=${req.query.email}`)
+        }
     }
     else {
         otp = generateOTP()
@@ -46,6 +55,21 @@ router.get('/verify', (req, res) => {
     }
 })
 
-const generateOTP = function() { return Math.floor(Math.random() * 1000000) }
+router.post('/create', async (req, res) => {
+    try {
+        const email = req.body.email
+        const user = await User.create({email: email})
+        res.status(200).json({user})
+    }
+    catch(err) {
+        console.log(err)
+        res.status(500).send(err)
+    }
+})
+
+router.get('/fetch', async (req, res) => {
+    const user = await User.findOne({email: req.query.email})
+    res.status(200).redirect(`/index.html?email=${req.query.email}`)
+})
 
 module.exports = router

@@ -15,7 +15,7 @@ html, body {
     justify-content: center;
     align-items: center;
 }
-.otp-container {
+.container {
     width: 350px;
     padding: 30px;
     background-color: #f8f9fa;
@@ -26,24 +26,17 @@ html, body {
     display: flex;
     flex-direction: column;
 }
-.otp-title {
+.title {
     font-size: 24px;
     margin-bottom: 10px;
     color: #082748;
 }
-.otp-form {
+.form {
     display: flex;
     flex-direction: column;
     gap: 15px;
 }
-.otp-input {
-    width: 100%;
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    font-size: 16px;
-}
-.otp-button {
+.button {
     width: 100%;
     padding: 10px;
     border: none;
@@ -53,16 +46,15 @@ html, body {
     font-size: 16px;
     cursor: pointer;
 }
-.otp-button:hover {
+.button:hover {
     background-color: #0a396b;
 }
-.otp-message-default {
+.message-default {
     height: 20px;
     font-size: 14px;
     color: #0a396b;
 }
-
-.otp-message-email{
+.message-email{
     height: 20px;
     margin-bottom: 10px;
     font-size: 14px;
@@ -72,7 +64,6 @@ html, body {
 .email-input{
     display: none;
   }
-  
 
 @media (max-width: 1100px) {
  }
@@ -81,7 +72,7 @@ html, body {
  }
 
  @media (max-width: 560px) {
-    .otp-container {
+    .container {
         width: 90%;
     }
  }
