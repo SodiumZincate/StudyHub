@@ -67,7 +67,16 @@ router.post('/create', async (req, res) => {
 
 router.get('/fetch', async (req, res) => {
     const user = await User.findOne({email: req.query.email})
+    //we set up session here. then we dont need to pass email as query parameter
     res.status(200).redirect(`/index.html?email=${req.query.email}`)
+})
+
+router.post('/personal-details', (req, res) => {
+    
+})
+
+router.post('/logout', (req, res) => {
+    
 })
 
 module.exports = router
