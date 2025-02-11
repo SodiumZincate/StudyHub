@@ -53,6 +53,26 @@ html, body {
     cursor:pointer; 
     background-color: rgb(189, 218, 243);
 }
+.todo{
+    background-color: aliceblue;
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    margin-left:10px;
+    padding:5px;
+    box-shadow:5px 5px 5px rgb(172, 172, 172);
+    border:0.5px solid grey;
+    border-radius:20px;
+}
+.todo a{
+    display:inline-block;
+    color:black;
+}
+.todo:hover{
+    cursor:pointer; 
+    background-color: rgb(189, 218, 243);
+}
+
 
  @media (max-width: 1100px) {
     .main-section-1{
