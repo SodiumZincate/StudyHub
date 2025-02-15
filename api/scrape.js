@@ -12,10 +12,9 @@ async function scrapeNotices() {
 
     const browser = await puppeteer.launch({
       args: chromium.args,
-      executablePath: executablePath || '/usr/bin/chromium-browser', // Fallback path
+      executablePath: executablePath || '/usr/bin/chromium-browser',
       headless: chromium.headless,
       ignoreHTTPSErrors: true,
-      timeout: 30000 // 30 seconds timeout for launching Puppeteer
     });
 
     console.log('Puppeteer launched successfully');
@@ -23,7 +22,7 @@ async function scrapeNotices() {
     const url = 'https://ku.edu.np/news-app?search_category=3&search_school=10&search_site_name=kuhome&show_on_home=0';
     console.log('Navigating to the URL:', url);
     
-    await page.goto(url, { waitUntil: 'networkidle2', timeout: 30000 }); // Wait for the page to load, with a timeout
+    await page.goto(url, { waitUntil: 'networkidle2' });
     console.log('Page loaded successfully');
 
     const notices = await page.evaluate(() => {
@@ -44,33 +43,30 @@ async function scrapeNotices() {
       });
     });
 
-    console.log(`Scraped ${notices.length} notices`);
+    console.log('Scraped notices:', notices);
 
-    // Ensure MongoDB URI is provided
     const uri = process.env.MONGO_URI;
     if (!uri) {
       throw new Error('MongoDB URI is missing!');
     }
     console.log('Connecting to MongoDB...');
-    const client = new MongoClient(uri, { useUnifiedTopology: true, connectTimeoutMS: 10000 });
+    const client = new MongoClient(uri);
     await client.connect();
     console.log('Connected to MongoDB');
 
     const db = client.db('studyhub');
     const collection = db.collection('notices');
     
-    // Insert the scraped notices into MongoDB, limit to 100 items per insert for performance
-    const chunkSize = 100;
-    for (let i = 0; i < notices.length; i += chunkSize) {
-      const chunk = notices.slice(i, i + chunkSize);
-      await collection.insertMany(chunk);
-      console.log(`Inserted ${chunk.length} notices into MongoDB`);
-    }
+    // Clear existing notices and insert new ones
+    await collection.deleteMany({});  // Delete all documents (clear collection)
+    console.log('Existing notices deleted from MongoDB');
+
+    // Insert the scraped notices into MongoDB (only 10 notices)
+    await collection.insertMany(notices.slice(0, 10));  // Insert only the first 10 notices
+    console.log('Notices inserted into MongoDB');
 
     await browser.close();
     console.log('Browser closed successfully');
-    await client.close();
-    console.log('MongoDB connection closed');
 
     return { success: true, message: 'Scraping and storage successful' };
   } catch (error) {
