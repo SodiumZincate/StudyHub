@@ -1,5 +1,5 @@
-import puppeteer from 'puppeteer';
-import fs from 'fs';
+const puppeteer = require('puppeteer');
+const fs = require('fs');
 
 export default async function handler(req, res) {
   try {
