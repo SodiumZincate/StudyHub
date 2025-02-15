@@ -13,12 +13,12 @@ jobs:
       - name: Checkout the repository
         uses: actions/checkout@v2
 
-      - name: Get Latest Vercel Deployment URL
+      - name: Get Vercel Deployment URL
+        id: vercel
         run: |
-          DEPLOYMENT_URL=$(curl -s https://api.vercel.com/v12/now/deployments?teamId=your-team-id&projectId=your-project-id | jq -r '.deployments[0].url')
-          echo "Deployment URL: $DEPLOYMENT_URL"
-          echo "VERCEL_URL=$DEPLOYMENT_URL" >> $GITHUB_ENV
+          echo "Vercel URL: $VERCEL_URL"
+          echo "VERCEL_URL=$VERCEL_URL" >> $GITHUB_ENV
 
       - name: Call Vercel Scraping API
         run: |
-          curl -X GET https://$VERCEL_URL/api/scrape
+          curl -X GET ${{ env.VERCEL_URL }}/api/scrape
