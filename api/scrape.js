@@ -2,22 +2,28 @@ const puppeteer = require('puppeteer-core');
 const chromium = require('@sparticuz/chromium');
 const { MongoClient } = require('mongodb');
 
-module.exports = async function scrapeNotices() {
+async function scrapeNotices() {
   try {
+    console.log('Starting scraping process...');
+
     // Ensure Chromium is properly included
     const executablePath = await chromium.executablePath();
-    
+    console.log('Chromium executable path:', executablePath);
+
     const browser = await puppeteer.launch({
       args: chromium.args,
-      executablePath: executablePath || '/usr/bin/chromium-browser', // Fallback
+      executablePath: executablePath || '/usr/bin/chromium-browser',
       headless: chromium.headless,
       ignoreHTTPSErrors: true,
     });
 
+    console.log('Puppeteer launched successfully');
     const page = await browser.newPage();
     const url = 'https://ku.edu.np/news-app?search_category=3&search_school=10&search_site_name=kuhome&show_on_home=0';
+    console.log('Navigating to the URL:', url);
     
     await page.goto(url, { waitUntil: 'networkidle2' });
+    console.log('Page loaded successfully');
 
     const notices = await page.evaluate(() => {
       return Array.from(document.querySelectorAll('.primary-box.bg-white')).map(notice => {
@@ -37,23 +43,37 @@ module.exports = async function scrapeNotices() {
       });
     });
 
-    // Store scraped data in MongoDB
-    const uri = process.env.MONGO_URI;
-    const client = new MongoClient(process.env.MONGO_URI);
+    console.log('Scraped notices:', notices);
 
+    const uri = process.env.MONGO_URI;
+    if (!uri) {
+      throw new Error('MongoDB URI is missing!');
+    }
+    console.log('Connecting to MongoDB...');
+    const client = new MongoClient(uri);
     await client.connect();
+    console.log('Connected to MongoDB');
+
     const db = client.db('studyhub');
     const collection = db.collection('notices');
     
     // Insert the scraped notices into MongoDB
     await collection.insertMany(notices);
+    console.log('Notices inserted into MongoDB');
 
     await browser.close();
+    console.log('Browser closed successfully');
 
-    // Return a result for the API route
     return { success: true, message: 'Scraping and storage successful' };
   } catch (error) {
     console.error('Error occurred during scraping:', error);
     return { success: false, error: error.message };
   }
-};
+}
+
+// Run the scraping function immediately
+(async () => {
+  console.log('Calling scrapeNotices function...');
+  const result = await scrapeNotices();
+  console.log('Result:', result);
+})();
