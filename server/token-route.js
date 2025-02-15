@@ -4,10 +4,9 @@ const jwt = require('jsonwebtoken')
 require('dotenv').config()
 const User = require('../models/user')
 
-let refreshTokens = []
-
-router.get('/create', async (req, res) => {
-    const user = await User.findOne({email: req.query.email})
+router.post('/create', async (req, res) => {
+    const email = req.body.email
+    const user = await User.findOne({email: email})
     //here, we create two jwts and send it to the client
 
     const userPayload = {
@@ -16,7 +15,6 @@ router.get('/create', async (req, res) => {
     }
     const accessToken = jwt.sign(userPayload, process.env.ACCESS_TOKEN_SECRET, {expiresIn: '20s'})
     const refreshToken = jwt.sign(userPayload, process.env.REFRESH_TOKEN_SECRET)
-    refreshTokens.push(refreshToken)
 
     //res.json({accessToken: accessToken, refreshToken: refreshToken})
 
@@ -33,8 +31,25 @@ router.get('/create', async (req, res) => {
         sameSite: 'strict',
         maxAge: 7 * 24 * 60 * 60 * 1000
     })
+    return res.status(200).json({ redirectUrl: `/index.html?email=${user.email}` });
+})
 
-    res.status(200).redirect(`/index.html`)
+router.post('/refresh', (req, res) => {
+    const refreshToken = req.body.token
+    if (refreshToken == null) return res.sendStatus(401)
+    if (! refreshTokens.includes(refreshToken)) return res.sendStatus(403)
+
+    jwt.verify(refreshToken, process.env.REFRESH_TOKEN_SECRET, (err, user) => {
+        if(err) return res.sendStatus(403)
+        const accessToken = jwt.sign(user, process.env.ACCESS_TOKEN_SECRET, {expiresIn: '20s'}) 
+        res.cookie('accessToken', accessToken, {
+            httpOnly: true, 
+            secure: process.env.NODE_ENV === 'production',
+            sameSite: 'strict', 
+            maxAge: 20 * 1000 
+        })
+        res.status(200).send("Access token refreshed successfully");
+    })
 })
 
 module.exports = router

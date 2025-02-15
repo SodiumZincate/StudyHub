@@ -141,8 +141,8 @@ require('dotenv').config()
 const start = async () => {
   try {
     await connectDB(process.env.MONGO_URI) 
-    app.listen(6969, () => {
-      console.log('Server is running on http://localhost:6969')
+    app.listen(5000, () => {
+      console.log('Server is running on http://localhost:5000')
     })
   } catch (err) {
     console.log(err)

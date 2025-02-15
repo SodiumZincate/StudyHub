@@ -1,5 +1,3 @@
-//after setting up session, we take user name 
-//from the session cookie rather than query parameter
 const URLParams = new URLSearchParams(window.location.search)
 const email = URLParams.get('email');
 
