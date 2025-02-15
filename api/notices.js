@@ -8,7 +8,7 @@ async function connectToDatabase() {
   }
 
   const uri = process.env.MONGO_URI;  // MongoDB URI from Vercel environment variables
-  client = new MongoClient(uri, { useNewUrlParser: true, useUnifiedTopology: true });
+  const client = new MongoClient(process.env.MONGO_URI);
   await client.connect();
   return client;
 }

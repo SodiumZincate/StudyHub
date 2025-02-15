@@ -39,7 +39,7 @@ module.exports = async function scrapeNotices() {
 
     // Store scraped data in MongoDB
     const uri = process.env.MONGO_URI;
-    const client = new MongoClient(uri, { useNewUrlParser: true, useUnifiedTopology: true });
+    const client = new MongoClient(process.env.MONGO_URI);
 
     await client.connect();
     const db = client.db('studyhub');
