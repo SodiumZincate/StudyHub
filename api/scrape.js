@@ -12,9 +12,10 @@ async function scrapeNotices() {
 
     const browser = await puppeteer.launch({
       args: chromium.args,
-      executablePath: executablePath || '/usr/bin/chromium-browser',
+      executablePath: executablePath || '/usr/bin/chromium-browser', // Fallback path
       headless: chromium.headless,
       ignoreHTTPSErrors: true,
+      timeout: 30000 // 30 seconds timeout for launching Puppeteer
     });
 
     console.log('Puppeteer launched successfully');
@@ -22,7 +23,7 @@ async function scrapeNotices() {
     const url = 'https://ku.edu.np/news-app?search_category=3&search_school=10&search_site_name=kuhome&show_on_home=0';
     console.log('Navigating to the URL:', url);
     
-    await page.goto(url, { waitUntil: 'networkidle2' });
+    await page.goto(url, { waitUntil: 'networkidle2', timeout: 30000 }); // Wait for the page to load, with a timeout
     console.log('Page loaded successfully');
 
     const notices = await page.evaluate(() => {
@@ -43,22 +44,23 @@ async function scrapeNotices() {
       });
     });
 
-    console.log('Scraped notices:', notices);
+    console.log(`Scraped ${notices.length} notices`);
 
+    // Ensure MongoDB URI is provided
     const uri = process.env.MONGO_URI;
     if (!uri) {
       throw new Error('MongoDB URI is missing!');
     }
     console.log('Connecting to MongoDB...');
-    const client = new MongoClient(uri);
+    const client = new MongoClient(uri, { useUnifiedTopology: true, connectTimeoutMS: 10000 });
     await client.connect();
     console.log('Connected to MongoDB');
 
     const db = client.db('studyhub');
     const collection = db.collection('notices');
     
-    // Clear existing notices and insert new ones
-    await collection.deleteMany({});  // Delete all documents (clear collection)
+    // Clear the collection and insert only the latest 10 notices
+    await collection.deleteMany({});  // Delete all documents to overwrite
     console.log('Existing notices deleted from MongoDB');
 
     // Insert the scraped notices into MongoDB (only 10 notices)
@@ -67,6 +69,8 @@ async function scrapeNotices() {
 
     await browser.close();
     console.log('Browser closed successfully');
+    await client.close();
+    console.log('MongoDB connection closed');
 
     return { success: true, message: 'Scraping and storage successful' };
   } catch (error) {
