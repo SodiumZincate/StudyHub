@@ -11,8 +11,10 @@
     "license": "ISC",
     "type": "commonjs",
     "dependencies": {
+        "@sparticuz/chromium": "^132.0.0",
         "chrome-aws-lambda": "^10.1.0",
         "express": "^4.21.2",
+        "mongodb": "^6.13.0",
         "puppeteer-core": "^10.4.0"
     }
 }

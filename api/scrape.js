@@ -1,19 +1,22 @@
 const puppeteer = require('puppeteer-core');
-const chrome = require('chrome-aws-lambda');
-const fs = require('fs');
+const chromium = require('@sparticuz/chromium');
+const { MongoClient } = require('mongodb');
 
-module.exports = async function handler(req, res) {
+module.exports = async function scrapeNotices() {
   try {
+    // Ensure Chromium is properly included
+    const executablePath = await chromium.executablePath();
+    
     const browser = await puppeteer.launch({
-      executablePath: await chrome.executablePath,
-      args: chrome.args,
-      defaultViewport: chrome.defaultViewport,
-      headless: chrome.headless,
+      args: chromium.args,
+      executablePath: executablePath || '/usr/bin/chromium-browser', // Fallback
+      headless: chromium.headless,
+      ignoreHTTPSErrors: true,
     });
 
     const page = await browser.newPage();
-
     const url = 'https://ku.edu.np/news-app?search_category=3&search_school=10&search_site_name=kuhome&show_on_home=0';
+    
     await page.goto(url, { waitUntil: 'networkidle2' });
 
     const notices = await page.evaluate(() => {
@@ -29,18 +32,28 @@ module.exports = async function handler(req, res) {
           description: descriptionElement ? descriptionElement.innerText.trim() : 'No Description',
           date: dateElement ? dateElement.innerText.trim() : 'No Date',
           link: linkElement ? linkElement.href : 'No Link',
-          image: imageElement ? imageElement.src : 'No Image'
+          image: imageElement ? imageElement.src : 'No Image',
         };
       });
     });
 
-    fs.writeFileSync("public/notices.json", JSON.stringify(notices, null, 2));
+    // Store scraped data in MongoDB
+    const uri = process.env.MONGO_URI;
+    const client = new MongoClient(uri, { useNewUrlParser: true, useUnifiedTopology: true });
+
+    await client.connect();
+    const db = client.db('studyhub');
+    const collection = db.collection('notices');
+    
+    // Insert the scraped notices into MongoDB
+    await collection.insertMany(notices);
 
     await browser.close();
 
-    res.status(200).json({ message: "Scraping completed and data saved" });
+    // Return a result for the API route
+    return { success: true, message: 'Scraping and storage successful' };
   } catch (error) {
-    console.error("Scraping failed:", error);
-    res.status(500).json({ error: 'Failed to scrape data' });
+    console.error('Error occurred during scraping:', error);
+    return { success: false, error: error.message };
   }
 };

@@ -6,7 +6,7 @@ on:
   workflow_dispatch:  # Allows you to trigger the workflow manually
   push:
     branches:
-        - server
+      - server
 
 jobs:
   scrape-notices:
@@ -16,7 +16,17 @@ jobs:
       - name: Checkout the repository
         uses: actions/checkout@v2
 
-      - name: Call Vercel Scraping API
+      - name: Set up Node.js
+        uses: actions/setup-node@v2
+        with:
+          node-version: '16'
+
+      - name: Install dependencies
         run: |
-          echo "Calling Vercel Scraping API at https://studyhub-sepia.vercel.app/api/scrape"
-          curl -X GET "https://studyhub-sepia.vercel.app/api/scrape"
+          npm install mongodb puppeteer-core @sparticuz/chromium
+
+      - name: Run Scrape Script
+        run: |
+          node scrape.js
+        env:
+          MONGO_URI: ${{ secrets.MONGO_URI }}  # MongoDB URI stored in GitHub Secrets
