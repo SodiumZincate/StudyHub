@@ -122,6 +122,18 @@ app.get('/resources/:department/:semester*', (req, res) => {
 const login = require('./login-route')
 app.use('/login', login)
 
+//token route
+const token = require('./token-route')
+app.use('/token', token)
+
+//home route
+const home = require('./home-route')
+app.use('/home', home)
+
+//logout route
+const logout = require('./logout-route')
+app.use('/logout', logout)
+
 const connectDB = require('../db/connect') 
 require('dotenv').config() 
 
