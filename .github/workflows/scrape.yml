@@ -27,6 +27,6 @@ jobs:
 
       - name: Run Scrape Script
         run: |
-          node scrape.js
+          node api/scrape.js
         env:
           MONGO_URI: ${{ secrets.MONGO_URI }}  # MongoDB URI stored in GitHub Secrets
