@@ -11,7 +11,7 @@
 	  },
 	  {
 		"src": "/api/notices",
-		"dest": "api/notices.js"
+		"use": "api/notices.js"
 	  },
 	  {
 		"src": "public/**",
