@@ -10,6 +10,10 @@
 		"use": "@vercel/node"
 	  },
 	  {
+		"src": "/api/notices",
+		"dest": "api/notices.js"
+	  },
+	  {
 		"src": "public/**",
 		"use": "@vercel/static"
 	  }
@@ -18,6 +22,10 @@
 	  {
 		"src": "/api/scrape",
 		"dest": "api/scrape.js"
+	  },
+	  {
+		"src": "/api/notices",
+		"dest": "api/notices.js"
 	  },
 	  {
 		"src": "/api/(.*)",
