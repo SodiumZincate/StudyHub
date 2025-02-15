@@ -1,17 +1,21 @@
-const puppeteer = require('puppeteer');
+const puppeteer = require('puppeteer-core');
+const chrome = require('chrome-aws-lambda');
 const fs = require('fs');
-const path = require('path');
 
-const scrapeNotices = async () => {
+module.exports = async function handler(req, res) {
   try {
-    const browser = await puppeteer.launch({ headless: true });
+    const browser = await puppeteer.launch({
+      executablePath: await chrome.executablePath,
+      args: chrome.args,
+      defaultViewport: chrome.defaultViewport,
+      headless: chrome.headless,
+    });
+
     const page = await browser.newPage();
 
-    // URL to scrape
     const url = 'https://ku.edu.np/news-app?search_category=3&search_school=10&search_site_name=kuhome&show_on_home=0';
     await page.goto(url, { waitUntil: 'networkidle2' });
 
-    // Scraping logic
     const notices = await page.evaluate(() => {
       return Array.from(document.querySelectorAll('.primary-box.bg-white')).map(notice => {
         const titleElement = notice.querySelector('.primary-box__title.listing-primary-box-title');
@@ -30,16 +34,13 @@ const scrapeNotices = async () => {
       });
     });
 
-    // Save notices to the public folder
-    const filePath = path.join(__dirname, 'public', 'notices.json');
-    fs.writeFileSync(filePath, JSON.stringify(notices, null, 2));
+    fs.writeFileSync("public/notices.json", JSON.stringify(notices, null, 2));
 
     await browser.close();
-    return { success: true, message: 'Scraping completed and data saved' };
+
+    res.status(200).json({ message: "Scraping completed and data saved" });
   } catch (error) {
-    console.error('Scraping failed:', error);
-    return { success: false, error: 'Failed to scrape data' };
+    console.error("Scraping failed:", error);
+    res.status(500).json({ error: 'Failed to scrape data' });
   }
 };
-
-module.exports = scrapeNotices;
