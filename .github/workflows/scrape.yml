@@ -16,17 +16,9 @@ jobs:
       - name: Checkout the repository
         uses: actions/checkout@v2
 
-      - name: Set up Node.js
-        uses: actions/setup-node@v2
-        with:
-          node-version: '16'
-
-      - name: Install dependencies
+      - name: Trigger Scrape on Vercel
         run: |
-          npm install mongodb puppeteer-core @sparticuz/chromium
-
-      - name: Run Scrape Script
-        run: |
-          node api/scrape.js
+          echo "Calling Vercel Scraping API"
+          curl -X GET "https://studyhub-sepia.vercel.app/api/scrape"  # Replace with your actual Vercel URL
         env:
           MONGO_URI: ${{ secrets.MONGO_URI }}  # MongoDB URI stored in GitHub Secrets
