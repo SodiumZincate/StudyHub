@@ -10,8 +10,8 @@
 		"use": "@vercel/node"
 	  },
 	  {
-		"src": "/api/notices",
-		"use": "api/notices.js"
+		"src": "/api/notices.js",
+		"use": "@vercel/node"
 	  },
 	  {
 		"src": "public/**",

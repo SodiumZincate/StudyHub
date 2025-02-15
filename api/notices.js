@@ -8,7 +8,7 @@ async function connectToDatabase() {
   }
 
   const uri = process.env.MONGO_URI;  // MongoDB URI from Vercel environment variables
-  const client = new MongoClient(process.env.MONGO_URI);
+  client = new MongoClient(uri);
   await client.connect();
   return client;
 }
@@ -20,11 +20,11 @@ export default async function handler(req, res) {
     const db = client.db('studyhub');
     const collection = db.collection('notices');
 
-    // Retrieve the most recent notice
-    const latestNotice = await collection.findOne({}, { sort: { createdAt: -1 } });
+    // Retrieve the 10 most recent notices (adjust sort order and limit)
+    const notices = await collection.find().sort({ createdAt: -1 }).limit(10).toArray();
 
-    if (latestNotice) {
-      res.status(200).json(latestNotice);
+    if (notices.length > 0) {
+      res.status(200).json(notices);
     } else {
       res.status(404).json({ message: 'No notices found' });
     }
