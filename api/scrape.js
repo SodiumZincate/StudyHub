@@ -1,7 +1,7 @@
 const puppeteer = require('puppeteer');
 const fs = require('fs');
 
-export default async function handler(req, res) {
+module.exports = async function handler(req, res) {
   try {
     const browser = await puppeteer.launch({ headless: true });
     const page = await browser.newPage();
@@ -27,9 +27,8 @@ export default async function handler(req, res) {
       });
     });
 
-    fs.writeFileSync("notices.json", JSON.stringify(notices, null, 2));
-
-    console.log("Scraped data saved to notice.json");
+    // Save notices as a JSON file in the public folder
+    fs.writeFileSync("public/notices.json", JSON.stringify(notices, null, 2));
 
     await browser.close();
 
