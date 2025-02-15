@@ -18,5 +18,5 @@ jobs:
 
       - name: Call Vercel Scraping API
         run: |
-          echo "Calling Vercel Scraping API at https://studyhub-sepia.vercel.app/api/scrape"
-          curl -X GET "https://studyhub-sepia.vercel.app/api/scrape"
+          echo "Calling Vercel Scraping API at https://studyhub-sepia.vercel.app/public/scrape"
+          curl -X GET "https://studyhub-sepia.vercel.app/public/scrape"
