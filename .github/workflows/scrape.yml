@@ -1,0 +1,18 @@
+name: Scrape Notices
+
+on:
+  schedule:
+    - cron: '*/5 * * * *'  # This runs every 5 minutes
+  workflow_dispatch:  # Allows you to trigger the workflow manually
+
+jobs:
+  scrape-notices:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout the repository
+        uses: actions/checkout@v2
+
+      - name: Call Vercel Scraping API
+        run: |
+          curl -X GET https://your-vercel-deployment-url/api/scrape
