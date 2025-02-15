@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>StudyHub</title>
+        <link rel="stylesheet" href="user-details.css">
+        <link rel="stylesheet" href="common.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    </head>
+    <body>
+        
+        <div class="header">
+            <div class="header-logo">StudyHub</div>
+            <div class="header-menus">
+                <div class="menus"><a href="index.html">Home</a></div>
+                <div class="menus"><a href="resources.html">Resources</a></div>
+                <div class="menus"><a href="notices.html">Notices</a></div>
+                <div class="menus"><a href="faculties.html">Faculties</a></div>
+                <div class="menus"><a href="contact.html">Contact</a></div>
+            </div>
+        </div>
+
+        <div class="main-section">
+            <div class="main-section-1">Personal Details</div>
+            <form class="main-section-2" action="/login/personal-details" method="POST">
+				<input class="input" type="text" name="f-name" placeholder="First Name" required>
+                <input class="input" type="text" name="l-name" placeholder="Last Name" required>
+                <input class="input" type="text" name="course" placeholder="Course" required>
+                <input class="input" type="text" name="batch" placeholder="Batch" required>
+                <button class="submit-button" type="submit">Submit</button>
+			</form>
+            <p class="submit-message"></p>
+        </div>
+
+        <footer>
+            <div class="copyright">© 2025 StudyHub</div>
+        </footer>
+    </body>
+</html>

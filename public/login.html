@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Login - StudyHub</title>
+        <link rel="stylesheet" href="login.css">
+        <link rel="stylesheet" href="common.css">
+    </head>
+    <body>
+        
+        <div class="header">
+            <div class="header-logo">StudyHub</div>
+            <div class="header-menus">
+                <div class="menus"><a href="#">Home</a></div>
+                <div class="menus"><a href="#">Resources</a></div>
+                <div class="menus"><a href="#">Notices</a></div>
+                <div class="menus"><a href="#">Faculties</a></div>
+                <div class="menus"><a href="#">Contact</a></div>
+            </div>
+        </div>
+
+        <div class="main-section">
+            <div class="login-container">
+                <h2 class="login-title">Login to StudyHub</h2>
+                <form class="login-form" action="/login" method="GET">
+                    <input class="login-input" type="text" name="email" placeholder="KU email" required>
+                    <button class="login-button" type="submit">Login</button>
+                </form>
+                <p class="login-message"></p>
+            </div>
+        </div>
+
+        <footer>
+            <div class="copyright">© 2025 StudyHub</div>
+        </footer>
+        <script src="login.js"></script>
+    </body>
+</html>

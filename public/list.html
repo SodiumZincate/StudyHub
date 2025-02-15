@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>StudyHub</title>
+        <link rel="stylesheet" href="list.css">
+        <link rel="stylesheet" href="common.css">
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    </head>
+    <body>      
+        <div class="header">
+            <div class="header-logo">StudyHub</div>
+            <div class="header-menus">
+                <div class="menus"><a href="index.html">Home</a></div>
+                <div class="menus"><a href="resources.html">Resources</a></div>
+                <div class="menus"><a href="notices.html">Notices</a></div>
+                <div class="menus"><a href="faculties.html">Faculties</a></div>
+                <div class="menus"><a href="contact.html">Contact</a></div>
+            </div>
+        </div>
+
+        <div class="outermost-container">
+            <div class="main-section">
+                <div class="branch-sem">
+                    <div class="back-button">
+                        <button class="bbutton" id="back-button">
+                            <i class="fa-solid fa-backward"></i>
+                        </button>
+                    </div>
+                    <div class="main-section-1" id="subject-name"></div>
+                </div>
+                
+                <div class="main-section-2" id="file-list"></div>
+            </div>
+        </div>
+        
+        <footer>
+            <div class="copyright">© 2025 StudyHub</div>
+        </footer>
+    
+        <script src="list.js"></script>
+        <script>
+            // Initialize semester
+            const urlParams = new URLSearchParams(window.location.search);
+            const semester = urlParams.get('semester');
+
+            if (semester) {
+                currentSemester = semester;
+                updatePageTitle();
+                fetchDirectories(currentSemester, []); // Fetch directories for the given semester
+            }
+
+            // Back button handler
+            document.getElementById('back-button').addEventListener('click', goBack);
+        </script>
+    </body>
+</html>
