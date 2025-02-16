@@ -1,40 +1,43 @@
 {
 	"version": 2,
 	"builds": [
-	  {
-		"src": "api/server.js",
-		"use": "@vercel/node"
-	  },
-	  {
-		"src": "api/scrape.js",
-		"use": "@vercel/node"
-	  },
-	  {
-		"src": "/api/notices.js",
-		"use": "@vercel/node"
-	  },
-	  {
-		"src": "public/**",
-		"use": "@vercel/static"
-	  }
+		{
+			"src": "api/*.js",
+			"use": "@vercel/node"
+		},
+		{
+			"src": "public/**",
+			"use": "@vercel/static"
+		}
 	],
 	"routes": [
-	  {
-		"src": "/api/scrape",
-		"dest": "api/scrape.js"
-	  },
-	  {
-		"src": "/api/notices",
-		"dest": "api/notices.js"
-	  },
-	  {
-		"src": "/api/(.*)",
-		"dest": "api/server.js"
-	  },
-	  {
-		"src": "/(.*)",
-		"dest": "/public/$1"
-	  }
+		{
+			"src": "/api/login(.*)",
+			"dest": "/api/login-route.js"
+		},
+		{
+			"src": "/api/home(.*)",
+			"dest": "/api/home-route.js"
+		},
+		{
+			"src": "/api/token(.*)",
+			"dest": "/api/token-route.js"
+		},
+		{
+			"src": "/api/logout(.*)",
+			"dest": "/api/logout-route.js"
+		},
+		{
+			"src": "/api/notices",
+			"dest": "/api/notices.js"
+		},
+		{
+			"src": "/api/directories(.*)",
+			"dest": "/api/server.js"
+		},
+		{
+			"src": "/(.*)",
+			"dest": "/public/$1"
+		}
 	]
-  }
-  
+}
