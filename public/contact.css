@@ -19,7 +19,7 @@ a {
     display: flex;
     flex-direction: row;
     background-color: #082748;
-    height: 100px;
+    height: 80px;
     color: white;
     align-items: center;
 }
@@ -30,7 +30,7 @@ a {
 }
 
 .header-logo {
-    font-size: 35px;
+    font-size: 32px;
     margin-left: 50px;
     flex: 0.5;
 }
