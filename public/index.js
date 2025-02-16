@@ -48,3 +48,14 @@ cancelButton.addEventListener("click", (event) => {
     event.preventDefault();  
     logoutContainer.classList.remove("active");  
 });
+
+const logout = document.querySelector(".logout-button")
+logout.addEventListener("click",  async () => {
+    try {
+        await axios.delete('/token/logout')
+        console.log('Tokens deleted successfully')
+        window.location.href = "/login.html"
+    } catch(err) {
+        console.log(err)
+    }
+})

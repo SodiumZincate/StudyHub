@@ -121,6 +121,10 @@ app.get('/resources/:department/:semester*', (req, res) => {
     });
 });
 
+//default route
+const def = require('./default-route')
+app.use('/default', def)
+
 //login route
 const login = require('./login-route')
 app.use('/login', login)
