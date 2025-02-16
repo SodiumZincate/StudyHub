@@ -12,7 +12,7 @@ router.get('/', (req, res) => {
         port: 465,
         auth: {
             user: "studyhub552@gmail.com",
-            pass: "ntbo yxbk tsyu hzqq"
+            pass: "qdwt cnwi badi pjok"
         }
     })
 
