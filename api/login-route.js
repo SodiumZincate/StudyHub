@@ -94,6 +94,17 @@ module.exports = async (req, res) => {
             return res.status(200).redirect(`/login.html?verification=fail`);
         }
     } 
+	else if (req.method === 'POST' && req.url === '/api/login/create') {
+		const { email } = req.body;
+
+		try {
+			const user = await User.create({ email });
+			return res.status(200).redirect(`/verification-success.html?email=${email}`);
+		} catch (err) {
+			console.error("Failed to create user:", err);
+			return res.status(500).send({ error: 'Failed to create user' });
+		}
+	}
     else if (req.method === 'GET') {
         const { email } = req.query;
 
@@ -109,18 +120,7 @@ module.exports = async (req, res) => {
             return res.status(500).json({ error: 'Failed to send OTP' });
         }
     } 
-    else if (req.method === 'POST' && req.url === '/api/login/create') {
-        const { email } = req.body;
-
-        try {
-            const user = await User.create({ email });
-            return res.status(200).redirect(`/verification-success.html?email=${email}`);
-        } catch (err) {
-            console.error("Failed to create user:", err);
-            return res.status(500).send({ error: 'Failed to create user' });
-        }
-    } 
-    else {
-        return res.status(405).json({ error: 'Method Not Allowed' });
-    }
+	else {
+		return res.status(405).json({ error: 'Method Not Allowed' });
+	}
 };
