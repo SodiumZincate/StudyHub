@@ -94,8 +94,8 @@ module.exports = async (req, res) => {
             return res.status(200).redirect(`/login.html?verification=fail`);
         }
     } 
-	else if (req.method === 'POST' && req.url === '/api/login/create') {
-		const { email } = req.body;
+	else if (req.method === 'GET' && req.url.startsWith('/api/login/create')) {
+		const { email } = req.query;
 
 		try {
 			const user = await User.create({ email });
