@@ -31,7 +31,5 @@ export default async function handler(req, res) {
   } catch (error) {
     console.error('Error fetching from MongoDB:', error);
     res.status(500).json({ error: 'Failed to fetch data from MongoDB' });
-  } finally {
-    await client.close();
   }
 }
