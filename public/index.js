@@ -1,7 +1,14 @@
 const URLParams = new URLSearchParams(window.location.search)
 const email = URLParams.get('email');
 
-//after session, if(username doesnt exit)
+document.querySelectorAll('.menus a').forEach(function(link) {
+    let url = new URL(link.href); 
+    if (email) {
+        url.searchParams.set('email', email); 
+        link.href = url; 
+    }
+});
+
 if (email) {
     const endIndex = email.search(/\d|@/)
     let name = email.slice(0, endIndex)

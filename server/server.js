@@ -1,15 +1,18 @@
 const fs = require('fs');
 const express = require('express');
+const cookieParser = require('cookie-parser')
 const path = require('path');
 
 const app = express();
 
 app.use(express.static(path.join(__dirname, '../public')));
 app.use(express.static(path.join(__dirname, '../assets')));
+app.use(express.static(path.join(__dirname, '../images')));
 // app.use(express.static(path.join(__dirname, '../resources')));
 
 app.use(express.json());
 app.use(express.urlencoded({extended: false}))
+app.use(cookieParser())
 
 // Route to handle search queries
 app.get('/home/search', (req, res) => {
