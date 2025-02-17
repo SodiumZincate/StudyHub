@@ -5,8 +5,8 @@ const path = require('path');
 
 const app = express();
 
-app.use(express.static(path.join(__dirname, '../public')));
-app.use(express.static(path.join(__dirname, '../assets')));
+app.use('/styles', express.static(path.join(__dirname, '../public/styles')));
+app.use('/scripts', express.static(path.join(__dirname, '../public/scripts')));;
 app.use(express.static(path.join(__dirname, '../images')));
 // app.use(express.static(path.join(__dirname, '../resources')));
 

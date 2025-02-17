@@ -50,12 +50,12 @@ cancelButton.addEventListener("click", (event) => {
 });
 
 const logout = document.querySelector(".logout-button")
-logout.addEventListener("click",  async () => {
-    try {
-        await axios.delete('/token/logout')
-        console.log('Tokens deleted successfully')
-        window.location.href = "/login.html"
-    } catch(err) {
-        console.log(err)
-    }
+logout.addEventListener("click", () => {
+    axios.delete('/token/logout')
+    .then((response) => {
+        window.location.href = response.data.redirectUrl;
+    })
+    .catch(error => {
+        console.error("There was an error with the request:", error);
+    });
 })

@@ -6,8 +6,7 @@ const emailMessage = document.querySelector('.message-email')
 emailMessage.textContent = email
 button.addEventListener("click", () => {
     axios.post('/token/create', {email: email})
-    .then(response => {
-      // Redirect to the URL returned from the server
+    .then((response) => {
       window.location.href = response.data.redirectUrl;
     })
     .catch(error => {

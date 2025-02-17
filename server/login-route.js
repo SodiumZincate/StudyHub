@@ -1,11 +1,12 @@
 const express = require('express')
 const router = express.Router()
+const path = require('path')
 const nodemailer = require('nodemailer')
 const User = require('../models/user')
 
 let otp;
 
-router.get('/', (req, res) => {
+router.get('/sendmail', (req, res) => {
     const transporter = nodemailer.createTransport({
         service: "gmail",
         secure: true,
@@ -31,9 +32,13 @@ router.get('/', (req, res) => {
             return res.status(500).send({error})
         }
         else {
-            res.status(200).redirect(`/otp.html?email=${req.query.email}`)
+            res.redirect(`/login/otp?email=${req.query.email}`)
         }
     })
+})
+
+router.get('/otp', (req, res) => {
+    res.sendFile(path.join(__dirname, '../public/otp.html'));
 })
 
 const generateOTP = function() { return Math.floor(Math.random() * 1000000) }
@@ -42,22 +47,34 @@ router.get('/verify', async (req, res) => {
     if (req.query.otp == otp) {
         const user = await User.findOne({email: req.query.email})
         if(!user) {
-            res.status(200).redirect(`/new-account.html?email=${req.query.email}`)
+            res.status(200).redirect(`/login/new-account?email=${req.query.email}`)
         }
         else {
-            res.status(200).redirect(`/verification-success.html?email=${req.query.email}`)
+            res.status(200).redirect(`/login/verification-success?email=${req.query.email}`)
         }
     }
     else {
-        res.status(200).redirect(`/login.html?verification=fail`)
+        res.status(200).redirect(`/login/login?verification=fail`)
     }
+})
+
+router.get('/new-account', (req, res) => {
+    res.sendFile(path.join(__dirname, '../public/new-account.html'));
+})
+
+router.get('/verification-success', (req, res) => {
+    res.sendFile(path.join(__dirname, '../public/verification-success.html'));
+})
+
+router.get('/login', (req, res) => {
+    res.sendFile(path.join(__dirname, '../public/login.html'));
 })
 
 router.post('/create', async (req, res) => {
     try {
         const email = req.body.email
         const user = await User.create({email: email})
-        res.status(200).redirect(`/verification-success.html?email=${email}`)
+        res.status(200).redirect(`/login/verification-success?email=${email}`)
     }
     catch(err) {
         console.log(err)

@@ -1,6 +1,7 @@
 const express = require('express')
 const router = express.Router()
 const jwt = require('jsonwebtoken')
+const path = require('path')
 require('dotenv').config()
 const User = require('../models/user')
 
@@ -31,7 +32,11 @@ router.post('/create', async (req, res) => {
         sameSite: 'strict',
         maxAge: 7 * 24 * 60 * 60 * 1000
     })
-    return res.status(200).json({ redirectUrl: `/dashboard.html?email=${user.email}` });
+    return res.status(200).json({redirectUrl: `/dashboard?email=${user.email}`})
+})
+
+router.get('/dashboard', (req, res) => {
+    res.sendFile(path.join(__dirname, '../public/dashboard.html'));
 })
 
 router.post('/refresh', (req, res) => {
@@ -69,7 +74,7 @@ router.delete('/logout', (req, res) => {
         sameSite: 'strict',
         expires: new Date(0) 
     });
-    return res.status(200).json({msg: "Tokens deleted successfully"})
+    return res.status(200).json({redirectUrl: `/login`})
 })
 
 module.exports = router
