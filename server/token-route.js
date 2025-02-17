@@ -11,7 +11,7 @@ router.post('/create', async (req, res) => {
 
     const userPayload = {
         email: user.email,
-        __id: user.__id
+        id: user.id
     }
     const accessToken = jwt.sign(userPayload, process.env.ACCESS_TOKEN_SECRET, {expiresIn: '20s'})
     const refreshToken = jwt.sign(userPayload, process.env.REFRESH_TOKEN_SECRET)
@@ -31,7 +31,7 @@ router.post('/create', async (req, res) => {
         sameSite: 'strict',
         maxAge: 7 * 24 * 60 * 60 * 1000
     })
-    return res.status(200).json({ redirectUrl: `/index.html?email=${user.email}` });
+    return res.status(200).json({ redirectUrl: `/dashboard.html?email=${user.email}` });
 })
 
 router.post('/refresh', (req, res) => {

@@ -123,7 +123,7 @@ app.get('/resources/:department/:semester*', (req, res) => {
 
 //default route
 const def = require('./default-route')
-app.use('/default', def)
+app.use('/', def)
 
 //login route
 const login = require('./login-route')
