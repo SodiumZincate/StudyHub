@@ -17,6 +17,7 @@ router.get('/', (req, res) => {
     })
 
     otp = generateOTP()
+    setInterval(() => {otp = generateOTP()}, 60000)
     const mailOptions = {
         from: "studyhub552@gmail.com",
         to: req.query.email,
@@ -48,7 +49,6 @@ router.get('/verify', async (req, res) => {
         }
     }
     else {
-        otp = generateOTP()
         res.status(200).redirect(`/login.html?verification=fail`)
     }
 })

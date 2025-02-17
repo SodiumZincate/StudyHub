@@ -60,10 +60,14 @@ html, body {
     font-size: 14px;
     color: #0a396b;
 }
-
+.otp-message-expire {
+    height: 20px;
+    font-size: 14px;
+    color: #0a396b;
+    margin-bottom: 10px;
+}
 .otp-message-email{
     height: 20px;
-    margin-bottom: 10px;
     font-size: 14px;
     color: #0a396b;
 }
