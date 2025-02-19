@@ -59,12 +59,12 @@ const generateOTP = function() { return Math.floor(Math.random() * 1000000) }
 router.get('/verify', async (req, res) => {
     if (req.query.otp == otp) {
         const Payload = {verified: true}
-        const verifiedToken = jwt.sign(Payload, process.env.VERIFIED_TOKEN_SECRET, {expiresIn: '60s'})
+        const verifiedToken = jwt.sign(Payload, process.env.VERIFIED_TOKEN_SECRET, {expiresIn: '10s'})
         res.cookie('verifiedToken', verifiedToken, {
             httpOnly: true,
             secure: process.env.NODE_ENV === 'production',
             sameSite: 'strict',
-            maxAge: 60 * 1000
+            maxAge: 10 * 1000
         })
 
         const user = await User.findOne({email: req.query.email})

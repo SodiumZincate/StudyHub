@@ -16,7 +16,7 @@ router.post('/create', async (req, res) => {
             //here, we create two jwts and send it to the client
         
             const userPayload = {
-                email: user.email,
+                email: email,
                 id: user.id
             }
             const accessToken = jwt.sign(userPayload, process.env.ACCESS_TOKEN_SECRET, {expiresIn: '20s'})

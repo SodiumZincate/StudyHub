@@ -1,20 +1,29 @@
+const updateQueryParam = function(key, value) {
+    const url = new URL(window.location);
+    url.searchParams.set(key, value);
+    window.history.pushState({}, '', url); 
+}
+
+axios.get('/get-email')
+.then(res => updateQueryParam('email', res.data.email))
+.then( () => {
 const URLParams = new URLSearchParams(window.location.search)
 const email = URLParams.get('email');
 
-document.querySelectorAll('.menus a').forEach(function(link) {
-    let url = new URL(link.href); 
-    if (email) {
+if (email) {
+    document.querySelectorAll('.menus a').forEach(function(link) {
+        let url = new URL(link.href);
         url.searchParams.set('email', email); 
         link.href = url; 
-    }
-});
+    });
 
-if (email) {
     const endIndex = email.search(/\d|@/)
     let name = email.slice(0, endIndex)
     name = (name.charAt(0).toUpperCase() + name.slice(1));
     document.querySelector('.main-section-1').textContent = `Welcome ${name}`
 }
+})
+.catch(err => console.log(err))
 
 const user = document.querySelector(".user");
 user.addEventListener("click", (event) => {
@@ -52,10 +61,6 @@ cancelButton.addEventListener("click", (event) => {
 const logout = document.querySelector(".logout-button")
 logout.addEventListener("click", () => {
     axios.delete('/token/logout')
-    .then((response) => {
-        window.location.href = response.data.redirectUrl;
-    })
-    .catch(error => {
-        console.error("There was an error with the request:", error);
-    });
+    .then(res => window.location.href = res.data.redirectUrl)
+    .catch(error => console.error("There was an error with the request:", error));
 })

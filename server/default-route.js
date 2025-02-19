@@ -28,4 +28,8 @@ router.get('/dashboard', authenticateToken, (req, res) => {
     res.sendFile(path.join(__dirname, '../public/dashboard.html'));
 })
 
+router.get('/get-email', authenticateToken, (req, res) => {
+    res.status(200).json({email: req.user.email})
+})
+
 module.exports = router
