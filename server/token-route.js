@@ -6,37 +6,40 @@ require('dotenv').config()
 const User = require('../models/user')
 
 router.post('/create', async (req, res) => {
-    const email = req.body.email
-    const user = await User.findOne({email: email})
-    //here, we create two jwts and send it to the client
-
-    const userPayload = {
-        email: user.email,
-        id: user.id
+    const verifiedToken = req.cookies.verifiedToken
+    if (!verifiedToken) return res.status(200).json({msg: "Access Denied"});
+    else {
+        jwt.verify(verifiedToken, process.env.VERIFIED_TOKEN_SECRET, async (err, user) => {
+            if (err) return res.status(403).json(err)
+            const email = req.body.email
+            const newUser = await User.findOne({email: email})
+            //here, we create two jwts and send it to the client
+        
+            const userPayload = {
+                email: user.email,
+                id: user.id
+            }
+            const accessToken = jwt.sign(userPayload, process.env.ACCESS_TOKEN_SECRET, {expiresIn: '20s'})
+            const refreshToken = jwt.sign(userPayload, process.env.REFRESH_TOKEN_SECRET)
+        
+            //res.json({accessToken: accessToken, refreshToken: refreshToken})
+        
+            res.cookie('accessToken', accessToken, {
+                httpOnly: true, //cookie is only accessible by the server
+                secure: process.env.NODE_ENV === 'production', //cookie is only sent over HTTPS in production environments
+                sameSite: 'strict', //cookie will be sent only with requests originating from the same domain as the one that set the cookie.
+                maxAge: 20 * 1000 //lifetime of cookie
+            })
+        
+            res.cookie('refreshToken', refreshToken, {
+                httpOnly: true,
+                secure: process.env.NODE_ENV === 'production',
+                sameSite: 'strict',
+                maxAge: 7 * 24 * 60 * 60 * 1000
+            })
+            return res.status(200).redirect(`/dashboard?email=${email}`)
+        })
     }
-    const accessToken = jwt.sign(userPayload, process.env.ACCESS_TOKEN_SECRET, {expiresIn: '20s'})
-    const refreshToken = jwt.sign(userPayload, process.env.REFRESH_TOKEN_SECRET)
-
-    //res.json({accessToken: accessToken, refreshToken: refreshToken})
-
-    res.cookie('accessToken', accessToken, {
-        httpOnly: true, //cookie is only accessible by the server
-        secure: process.env.NODE_ENV === 'production', //cookie is only sent over HTTPS in production environments
-        sameSite: 'strict', //cookie will be sent only with requests originating from the same domain as the one that set the cookie.
-        maxAge: 20 * 1000 //lifetime of cookie
-    })
-
-    res.cookie('refreshToken', refreshToken, {
-        httpOnly: true,
-        secure: process.env.NODE_ENV === 'production',
-        sameSite: 'strict',
-        maxAge: 7 * 24 * 60 * 60 * 1000
-    })
-    return res.status(200).json({redirectUrl: `/dashboard?email=${user.email}`})
-})
-
-router.get('/dashboard', (req, res) => {
-    res.sendFile(path.join(__dirname, '../public/dashboard.html'));
 })
 
 router.post('/refresh', (req, res) => {

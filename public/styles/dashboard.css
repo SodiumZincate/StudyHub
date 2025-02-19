@@ -19,13 +19,13 @@ html, body {
     outline: none;
     color: black;
     background-color: aliceblue;
-    box-shadow: 3px 3px 5px rgb(172, 172, 172);
+    box-shadow: 3px 3px 3px rgb(200, 200, 200);
     cursor: pointer;
 }
 
 .user:hover {
     background-color: lightgray; 
-    box-shadow: 2px 2px 4px rgb(120, 120, 120);
+    box-shadow: 3px 3px 3px rgb(150, 150, 150);
 }
 
 .nav-menu {
@@ -36,7 +36,7 @@ html, body {
     width: 150px;
     height: 115px;
     background-color: aliceblue;
-    box-shadow: 3px 3px 5px rgb(172, 172, 172);
+    box-shadow: 3px 3px 5px rgb(200, 200, 200);
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -88,7 +88,7 @@ html, body {
     padding-left:20px;
     color:black;
     background-color: aliceblue;
-    box-shadow:5px 5px 5px rgb(172, 172, 172);
+    box-shadow:3px 3px 3px rgb(200, 200, 200);
 }
 .search-button{
     width:40px;
@@ -96,12 +96,13 @@ html, body {
     border-radius:50%;
     border:0.5px solid grey;  
     outline:none;
-    box-shadow:5px 5px 5px rgb(172, 172, 172);
+    box-shadow:3px 3px 3px rgb(200, 200, 200);
     margin-left: 10px;
 }
 .search-button:hover{
     cursor:pointer; 
-    background-color: rgb(189, 218, 243);
+    background-color: lightgray; 
+    box-shadow: 3px 3px 3px rgb(150, 150, 150);
 }
 .logout-container {
     position: fixed;  
