@@ -64,3 +64,29 @@ logout.addEventListener("click", () => {
     .then(res => window.location.href = res.data.redirectUrl)
     .catch(error => console.error("There was an error with the request:", error));
 })
+
+//theme
+document.addEventListener("DOMContentLoaded", () => {
+    const toggleButton = document.querySelector(".theme");
+    const themeStylesheet1 = document.getElementById("themeStylesheet1");
+    const themeStylesheet2 = document.getElementById("themeStylesheet2");
+  
+    // Check localStorage for theme preference
+    const currentTheme = localStorage.getItem("theme") || "light";
+    themeStylesheet1.href = currentTheme === "dark" ? "/styles/dashboard-dark.css" : "/styles/dashboard.css";
+    themeStylesheet2.href = currentTheme === "dark" ? "/styles/common-dark.css" : "/styles/common.css"
+  
+    // Toggle theme on button click
+    toggleButton.addEventListener("click", () => {
+      if (themeStylesheet1.href.includes("/styles/dashboard.css")) {
+        themeStylesheet1.href = "/styles/dashboard-dark.css";
+        themeStylesheet2.href = "/styles/common-dark.css";
+        localStorage.setItem("theme", "dark");
+      } else {
+        themeStylesheet1.href = "/styles/dashboard.css";
+        themeStylesheet2.href = "/styles/common.css";
+        localStorage.setItem("theme", "light");
+      }
+    });
+  });
+  

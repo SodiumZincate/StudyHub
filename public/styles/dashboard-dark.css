@@ -4,18 +4,16 @@
     right: 20px;
     width: 40px; 
     height: 30px; 
-    border: 1px solid grey;
+    border: 2px solid rgb(50,50,50) ;
     border-radius: 20px;
     outline: none;
-    color: black;
-    background-color: aliceblue;
-    box-shadow: 3px 3px 3px rgb(200, 200, 200);
+    color: rgb(130,130,130) ;
+    background-color: rgb(20,20,20);
     cursor: pointer;
 }
 
 .user:hover {
-    background-color: lightgray; 
-    box-shadow: 3px 3px 3px rgb(150, 150, 150);
+    background-color: rgb(15,15,15) ; 
 }
 
 .nav-menu {
@@ -25,8 +23,8 @@
     visibility: hidden;
     width: 150px;
     height: 150px;
-    background-color: aliceblue;
-    box-shadow: 3px 3px 5px rgb(200, 200, 200);
+    background-color: rgb(25,25,25);
+    border-radius: 8px;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -35,13 +33,13 @@
 
 .nav-menu a {
     text-decoration: none;
-    color: black;
+    color: rgb(160,160,160) ;
     padding: 10px;
     font-size: 14px;
 }
 
 .nav-menu a:hover {
-    background-color: lightgray;
+    background-color: rgb(40,40,40);
     border-radius: 5px;
 }
 
@@ -69,29 +67,30 @@
 }
 .search-bar{
     width:80%;
-    border:0.5px solid grey;
+    border:1px solid rgb(50,50,50);
     border-radius:20px;
     height:38px;
     outline:none;
     text-align:left;
     padding-left:20px;
-    color:black;
-    background-color: aliceblue;
-    box-shadow:3px 3px 3px rgb(200, 200, 200);
+    color: rgb(130,130,130) ;
+    background-color: rgb(40,40,40) ;
+    border: 1px solid rgb(50,50,50) ;
 }
 .search-button{
     width:40px;
     height:40px;
     border-radius:50%;
-    border:0.5px solid grey;  
+    border:0.5px solid #2E2E2E;  
     outline:none;
-    box-shadow:3px 3px 3px rgb(200, 200, 200);
     margin-left: 10px;
+    color: rgb(100,100,100) ;
+    background-color: rgb(40,40,40) ;
+    border: 1px solid rgb(50,50,50) ;
 }
 .search-button:hover{
     cursor:pointer; 
-    background-color: lightgray; 
-    box-shadow: 3px 3px 3px rgb(150, 150, 150);
+    background-color: rgb(25,25,25);
 }
 .logout-container {
     position: fixed;  
@@ -100,10 +99,9 @@
     transform: translate(-50%, -50%);
     width: 350px;
     padding: 30px;
-    background-color: #f8f9fa;
-    border: 1px solid #ddd;
+    background-color: rgb(40,40,40);
+    border: 1px solid rgb(50,50,50);
     border-radius: 10px;
-    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.2);
     text-align: center;
     display: none;
     flex-direction: column;
@@ -129,15 +127,18 @@
     cursor: pointer;
 }
 .logout-button {
-    background-color: #082748;
-    color: white;
+    background-color: rgb(37, 47, 63);
+    color: rgb(190,190,190);
 }
 .cancel-button {
-    color: #082748;
-    background-color: white;
+    color: rgb(37, 47, 63);
+    background-color: rgb(190,190,190);
 }
 .logout-button:hover {
-    background-color: #0a396b;
+    background-color:rgb(23, 32, 47);
+}
+.cancel-button:hover {
+    background-color: rgb(160,160,160) ;
 }
 
  @media (max-width: 1100px) {

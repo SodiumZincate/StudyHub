@@ -8,4 +8,4 @@ async function refreshToken() {
 }
 
 refreshToken()
-setInterval(refreshToken, 16000)
+setInterval(refreshToken, 14.8 * 60 * 1000)

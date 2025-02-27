@@ -19,7 +19,7 @@ router.post('/create', async (req, res) => {
                 email: email,
                 id: user.id
             }
-            const accessToken = jwt.sign(userPayload, process.env.ACCESS_TOKEN_SECRET, {expiresIn: '20s'})
+            const accessToken = jwt.sign(userPayload, process.env.ACCESS_TOKEN_SECRET, {expiresIn: '900s'})
             const refreshToken = jwt.sign(userPayload, process.env.REFRESH_TOKEN_SECRET)
         
             //res.json({accessToken: accessToken, refreshToken: refreshToken})
@@ -28,7 +28,7 @@ router.post('/create', async (req, res) => {
                 httpOnly: true, //cookie is only accessible by the server
                 secure: process.env.NODE_ENV === 'production', //cookie is only sent over HTTPS in production environments
                 sameSite: 'strict', //cookie will be sent only with requests originating from the same domain as the one that set the cookie.
-                maxAge: 20 * 1000 //lifetime of cookie
+                maxAge: 15 * 60 * 1000 //lifetime of cookie
             })
         
             res.cookie('refreshToken', refreshToken, {
@@ -48,12 +48,12 @@ router.post('/refresh', (req, res) => {
 
     jwt.verify(refreshToken, process.env.REFRESH_TOKEN_SECRET, (err, user) => {
         if(err) return res.sendStatus(403)
-        const accessToken = jwt.sign(user, process.env.ACCESS_TOKEN_SECRET, {expiresIn: '20s'}) 
+        const accessToken = jwt.sign(user, process.env.ACCESS_TOKEN_SECRET, {expiresIn: '900s'}) 
         res.cookie('accessToken', accessToken, {
             httpOnly: true, 
             secure: process.env.NODE_ENV === 'production',
             sameSite: 'strict', 
-            maxAge: 20 * 1000 
+            maxAge: 15 * 60 * 1000 
         })
         res.status(200).send("Access token refreshed successfully");
     })
