@@ -1,11 +1,8 @@
-async function refreshToken() {
-    try {
-        await axios.post('/token/refresh')
-        console.log("Access token refreshed successfully"); 
-    } catch (err) {
-        console.log(err)
-    }
+function refreshToken() {
+    axios.post('/token/refresh')
+    .then(res => console.log(res.data))
+    .catch(err => console.log(err))
 }
 
 refreshToken()
-setInterval(refreshToken, 14.8 * 60 * 1000)
+setInterval(refreshToken, 25 * 1000)

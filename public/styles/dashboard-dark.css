@@ -75,7 +75,6 @@
     padding-left:20px;
     color: rgb(130,130,130) ;
     background-color: rgb(40,40,40) ;
-    border: 1px solid rgb(50,50,50) ;
 }
 .search-button{
     width:40px;
@@ -121,13 +120,13 @@
 .logout-button, .cancel-button {
     width: 100%;
     padding: 10px;
-    border: 1px solid rgb(50,50,50);
+    border: none;
     border-radius: 5px;
     font-size: 16px;
     cursor: pointer;
 }
 .logout-button {
-    background-color: rgb(37, 47, 63);
+    background-color: rgb(6, 27, 48);;
     color: rgb(190,190,190);
 }
 .cancel-button {
@@ -135,7 +134,7 @@
     background-color: rgb(190,190,190);
 }
 .logout-button:hover {
-    background-color:rgb(23, 32, 47);
+    background-color:rgb(7, 35, 62);
 }
 .cancel-button:hover {
     background-color: rgb(160,160,160) ;

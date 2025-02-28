@@ -89,8 +89,8 @@ footer{
  @media (max-width: 600px) {
     .header{
         flex-direction: column;
-        padding-top: 10px;
-        gap:10px;
+        padding-top: 5px;
+        gap:5px;
     }
     .header-logo{
         margin: 0px;

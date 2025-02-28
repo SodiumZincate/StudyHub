@@ -5,23 +5,14 @@ const updateQueryParam = function(key, value) {
 }
 
 axios.get('/get-email')
-.then(res => updateQueryParam('email', res.data.email))
-.then( () => {
-const URLParams = new URLSearchParams(window.location.search)
-const email = URLParams.get('email');
-
-if (email) {
-    document.querySelectorAll('.menus a').forEach(function(link) {
-        let url = new URL(link.href);
-        url.searchParams.set('email', email); 
-        link.href = url; 
-    });
+.then( (res) => {
+    localStorage.setItem('email', res.data.email);
+    const email = localStorage.getItem('email');
 
     const endIndex = email.search(/\d|@/)
     let name = email.slice(0, endIndex)
     name = (name.charAt(0).toUpperCase() + name.slice(1));
     document.querySelector('.main-section-1').textContent = `Welcome ${name}`
-}
 })
 .catch(err => console.log(err))
 
@@ -60,7 +51,8 @@ cancelButton.addEventListener("click", (event) => {
 
 const logout = document.querySelector(".logout-button")
 logout.addEventListener("click", () => {
-    axios.delete('/token/logout')
+    localStorage.removeItem("email");
+    axios.delete('/logout')
     .then(res => window.location.href = res.data.redirectUrl)
     .catch(error => console.error("There was an error with the request:", error));
 })
@@ -89,4 +81,16 @@ document.addEventListener("DOMContentLoaded", () => {
       }
     });
   });
-  
+
+  //user options
+  //user details
+  const userDetails = document.querySelector("#user-details")
+  userDetails.addEventListener("click", (event) => {
+    event.preventDefault();
+    try {
+        window.location.href = '/home/personal-details' //sends a get request 
+    }
+    catch(error) {
+        console.error("There was an error with the request:", error)
+    }
+  })
