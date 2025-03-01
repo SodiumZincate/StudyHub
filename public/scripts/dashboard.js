@@ -29,9 +29,11 @@ document.addEventListener("click", (event) => {
     }
 });
 
-const logoutButton = document.querySelector(".logout");
+//logout
+const logoutButton = document.querySelector("#logout");
 const logoutContainer = document.querySelector(".logout-container");
 const cancelButton = document.querySelector(".cancel-button");
+const logout = document.querySelector(".logout-button")
 
 logoutButton.addEventListener("click", (event) => {
     event.preventDefault();  
@@ -49,7 +51,6 @@ cancelButton.addEventListener("click", (event) => {
     logoutContainer.classList.remove("active");  
 });
 
-const logout = document.querySelector(".logout-button")
 logout.addEventListener("click", () => {
     localStorage.removeItem("email");
     axios.delete('/logout')
@@ -59,7 +60,8 @@ logout.addEventListener("click", () => {
 
 //theme
 document.addEventListener("DOMContentLoaded", () => {
-    const toggleButton = document.querySelector(".theme");
+    const toggleButton = document.querySelector("#theme");
+    const toggleButtonSb = document.querySelector("#sb-theme");
     const themeStylesheet1 = document.getElementById("themeStylesheet1");
     const themeStylesheet2 = document.getElementById("themeStylesheet2");
   
@@ -80,28 +82,43 @@ document.addEventListener("DOMContentLoaded", () => {
         localStorage.setItem("theme", "light");
       }
     });
+    toggleButtonSb.addEventListener("click", () => {
+        if (themeStylesheet1.href.includes("/styles/dashboard.css")) {
+          themeStylesheet1.href = "/styles/dashboard-dark.css";
+          themeStylesheet2.href = "/styles/common-dark.css";
+          localStorage.setItem("theme", "dark");
+        } else {
+          themeStylesheet1.href = "/styles/dashboard.css";
+          themeStylesheet2.href = "/styles/common.css";
+          localStorage.setItem("theme", "light");
+        }
+      });
 });
 
-//user options
 //user details
 const userDetails = document.querySelector("#user-details")
+const userDetailsSb = document.querySelector("#sb-user-details")
 userDetails.addEventListener("click", (event) => {
 event.preventDefault();
-try {
-    window.location.href = '/home/personal-details' //sends a get request 
-}
-catch(error) {
-    console.error("There was an error with the request:", error)
-}
+try { window.location.href = '/home/personal-details'}
+catch(error) { console.error("There was an error with the request:", error)}
+})
+userDetailsSb.addEventListener("click", (event) => {
+event.preventDefault();
+try { window.location.href = '/home/personal-details'}
+catch(error) { console.error("There was an error with the request:", error)}
 })
 
+//tasks
 const todoList = document.querySelector("#todo-list")
+const todoListSb = document.querySelector("#sb-todo-list")
 todoList.addEventListener("click", (event) => {
   event.preventDefault();
-  try {
-      window.location.href = '/home/todo-list' //sends a get request 
-  }
-  catch(error) {
-      console.error("There was an error with the request:", error)
-  }
+  try { window.location.href = '/home/todo-list' }
+  catch(error) { console.error("There was an error with the request:", error) }
 })
+todoListSb.addEventListener("click", (event) => {
+    event.preventDefault();
+    try { window.location.href = '/home/todo-list' }
+    catch(error) { console.error("There was an error with the request:", error) }
+  })

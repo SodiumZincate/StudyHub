@@ -30,16 +30,24 @@
         <nav class="nav-menu">
             <a id="user-details" href="#">User Details</a>
             <a id="todo-list" href="#">Tasks</a>
-            <a href="#" class="theme">Change Theme</a>
-            <a href="#" class="logout">Log Out</a>
+            <a id="theme" href="#">Change Theme</a>
+            <a id="logout" href="#">Log Out</a>
         </nav>
         
-        <div class="main-section">
-            <div class="main-section-1"></div>
-            <form class="main-section-2" action="/home/search" method="GET">
-				<input class="search-bar" name="item" type="text" placeholder="Search for notes or subjects......">
-				<button class="search-button" type="submit"><i class="fa-solid fa-magnifying-glass"></i></button>
-			</form>
+        <div class="main">
+            <aside class="sidebar">
+                <a id="sb-user-details" href="#"><i class="fas fa-user"></i> <span>User Details</span></a>
+                <a id="sb-todo-list" href="#"><i class="fas fa-list"></i> <span>Tasks</span></a>
+                <a id="sb-theme" href="#"><i class="fas fa-paint-brush"></i> <span>Change Theme</span></a>
+            </aside>
+            
+            <div class="main-section">
+                <div class="main-section-1"></div>
+                <form class="main-section-2" action="/home/search" method="GET">
+                    <input class="search-bar" name="item" type="text" placeholder="Search for notes or subjects......">
+                    <button class="search-button" type="submit"><i class="fa-solid fa-magnifying-glass"></i></button>
+                </form>
+            </div>
         </div>
 
         <div class="logout-container">

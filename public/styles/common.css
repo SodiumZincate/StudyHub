@@ -7,7 +7,7 @@
 html, body {
     width: 100%;
     height: 100%;
-    background-color: #f4f7fb;
+    background-color: rgb(204, 211, 223);
     color: black;
 }
 .header{
@@ -16,7 +16,6 @@ html, body {
     background-color: #082748;
     height:70px;
     align-items:center;
-    border-bottom: 1px solid white;
 }
 
 .header-logo:hover {
@@ -71,6 +70,7 @@ footer{
     }
     .header-logo{
         font-size:30px;
+        margin-left: 30px;
     }
  }
 
@@ -81,6 +81,7 @@ footer{
     }
     .header-logo{
         font-size:25px;
+        margin-left: 15px;
     }
     .menus {
         padding: 15px 2px;

@@ -7,7 +7,7 @@
 html, body {
     width: 100%;
     height: 100%;
-    background-color: rgb(30,30,30);
+    background-color: rgb(20,20,20);
     color: rgb(200,200,200);
 }
 .header{
@@ -16,7 +16,6 @@ html, body {
     background-color: rgb(20,20,20)  ;
     height:70px;
     align-items:center;
-    border-bottom: 1px solid rgb(50,50,50);
 }
 
 .header-logo:hover {
@@ -58,7 +57,6 @@ footer{
     height:75px;
     background-color: rgb(20,20,20);
     text-align: center;
-    border-top: 1px solid rgb(50,50,50);
 }
 .copyright{
     padding-top:20px;
@@ -70,6 +68,7 @@ footer{
     }
     .header-logo{
         font-size:30px;
+        margin-left: 30px;
     }
  }
 
@@ -80,6 +79,7 @@ footer{
     }
     .header-logo{
         font-size:25px;
+        margin-left: 15px;
     }
     .menus {
         padding: 15px 2px;
