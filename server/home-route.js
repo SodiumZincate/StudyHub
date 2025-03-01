@@ -46,4 +46,9 @@ router.get('/user-data', authenticateToken, async (req, res) => {
     })
 })
 
+//todo list
+router.get('/todo-list', authenticateToken, (req, res) => {
+    res.sendFile(path.join(__dirname, '../public/todo.html'))
+})
+
 module.exports = router

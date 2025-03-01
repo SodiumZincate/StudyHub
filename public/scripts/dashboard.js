@@ -80,17 +80,28 @@ document.addEventListener("DOMContentLoaded", () => {
         localStorage.setItem("theme", "light");
       }
     });
-  });
+});
 
-  //user options
-  //user details
-  const userDetails = document.querySelector("#user-details")
-  userDetails.addEventListener("click", (event) => {
-    event.preventDefault();
-    try {
-        window.location.href = '/home/personal-details' //sends a get request 
-    }
-    catch(error) {
-        console.error("There was an error with the request:", error)
-    }
-  })
+//user options
+//user details
+const userDetails = document.querySelector("#user-details")
+userDetails.addEventListener("click", (event) => {
+event.preventDefault();
+try {
+    window.location.href = '/home/personal-details' //sends a get request 
+}
+catch(error) {
+    console.error("There was an error with the request:", error)
+}
+})
+
+const todoList = document.querySelector("#todo-list")
+todoList.addEventListener("click", (event) => {
+  event.preventDefault();
+  try {
+      window.location.href = '/home/todo-list' //sends a get request 
+  }
+  catch(error) {
+      console.error("There was an error with the request:", error)
+  }
+})
