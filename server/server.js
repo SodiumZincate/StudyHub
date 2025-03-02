@@ -7,7 +7,7 @@ const app = express();
 
 app.use('/styles', express.static(path.join(__dirname, '../public/styles')));
 app.use('/scripts', express.static(path.join(__dirname, '../public/scripts')));;
-app.use(express.static(path.join(__dirname, '../images')));
+app.use('/images', express.static(path.join(__dirname, '../images')));
 // app.use(express.static(path.join(__dirname, '../resources')));
 
 app.use(express.json());

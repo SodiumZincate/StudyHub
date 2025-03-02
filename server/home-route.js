@@ -51,4 +51,24 @@ router.get('/todo-list', authenticateToken, (req, res) => {
     res.sendFile(path.join(__dirname, '../public/todo.html'))
 })
 
+//menus
+router.get('/home', authenticateToken, (req, res) => {
+    res.sendFile(path.join(__dirname, '../public/dashboard.html'))
+})
+
+router.get('/resources', authenticateToken, (req, res) => {
+    res.sendFile(path.join(__dirname, '../public/resources.html'))
+})
+
+router.get('/notices', authenticateToken, (req, res) => {
+    res.sendFile(path.join(__dirname, '../public/notices.html'))
+})
+
+router.get('/faculties', authenticateToken, (req, res) => {
+    res.sendFile(path.join(__dirname, '../public/faculties.html'))
+})
+
+router.get('/contact', authenticateToken, (req, res) => {
+    res.sendFile(path.join(__dirname, '../public/contact.html'))
+})
 module.exports = router

@@ -1,10 +1,30 @@
-const URLParams = new URLSearchParams(window.location.search)
-const email = URLParams.get('email');
+const menusHome = document.querySelector("#menus-home");
+const menusResources = document.querySelector("#menus-resources");
+const menusNotices = document.querySelector("#menus-notices");
+const menusFaculties = document.querySelector("#menus-faculties");
+const menusContact = document.querySelector("#menus-contact");
 
-document.querySelectorAll('.menus a').forEach(function(link) {
-    let url = new URL(link.href); 
-    if (email) {
-        url.searchParams.set('email', email); 
-        link.href = url; 
-    }
-});
+menusHome.addEventListener("click", (event) => {
+    event.preventDefault();
+    window.location.href = '/dashboard'; 
+})
+
+menusResources.addEventListener("click", (event) => {
+    event.preventDefault();
+    window.location.href = '/home/resources';
+})
+
+menusNotices.addEventListener("click", (event) => {
+    event.preventDefault();
+    window.location.href = '/home/notices'; 
+})
+
+menusFaculties.addEventListener("click", (event) => {
+    event.preventDefault();
+    window.location.href = '/home/faculties'; 
+})
+
+menusContact.addEventListener("click", (event) => {
+    event.preventDefault();
+    window.location.href = '/home/contact'; 
+})
