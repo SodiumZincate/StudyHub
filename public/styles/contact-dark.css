@@ -14,6 +14,8 @@ h2 {
     margin-bottom: 100px;
     gap: 100px;
     margin: 10px;
+    border-radius: 10px;
+    background-color: rgb(30,30,30);
 }
 
 .contact-us {
@@ -27,14 +29,14 @@ h2 {
 }
 
 #short-info {
-    border: 2px solid black;
+    border: 2px solid rgb(40,40,40);
     padding: 20px;
     font-size: 18px;
 }
 
 #short {
     margin-bottom: 20px;
-    color: rgb(40,40,40);
+    color: rgb(200,200,200);
 }
 
 #list {
@@ -43,6 +45,10 @@ h2 {
 
 #list li {
     margin: 10px 0;
+}
+
+.f a {
+    color: rgb(230, 230, 230);
 }
 
 .map {
@@ -59,12 +65,10 @@ h2 {
     height: 700px;
     border: none;
     border-radius: 10px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
 footer {
     color:white;
-    background-color: #082748;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -105,8 +109,6 @@ footer {
 
 .copyright{
     height:75px;
-    color:white;
-    background-color: #082748;
     text-align: center;
     padding-top:20px;
 }

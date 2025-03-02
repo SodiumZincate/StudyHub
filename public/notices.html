@@ -4,8 +4,8 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Notices</title>
-        <link rel="stylesheet" href="/styles/notices.css">
-        <link rel="stylesheet" href="/styles/common.css">
+        <link id="themeStylesheet1" rel="stylesheet" href="/styles/notices-dark.css">
+        <link id="themeStylesheet2" rel="stylesheet" href="/styles/common-dark.css">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -32,6 +32,16 @@
             <div class="copyright">© 2025 StudyHub</div>
         </footer>
         <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+        <script>
+            document.addEventListener("DOMContentLoaded", () => {
+            const themeStylesheet1 = document.getElementById("themeStylesheet1");
+            const themeStylesheet2 = document.getElementById("themeStylesheet2");
+
+            const currentTheme = localStorage.getItem("theme") || "light";
+            themeStylesheet1.href = currentTheme === "dark" ? "/styles/notices-dark.css" : "/styles/notices.css";
+            themeStylesheet2.href = currentTheme === "dark" ? "/styles/common-dark.css" : "/styles/common.css"
+        });
+        </script>
         <script src="/scripts/common.js"></script>
         <script src="/scripts/auth.js"></script>
     </body>
