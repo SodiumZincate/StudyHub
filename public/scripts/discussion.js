@@ -1,6 +1,15 @@
 // JavaScript to manage question list and functionality
 document.addEventListener("DOMContentLoaded", () => {
 	const questionList = document.querySelector(".questionList");
+
+
+	if (questionList) {
+        questionList.addEventListener("click", buttonOperation);
+    } else {
+        console.error("questionList not found!");
+    }
+
+
 	const addQuestionButton = document.querySelector(".addButton");
 	const newQuestionInput = document.querySelector(".input");
 	const paginationPrevButton = document.querySelector(".pageButton.prev");
@@ -74,3 +83,26 @@ document.addEventListener("DOMContentLoaded", () => {
 	handlePagination();
   });
   
+
+  //functionality for delete and edit buttons
+  function buttonOperation(event){
+	const button=event.target; 	
+	if(button.classList.contains("deleteButton")){
+		button.parentElement.parentElement.parentElement.remove();
+	}
+	if(button.classList.contains("editButton")){
+		const questionBox=button.parentElement.parentElement.children[0];
+		const originalQuestionText=questionBox.innerText;
+		questionBox.innerHTML=`<input class="editInput" type="text" value="${originalQuestionText}">`;
+		const inputField=questionBox.querySelector('.editInput');
+
+		inputField.focus();
+		inputField.setSelectionRange(inputField.value.length, inputField.value.length);
+		
+		//edit Button conversion to Save Button
+		button.innerText='Save';
+		button.classList.remove('editButton');
+		button.classList.add('addButton');//for reference
+
+	}
+  }
