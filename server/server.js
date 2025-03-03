@@ -137,6 +137,10 @@ app.use('/token', token)
 const home = require('./home-route')
 app.use('/home', home)
 
+//discussion route
+const discussion = require('./discussion-route')
+app.use('/discussion', discussion)
+
 //logout route
 const logout = require('./logout-route')
 app.use('/logout', logout)

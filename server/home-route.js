@@ -51,6 +51,11 @@ router.get('/todo-list', authenticateToken, (req, res) => {
     res.sendFile(path.join(__dirname, '../public/todo.html'))
 })
 
+//discussion
+router.get('/discussion', authenticateToken, (req, res) => {
+    res.sendFile(path.join(__dirname, '../public/discussion.html'))
+})
+
 //menus
 router.get('/home', authenticateToken, (req, res) => {
     res.sendFile(path.join(__dirname, '../public/dashboard.html'))
@@ -71,4 +76,5 @@ router.get('/faculties', authenticateToken, (req, res) => {
 router.get('/contact', authenticateToken, (req, res) => {
     res.sendFile(path.join(__dirname, '../public/contact.html'))
 })
+
 module.exports = router

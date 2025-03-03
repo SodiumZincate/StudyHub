@@ -1,0 +1,211 @@
+/* Questions Page Layout */
+
+.main-section {
+	height: 1000px;
+	margin: 20px 20px 10px 20px;
+	display: flex;
+	flex-direction: column;
+	gap: 30px;
+}
+
+.questionInputSection {
+	width: 100%;
+	display: flex;
+	justify-content: space-between;
+}
+
+.input {
+outline: none;
+width: 80%;
+padding: 10px;
+font-size: 16px;
+border:0.5px solid grey;
+border-radius: 5px;
+background-color: rgb(228, 233, 241);
+}
+
+.addButton {
+width: 20%;
+padding: 10px 20px;
+font-size: 16px;
+background-color: #082748;
+color: white;
+border: none;
+border-radius: 5px;
+cursor: pointer;
+}
+
+.addButton:hover {
+background-color: #064173;
+}
+
+/* Question List */
+.questionList {
+margin-bottom: 30px;
+}
+
+.questionItem {
+background-color: aliceblue;
+margin-bottom: 15px;
+padding: 15px;
+border-radius: 5px;
+box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+border: 1px solid #ccc;
+}
+
+.questionContent {
+display: flex;
+flex-direction: column;
+}
+
+.questionLink {
+text-decoration: none;
+}
+
+.questionText {
+font-size: 18px;
+color: #082748;
+margin: 0;
+}
+
+.questionText:hover {
+text-decoration: underline;
+}
+
+.questionInfo {
+font-size: 14px;
+color: #444;
+margin: 5px 0;
+}
+
+.userEmail {
+font-weight: bold;
+}
+
+.date {
+font-style: italic;
+}
+
+.actionButtons {
+display: flex;
+gap: 10px;
+margin-top: 10px;
+}
+
+.editButton, .deleteButton {
+padding: 8px 15px;
+border: none;
+border-radius: 5px;
+cursor: pointer;
+}
+
+.editButton {
+background-color: #082748;
+color: white;
+}
+
+.editButton:hover {
+background-color: #064173;
+}
+
+.deleteButton {
+background-color: #ff4d4d;
+color: white;
+}
+
+.deleteButton:hover {
+background-color: #cc0000;
+}
+
+/* Edit Question */
+.editQuestion {
+display: flex;
+gap: 10px;
+}
+
+.saveButton, .cancelButton {
+padding: 8px 15px;
+border: none;
+border-radius: 5px;
+cursor: pointer;
+}
+
+.saveButton {
+background-color: #082748;
+color: white;
+}
+
+.saveButton:hover {
+background-color: #064173;
+}
+
+.cancelButton {
+background-color: #ccc;
+color: black;
+}
+
+.cancelButton:hover {
+background-color: #999;
+}
+
+/* Pagination */
+.pagination {
+display: flex;
+justify-content: center;
+gap: 20px;
+}
+
+.pageButton {
+padding: 10px 20px;
+background-color: #082748;
+color: white;
+border: none;
+border-radius: 5px;
+cursor: pointer;
+}
+
+.pageButton:disabled {
+background-color: #ccc;
+cursor: not-allowed;
+}
+
+.pageButton:hover:not(:disabled) {
+background-color: #064173;
+}
+
+/* Responsive Styles */
+@media (max-width: 1100px) {
+.questionText {
+	font-size: 16px;
+}
+
+.input, .addButton {
+	font-size: 14px;
+}
+}
+
+@media (max-width: 800px) {
+.input {
+	width: 70%;
+}
+.addButton {
+	width: 30%;
+}
+.questionText {
+	font-size: 14px;
+}
+
+.input, .addButton {
+	font-size: 12px;
+}
+
+.pageButton {
+	font-size: 14px;
+}
+}
+
+@media (max-width: 560px) {
+.input, .addButton, .pageButton {
+	font-size: 12px;
+}
+}

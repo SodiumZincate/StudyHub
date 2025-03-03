@@ -1,9 +1,3 @@
-const updateQueryParam = function(key, value) {
-    const url = new URL(window.location);
-    url.searchParams.set(key, value);
-    window.history.pushState({}, '', url); 
-}
-
 axios.get('/get-email')
 .then( (res) => {
     localStorage.setItem('email', res.data.email);
@@ -121,4 +115,19 @@ todoListSb.addEventListener("click", (event) => {
     event.preventDefault();
     try { window.location.href = '/home/todo-list' }
     catch(error) { console.error("There was an error with the request:", error) }
-  })
+})
+
+//discussion
+const discussion = document.querySelector("#discussion")
+const discussionSb = document.querySelector("#sb-discussion")
+discussion.addEventListener("click", (event) => {
+  event.preventDefault();
+  try { window.location.href = '/home/discussion' }
+  catch (error) { console.error("There was an error with the request:", error) }
+})
+discussionSb.addEventListener("click", (event) => {
+  event.preventDefault();
+  try { window.location.href = '/home/discussion' }
+  catch (error) { console.error("There was an error with the request:", error) }
+})
+
