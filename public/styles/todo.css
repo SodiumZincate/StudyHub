@@ -10,7 +10,7 @@
   }
   
 *{
-    font-family:"Oswald";
+    font-family: 'Inter', sans-serif;
     background-color:  var(--background-color);
     color:var(--text-color);
     margin:0;
