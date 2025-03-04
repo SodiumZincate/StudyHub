@@ -110,14 +110,45 @@ document.addEventListener("DOMContentLoaded", () => {
   //answerPage
 function answerPage(){
 	let newPageHTML=   `<!DOCTYPE html>
-					<html>
-					<head>
-					<title>AnswerPage</title>
-					</head>
-					<body>
-					</body>
-					</html>`
-	let newPage=window.open("","_blank");
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Answer Page</title>
+    <link rel="stylesheet" href="/styles/answer.css">
+</head>
+<body>
+    <div class="container">
+        <div id="question-container">
+            <h1 id="question-text"></h1>
+            <button id="edit-question-btn">Edit Question</button>
+            <div id="edit-question-container" style="display: none;">
+                <textarea id="edited-question-text"></textarea>
+                <button id="save-question-btn">Save</button>
+                <button id="cancel-question-btn">Cancel</button>
+            </div>
+            <p id="question-details"></p>
+        </div>
+
+        <div id="answers-container">
+            <h3>Answers</h3>
+            <p id="no-answers-message">No answers yet. Be the first to answer!</p>
+            <ul id="answers-list"></ul>
+        </div>
+
+        <div class="add-answer-container">
+            <input type="text" id="new-answer" placeholder="Add your answer">
+            <button id="add-answer-btn">Add Answer</button>
+        </div>
+
+        <button id="back-btn">Back to Questions</button>
+    </div>
+
+    <script src="answers.js"></script>
+</body>
+</html>
+`
+	let newPage=window.open("","_self");
 	newPage.document.write(newPageHTML);
 	newPage.document.close();
 }
