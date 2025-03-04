@@ -28,7 +28,7 @@ document.addEventListener("DOMContentLoaded", () => {
 		questionItem.classList.add("questionItem");
 		questionItem.innerHTML = `
 		  <div class="questionContent">
-			<h3 class="questionText">${question.text}</h3>
+			<h3 class="questionText" onclick="answerPage()" style="cursor:pointer">${question.text}</h3>
 			<p class="questionInfo">Asked by <span class="userEmail">${question.userEmail}</span> on <span class="date">${question.date}</span></p>
 			<div class="actionButtons">
 			  <button class="editButton">Edit</button>
@@ -106,3 +106,18 @@ document.addEventListener("DOMContentLoaded", () => {
 
 	}
   }
+
+  //answerPage
+function answerPage(){
+	let newPageHTML=   `<!DOCTYPE html>
+					<html>
+					<head>
+					<title>AnswerPage</title>
+					</head>
+					<body>
+					</body>
+					</html>`
+	let newPage=window.open("","_blank");
+	newPage.document.write(newPageHTML);
+	newPage.document.close();
+}
