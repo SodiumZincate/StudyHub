@@ -4,53 +4,68 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>StudyHub</title>
-        <link rel="stylesheet" href="index.css">
-        <link rel="stylesheet" href="common.css">
+        <link id="themeStylesheet1" rel="stylesheet" href="/styles/index-dark.css">
+        <link id="themeStylesheet2" rel="stylesheet" href="/styles/common-dark.css">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Manrope:wght@200..800&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
     </head>
     <body>
         
-        <div class="header">
+        <nav class="header">
             <div class="header-logo">StudyHub</div>
             <div class="header-menus">
-                <div class="menus"><a href="index.html">Home</a></div>
-                <div class="menus"><a href="resources.html">Resources</a></div>
- 				<div class="menus"><a href="discussion/discussion.html">Discussion</a></div>
-                <div class="menus"><a href="notices.html">Notices</a></div>
-                <div class="menus"><a href="faculties.html">Faculties</a></div>
-                <div class="menus"><a href="contact.html">Contact</a></div>
+                <div class="menus" id="menus-home"><a href="#">Home</a></div>
+                <div class="menus" id="menus-resources"><a href="#">Resources</a></div>
+                <div class="menus" id="menus-notices"><a href="#">Notices</a></div>
+                <div class="menus" id="menus-faculties"><a href="#">Faculties</a></div>
+                <div class="menus" id="menus-contact"><a href="#">Contact</a></div>
             </div>
-        </div>
-        </div>
+        </nav>
 
         <button class="user">
             <i class="fa-solid fa-user"></i>
         </button>
         <nav class="nav-menu">
-            <a href="user-details.html">User Details</a>
-            <a href="#" class="logout">Log Out</a>
+            <a id="user-details" href="#">User Details</a>
+            <a id="todo-list" href="#">Tasks</a>
+            <a id="discussion" href="#">Discussion</a>
+            <a id="theme" href="#">Change Theme</a>
+            <a id="logout" href="#">Log Out</a>
         </nav>
         
-        <div class="main-section">
-            <div class="main-section-1"></div>
-            <form class="main-section-2" action="/home/search" method="GET">
-				<input class="search-bar" name="item" type="text" placeholder="Search for notes or subjects......">
-				<button class="search-button" type="submit"><i class="fa-solid fa-magnifying-glass"></i></button>
-                <div class="todo"><a href="to-do-list/todo.html">Tasks</a></div>
-			</form>
+        <div class="main">
+            <aside class="sidebar">
+                <a id="sb-user-details" href="#"><i class="fas fa-user"></i> <span>User Details</span></a>
+                <a id="sb-todo-list" href="#"><i class="fas fa-list"></i> <span>Tasks</span></a>
+                <a id="sb-discussion" href="#"><i class="fas fa-comments"></i> <span>Discussion</span></a>
+                <a id="sb-theme" href="#"><i class="fas fa-paint-brush"></i> <span>Change Theme</span></a>
+            </aside>
+            
+            <div class="main-section">
+                <div class="main-section-1"></div>
+                <form class="main-section-2" action="/api/home/search" method="GET">
+                    <input class="search-bar" name="item" type="text" placeholder="Search for notes or subjects......">
+                    <button class="search-button" type="submit"><i class="fa-solid fa-magnifying-glass"></i></button>
+                </form>
+            </div>
         </div>
 
         <div class="logout-container">
-            <h2 class="logout-title">Logout of StudyHub?</h2>
-            <form class="logout-form" action="/api/login/logout" method="POST">
+            <h3 class="logout-title">Logout of StudyHub?</h3 >
+            <div class="logout-form" >
                 <button class="cancel-button" type="button">Cancel</button>
-                <button class="logout-button" type="submit">Logout</button>
-            </form>
+                <button class="logout-button" type="button">Logout</button>
+            </div>
         </div>
 
         <footer>
             <div class="copyright">© 2025 StudyHub</div>
         </footer>
-        <script src="index.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+        <script src="/scripts/index.js"></script>
+        <script src="/scripts/common.js"></script>
+        <script src="/scripts/auth.js"></script>
     </body>
 </html>

@@ -1,55 +1,6 @@
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-html, body {
-    width: 100%;
-    height: 100%;
-    font-family: Arial, sans-serif;
-    background-color: white;
-}
-
-a {
-    text-decoration: none;
-}
-
-.header {
-    display: flex;
-    flex-direction: row;
-    background-color: #082748;
-    height: 100px;
-    color: white;
-    align-items: center;
-}
-
-.menus a {
-    color: white;
-    font-size: 18px;
-}
-
-.header-logo {
-    font-size: 35px;
-    margin-left: 50px;
-    flex: 0.5;
-}
-
-.header-menus {
-    flex: 0.5;
-    display: flex;
-    justify-content: space-evenly;
-}
-
-.header-menus a:hover {
-    cursor: pointer;
-    color: rgb(200, 200, 200);
-}
-
 h2 {
     font-size: 24px;
     margin-bottom: 30px;
-    color: black;
     text-align: center;
 }
 
@@ -62,6 +13,9 @@ h2 {
     padding: 100px 50px;
     margin-bottom: 100px;
     gap: 100px;
+    margin: 10px;
+    border-radius: 10px;
+    background-color: rgb(30,30,30);
 }
 
 .contact-us {
@@ -75,14 +29,14 @@ h2 {
 }
 
 #short-info {
-    border: 2px solid black;
+    border: 2px solid rgb(40,40,40);
     padding: 20px;
     font-size: 18px;
 }
 
 #short {
     margin-bottom: 20px;
-    color: rgb(40,40,40);
+    color: rgb(200,200,200);
 }
 
 #list {
@@ -91,6 +45,10 @@ h2 {
 
 #list li {
     margin: 10px 0;
+}
+
+.f a {
+    color: rgb(230, 230, 230);
 }
 
 .map {
@@ -107,17 +65,14 @@ h2 {
     height: 700px;
     border: none;
     border-radius: 10px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
 footer {
-    height:200px;
     color:white;
-    background-color: #082748;
     display: flex;
     flex-direction: column;
     justify-content: center;
-    gap: 30px;
+    gap: 10px;
     padding: 20px 0px 20px 0px;
 }
 
@@ -154,8 +109,6 @@ footer {
 
 .copyright{
     height:75px;
-    color:white;
-    background-color: #082748;
     text-align: center;
     padding-top:20px;
 }

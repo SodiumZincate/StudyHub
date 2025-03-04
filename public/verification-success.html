@@ -4,12 +4,14 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Login - StudyHub</title>
-        <link rel="stylesheet" href="verification-success.css">
-        <link rel="stylesheet" href="common.css">
+        <link rel="stylesheet" href="/styles/verification-success.css">
+        <link rel="stylesheet" href="/styles/common.css">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
     </head>
     <body>
-        
-        <div class="header">
+        <nav class="header">
             <div class="header-logo">StudyHub</div>
             <div class="header-menus">
                 <div class="menus"><a href="#">Home</a></div>
@@ -18,20 +20,19 @@
                 <div class="menus"><a href="#">Faculties</a></div>
                 <div class="menus"><a href="#">Contact</a></div>
             </div>
-        </div>
+        </nav>
 
         <div class="main-section">
             <div class="container">
                 <h2 class="title">Verification Successful</h2>
                 <p class="message-default">You have successfully logged in with</p>
                 <p class="message-email"></p>
-                <form class="form" action="/api/token/create" method="GET">
+                <form class="form" action='/token/create' method="POST"> 
                     <input class="email-input" type="text" name="email">
-                    <button class="button" type="submit">Go to Dashboard</button>
+                    <button class="button" type="submit">Go to index</button>
                 </form>
             </div>
         </div>
-
         <footer>
             <div class="copyright">© 2025 StudyHub</div>
         </footer>

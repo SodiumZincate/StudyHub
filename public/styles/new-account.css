@@ -1,14 +1,3 @@
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-html, body {
-    width: 100%;
-    height: 100%;
-    font-family: Arial, sans-serif;
-    background-color: white;
-}
 .main-section {
     height: 900px;
     display: flex;
@@ -49,12 +38,12 @@ html, body {
 .button:hover {
     background-color: #0a396b;
 }
-.message-default {
+.message-1 {
     height: 20px;
     font-size: 14px;
     color: #0a396b;
 }
-.message-email{
+.message-2{
     height: 20px;
     margin-bottom: 10px;
     font-size: 14px;

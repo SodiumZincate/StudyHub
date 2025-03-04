@@ -1,34 +1,49 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Notices | StudyHub</title>
-    <link rel="stylesheet" href="notices.css">
-    <link rel="stylesheet" href="common.css">
-</head>
-<body>
-    
-    <div class="header">
-        <div class="header-logo">StudyHub</div>
-        <div class="header-menus">
-            <div class="menus"><a href="index.html">Home</a></div>
-            <div class="menus"><a href="resources.html">Resources</a></div>
-            <div class="menus"><a href="notices.html">Notices</a></div>
-            <div class="menus"><a href="faculties.html">Faculties</a></div>
-            <div class="menus"><a href="contact.html">Contact</a></div>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Notices</title>
+        <link id="themeStylesheet1" rel="stylesheet" href="/styles/notices-dark.css">
+        <link id="themeStylesheet2" rel="stylesheet" href="/styles/common-dark.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Manrope:wght@200..800&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    </head>
+    <body>
+        
+        <nav class="header">
+            <div class="header-logo">StudyHub</div>
+            <div class="header-menus">
+                <div class="menus" id="menus-home"><a href="#">Home</a></div>
+                <div class="menus" id="menus-resources"><a href="#">Resources</a></div>
+                <div class="menus" id="menus-notices"><a href="#">Notices</a></div>
+                <div class="menus" id="menus-faculties"><a href="#">Faculties</a></div>
+                <div class="menus" id="menus-contact"><a href="#">Contact</a></div>
+            </div>
+        </nav>
+
+        <div class="main-section">
+            <h2>Notices</h2>
+			<div id="notices-container"></div>
         </div>
-    </div>
+        <footer class="footer">
+            <div class="copyright">© 2025 StudyHub</div>
+        </footer>
+        <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+        <script>
+            document.addEventListener("DOMContentLoaded", () => {
+            const themeStylesheet1 = document.getElementById("themeStylesheet1");
+            const themeStylesheet2 = document.getElementById("themeStylesheet2");
 
-    <div class="main-section">
-        <h2>Notices</h2>
-        <div id="notices-container"></div>
-    </div>
-
-    <footer class="footer">
-        <div class="copyright">© 2025 StudyHub</div>
-    </footer>
-
-    <script src="notices.js"></script>
-</body>
+            const currentTheme = localStorage.getItem("theme") || "light";
+            themeStylesheet1.href = currentTheme === "dark" ? "/styles/notices-dark.css" : "/styles/notices.css";
+            themeStylesheet2.href = currentTheme === "dark" ? "/styles/common-dark.css" : "/styles/common.css"
+        });
+        </script>
+        <script src="/scripts/common.js"></script>
+        <script src="/scripts/auth.js"></script>
+        <script src="/scripts/notices.js"></script>
+    </body>
 </html>

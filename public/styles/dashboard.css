@@ -1,43 +1,62 @@
-*{
-    margin:0;
-    padding:0;
-    box-sizing: border-box;
+.main {
+    display: flex;
+    gap: 15px;
+    margin: 5px 10px 0px 10px;
+    padding: 5px 10px 20px 10px;
 }
-html, body {
-    width: 100%;
-    height: 100%;
-    font-family: Arial, sans-serif;
-    background-color: white;
+
+.sidebar {
+    display: flex;
+    flex-direction: column;
+    width: 15%;
+    padding: 10px 8px 0px 8px;
+    border-radius: 10px;
+    background-color: rgb(215, 224, 236);
 }
+
+.sidebar a {
+    text-decoration: none;
+    color: rgb(80,80,80);
+    padding: 10px;
+    font-size: 14px;
+    display: flex;
+    gap: 10px;
+}
+
+.sidebar a:hover {
+    background-color: rgb(187, 194, 203);
+    border-radius: 5px;
+}
+
+
 .user {
     position: absolute;
-    top: 120px;
-    right: 20px;
+    top: 90px;
+    right: 40px;
     width: 40px; 
     height: 30px; 
     border: 1px solid grey;
     border-radius: 20px;
     outline: none;
     color: black;
-    background-color: aliceblue;
-    box-shadow: 3px 3px 5px rgb(172, 172, 172);
+    background-color: rgb(228, 233, 241);
     cursor: pointer;
 }
 
 .user:hover {
     background-color: lightgray; 
-    box-shadow: 2px 2px 4px rgb(120, 120, 120);
+    box-shadow: 3px 3px 3px rgb(150, 150, 150);
 }
 
 .nav-menu {
     position: absolute;
-    top: 120px;
-    right: 15px;
+    top: 80px;
+    right: 20px;
     visibility: hidden;
     width: 150px;
-    height: 80px;
-    background-color: aliceblue;
-    box-shadow: -2px 0 5px rgba(0, 0, 0, 0.2);
+    height: 200px;
+    background-color: rgb(228, 233, 241);
+    border-radius: 8px;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -61,17 +80,19 @@ html, body {
 }
 
 .main-section{
-    height:600px;
+    border-radius: 10px;
+    width: 85%;
+    height:900px;
     display:flex;
     flex-direction: column;
-    justify-content:center;
+    padding-top: 200px;
+    justify-content:flex-start;
     align-items:center;
-    margin-bottom:400px;
     gap: 50px;
+    background-color: rgb(215, 224, 236);
 }
 .main-section-1{
     font-size:30px;
-    font-weight: 450;
 }
 .main-section-2{
     width:50%;
@@ -88,8 +109,7 @@ html, body {
     text-align:left;
     padding-left:20px;
     color:black;
-    background-color: aliceblue;
-    box-shadow:5px 5px 5px rgb(172, 172, 172);
+    background-color: rgb(228, 233, 241);
 }
 .search-button{
     width:40px;
@@ -97,34 +117,14 @@ html, body {
     border-radius:50%;
     border:0.5px solid grey;  
     outline:none;
-    box-shadow:5px 5px 5px rgb(172, 172, 172);
     margin-left: 10px;
+    background-color: rgb(228, 233, 241);
 }
 .search-button:hover{
     cursor:pointer; 
-    background-color: rgb(189, 218, 243);
+    background-color: lightgray; 
+    box-shadow: 3px 3px 3px rgb(150, 150, 150);
 }
-.todo{
-    background-color: aliceblue;
-    display:flex;
-    align-items: center;
-    justify-content: center;
-    margin-left:10px;
-    padding:5px;
-    box-shadow:5px 5px 5px rgb(172, 172, 172);
-    border:0.5px solid grey;
-    border-radius:20px;
-}
-.todo a{
-    display:inline-block;
-    color:black;
-}
-.todo:hover{
-    cursor:pointer; 
-    background-color: rgb(189, 218, 243);
-}
-
-
 .logout-container {
     position: fixed;  
     top: 50%; 
@@ -146,7 +146,6 @@ html, body {
 .logout-title {
     font-size: 24px;
     margin-bottom: 20px;
-    color: #082748;
 }
 .logout-form {
     display: flex;
@@ -156,11 +155,10 @@ html, body {
 .logout-button, .cancel-button {
     width: 100%;
     padding: 10px;
-    border: none;
+    border: 1px solid rgb(50,50,50);
     border-radius: 5px;
     font-size: 16px;
     cursor: pointer;
-    outline: 1px solid #082748;
 }
 .logout-button {
     background-color: #082748;
@@ -181,14 +179,54 @@ html, body {
     .main-section-2{
         width: 70%;
     }
+    .main-section{
+        width:80%;
+    }
+    .sidebar{
+        width:20%;
+    }
+    .main {
+        gap: 10px;
+        margin: 5px 5px 0px 5px;
+        padding: 0px 10px 20px 10px;
+    }
  }
 
  @media (max-width: 800px) {
     .main-section-1{
         font-size:25px;
     }
+    .main-section{
+        width:75%;
+    }
+    .sidebar{
+        width:25%;
+    }
+    .main {
+        gap: 8px;
+        margin: 5px 0px 0px 0px;
+        padding: 0px 10px 20px 10px;
+    }
  }
 
- @media (max-width: 560px) {
-    
+ @media (max-width: 600px) {
+    .main-section{
+        background-color: rgb(215, 224, 236);
+        width:100%;
+        margin-top: 10px;
+    }
+    .sidebar{
+        display: none;
+        width:0%;
+    }
+    .main {
+        padding: 0px 5px 20px 5px;
+    }
+    .user{
+        top:100px;
+        right: 30px
+    }
+    .main-section{
+        background-color: rgb(204, 211, 223);
+    }
  }
