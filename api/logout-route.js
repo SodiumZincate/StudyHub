@@ -1,68 +1,38 @@
-const express = require('express')
-const router = express.Router()
-const nodemailer = require('nodemailer')
-const User = require('./login/models/user')
+const cookie = require('cookie');
+require('dotenv').config();
 
-let otp;
+module.exports = async (req, res) => {
+    if (req.method === 'DELETE') {
+        // Extract accessToken and refreshToken from cookies
+        const cookies = cookie.parse(req.headers.cookie || '');
+        const accessToken = cookies.accessToken;
+        const refreshToken = cookies.refreshToken;
 
-router.get('/', (req, res) => {
-    const transporter = nodemailer.createTransport({
-        service: "gmail",
-        secure: true,
-        port: 465,
-        auth: {
-            user: "studyhub552@gmail.com",
-            pass: "ntbo yxbk tsyu hzqq"
+        // Check if both tokens exist
+        if (!accessToken || !refreshToken) {
+            return res.status(400).json({ msg: "Token(s) missing" });
         }
-    })
 
-    otp = generateOTP()
-    const mailOptions = {
-        from: "studyhub552@gmail.com",
-        to: req.query.email,
-        subject: "StudyHub login OTP",
-        text:  `Your login OTP for StudyHub is ${otp} \nIf you did not attempt to sign in, you can safely ignore this email.`
+        // Clear the cookies by setting the expiration date to the past
+        res.setHeader('Set-Cookie', [
+            cookie.serialize('accessToken', '', {
+                httpOnly: true,
+                secure: process.env.NODE_ENV === 'production',
+                sameSite: 'strict',
+                expires: new Date(0)
+            }),
+            cookie.serialize('refreshToken', '', {
+                httpOnly: true,
+                secure: process.env.NODE_ENV === 'production',
+                sameSite: 'strict',
+                expires: new Date(0)
+            })
+        ]);
+
+        // Respond with a success message and redirect URL
+        return res.status(200).json({ redirectUrl: `/api/login` });
     }
 
-    transporter.sendMail(mailOptions, (error, info) => {
-        if(error) {
-            console.log(error)
-            return res.status(500).send({error})
-        }
-        else {
-            res.status(200).redirect(`/otp.html?email=${req.query.email}`)
-        }
-    })
-})
-
-const generateOTP = function() { return Math.floor(Math.random() * 1000000) }
-
-router.get('/verify', async (req, res) => {
-    if (req.query.otp == otp) {
-        const user = await User.findOne({email: req.query.email})
-        if(!user) {
-            res.status(200).redirect(`/new-account.html?email=${req.query.email}`)
-        }
-        else {
-            res.status(200).redirect(`/verification-success.html?email=${req.query.email}`)
-        }
-    }
-    else {
-        otp = generateOTP()
-        res.status(200).redirect(`/login.html?verification=fail`)
-    }
-})
-
-router.post('/create', async (req, res) => {
-    try {
-        const email = req.body.email
-        const user = await User.create({email: email})
-        res.status(200).redirect(`/verification-success.html?email=${email}`)
-    }
-    catch(err) {
-        console.log(err)
-        res.status(500).send(err)
-    }
-})
-
-module.exports = router
+    // Handle unsupported methods (only DELETE is allowed)
+    return res.status(405).json({ error: 'Method Not Allowed' });
+};

@@ -1,72 +1,90 @@
-function fetchFiles(path = '') {
-	if (!path) {
-        return;
-    }
-    // fetch the files based on current path
-    fetch(`/resources/${path}`)
-        .then(response => response.json())
-        .then(files => {
-			// store the response in a container
-            const fileListContainer = document.getElementById('file-list');
-            fileListContainer.innerHTML = '';
+let currentSemester = null;
+let currentPath = []; // This will store the current path for navigation
 
-            // adding a ../ button to go back
-            if (path) {
-                const backButton = document.createElement('div');
-                backButton.textContent = '../';
-                backButton.style.cursor = 'pointer';
-                backButton.style.color = 'blue';
-                backButton.addEventListener('click', () => {
-                    const pathParts = path.split('/').filter(Boolean);
-                    pathParts.pop();
-                    const newPath = pathParts.join('/');
-					if(newPath != "ce" && newPath != "cs"){
-                    	fetchFiles(newPath);
-					}
-					else{
-						window.location.href = '/resources.html';
-					}
-                });
-                fileListContainer.appendChild(backButton);
-            }
+// Fetch directories based on current semester and current path
+function fetchDirectories(semester, path) {
+  let url = `/api/directories?semester=${semester}`;
+  if (path.length > 0) {
+    url += `&directory=${path.join('/')}`; // Append the current path to the API call
+  }
 
-            // iterate over files and folders
-            files.forEach(file => {
-                const div = document.createElement('div');
-                div.classList.add(file.isDirectory ? 'folder' : 'file');
-                div.textContent = file.name;
+  // Show loading state while fetching directories
+  const fileListDiv = document.getElementById('file-list');
+  fileListDiv.innerHTML = '<div class="loading">Loading...</div>'; // Loading message
+  
+  fetch(url)
+    .then(response => response.json())
+    .then(directories => {
+      fileListDiv.innerHTML = ''; // Clear previous loading message
 
-				// for directory
-                if (file.isDirectory) {
-                    div.addEventListener('click', () => {
-                        fetchFiles(path + '/' + file.name);
-                    });
-                } else {
-                    div.addEventListener('click', () => {
-						// calls /openfile endpoint to show pdf
-                        fetch(`/openfile/${path}/${file.name}`)
-                            .then(response => {
-                                if (!response.ok) {
-                                    throw new Error(`HTTP error! Status: ${response.status}`);
-                                }
-                                return response.blob();
-                            })
-                            .then(pdfBlob => {
-                                const pdfUrl = URL.createObjectURL(pdfBlob);
-                                window.open(pdfUrl, '_blank');
-                            })
-                            .catch(error => {
-                                console.error('Error fetching PDF:', error);
-                            });
-                    });
-                }
+      if (directories && directories.length > 0) {
+        directories.forEach(directory => {
+          const directoryDiv = document.createElement('div');
+          directoryDiv.classList.add('directory');
+          directoryDiv.textContent = directory;
 
-                // append the file or directory to the container
-                fileListContainer.appendChild(div);
-            });
-        })
-        .catch(error => console.error('Error fetching file list:', error));
+          // Add a pointer cursor for clickable directories
+          directoryDiv.style.cursor = 'pointer';
+
+          // Highlight directories with subdirectories
+          directoryDiv.classList.toggle('has-subdirectories', directory.includes('/')); // Example: if the directory name has a '/' (could be adjusted)
+
+          // Add click event to navigate into the subdirectory
+          directoryDiv.addEventListener('click', () => navigateToSubdirectory(directory));
+          fileListDiv.appendChild(directoryDiv);
+        });
+      } else {
+        fileListDiv.innerHTML = 'No directories found.';
+      }
+    })
+    .catch(error => {
+      console.error('Error fetching directories:', error);
+      fileListDiv.innerHTML = 'Failed to load directories.';
+    });
 }
 
-// initial call for root path
-fetchFiles();
+// Navigate to a subdirectory by adding it to the current path
+function navigateToSubdirectory(subdirectory) {
+  currentPath.push(subdirectory); // Add the subdirectory to the path
+  fetchDirectories(currentSemester, currentPath); // Fetch subdirectories
+  updatePageTitle(); // Update the title with the current path
+}
+
+// Go back to the previous directory in the path
+function goBack() {
+	if (currentPath.length === 0) {
+		console.log(currentPath);
+		
+		window.history.back();
+	}
+
+  currentPath.pop(); // Remove the last directory in the path
+
+  // Temporarily display a loading state while fetching
+  const fileListDiv = document.getElementById('file-list');
+  fileListDiv.innerHTML = '<div class="loading">Loading...</div>';
+
+  fetchDirectories(currentSemester, currentPath); // Fetch directories for the parent directory
+  updatePageTitle(); // Update the page title
+}
+
+// Update the page title to show the current path
+function updatePageTitle() {
+  const subjectNameDiv = document.getElementById('subject-name');
+  if (currentPath.length > 0) {
+    subjectNameDiv.textContent = `${currentSemester} > ${currentPath.join(' > ')}`;
+  } else {
+    subjectNameDiv.textContent = currentSemester;
+  }
+}
+
+if (currentSemester) {
+  // Set the initial title to the semester
+  updatePageTitle();
+
+  // Fetch and display the directories for the semester
+  fetchDirectories(currentSemester, []);  // Start from the root directory of the semester
+}
+
+// Back button handler
+document.getElementById('back-button').addEventListener('click', goBack);

@@ -43,25 +43,19 @@
             <div class="copyright">© 2025 StudyHub</div>
         </footer>
 	
-		<script src="list.js"></script>
-		<script>
-			const urlParams = new URLSearchParams(window.location.search);
-			const semester = urlParams.get('semester');
-	
-			// function to fetch semester files
-			if (semester) {
-				fetchFiles(semester);
-
-				const subjectNameDiv = document.getElementById('subject-name');
-				subjectNameDiv.textContent = semester;
-			}
-
-            //back button
-            function goBack(){
-                window.history.back();
-            }
-		</script>
         <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+        <script src="/scripts/list.js"></script>
+		<script>
+            // Initialize semester
+            const urlParams = new URLSearchParams(window.location.search);
+            const semester = urlParams.get('semester');
+
+            if (semester) {
+                currentSemester = semester;
+                updatePageTitle();
+                fetchDirectories(currentSemester, []); // Fetch directories for the given semester
+            }
+        </script>
         <script src="/scripts/common.js"></script>
         <script src="/scripts/auth.js"></script>
     </body>

@@ -1,4 +1,4 @@
-axios.get('/get-email')
+axios.get('/api/default/get-email')
 .then( (res) => {
     localStorage.setItem('email', res.data.email);
     const email = localStorage.getItem('email');
@@ -47,7 +47,7 @@ cancelButton.addEventListener("click", (event) => {
 
 logout.addEventListener("click", () => {
     localStorage.removeItem("email");
-    axios.delete('/logout')
+    axios.delete('/api/logout')
     .then(res => window.location.href = res.data.redirectUrl)
     .catch(error => console.error("There was an error with the request:", error));
 })

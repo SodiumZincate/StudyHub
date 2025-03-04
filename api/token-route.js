@@ -1,6 +1,7 @@
 const jwt = require('jsonwebtoken');
 const User = require('./login/models/user');
 const cookie = require('cookie');
+const connectDB = require('./login/connect');
 require('dotenv').config();
 
 // Create User (POST)
@@ -42,7 +43,7 @@ const createUser = async (req, res) => {
                 })
             ]);
 
-            return res.status(200).redirect(`/dashboard?email=${email}`);
+            return res.writeHead(302, { Location: '/api/home/home' }).end();
         });
     }
 };
@@ -73,6 +74,8 @@ const refreshAccessToken = async (req, res) => {
 
 // Export handler for Vercel
 module.exports = async (req, res) => {
+	await connectDB(process.env.MONGO_URI);
+
     if (req.method === 'POST' && req.url === '/api/token/create') {
         await createUser(req, res);
     } else if (req.method === 'POST' && req.url === '/api/token/refresh') {

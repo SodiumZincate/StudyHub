@@ -32,7 +32,7 @@ const authenticateToken = (req, res, next) => {
             return res.status(403).json({ error: "Invalid Token", details: err.message });
         }
         req.email = user.email;
-        next();
+        next();  // Proceed to the next middleware or route handler
     });
 };
 
@@ -142,11 +142,12 @@ module.exports = async (req, res) => {
             case '/api/home/personal-details':
                 return personalDetailsForm(req, res);
             case '/api/home/user-data':
-                return getUserData(req, res);
+                // Apply authenticateToken middleware
+                return authenticateToken(req, res, () => getUserData(req, res));
             case '/api/home/todo-list':
-                return todoListPage(req, res);
+                return authenticateToken(req, res, () => todoListPage(req, res));
             case '/api/home/discussion':
-                return discussionPage(req, res);
+                return authenticateToken(req, res, () => discussionPage(req, res));
             case '/api/home/home':
                 return homePage(req, res);
             case '/api/home/resources':
@@ -163,7 +164,7 @@ module.exports = async (req, res) => {
     } else if (req.method === 'POST') {
         switch (req.url) {
             case '/api/home/personal-details':
-                return updatePersonalDetails(req, res);
+                return authenticateToken(req, res, () => updatePersonalDetails(req, res));
             default:
                 return res.status(404).send('Route not found');
         }

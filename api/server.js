@@ -5,11 +5,7 @@ module.exports = (req, res) => {
   const semester = new URLSearchParams(req.url.split('?')[1]).get('semester');
   const directory = new URLSearchParams(req.url.split('?')[1]).get('directory');
   
-  if (req.url === "/api") {
-    res.status(200).json({ message: "Hello from Vercel API!" });
-  } 
-  // API route to fetch directories for a given semester
-  else if (req.url.startsWith("/api/directories")) {
+  if (req.url.startsWith("/api/directories")) {
     if (!semester) {
       return res.status(400).json({ error: 'Semester parameter is required' });
     }

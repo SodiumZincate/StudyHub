@@ -11,8 +11,12 @@
 	  }
 	],
 	"routes": [
-	  {
+	{
 		"src": "/",
+		"dest": "/api/default-route.js"
+		},
+	  {
+		"src": "/api/default(.*)",
 		"dest": "/api/default-route.js"
 	  },
 	  {
