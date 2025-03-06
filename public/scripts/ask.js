@@ -4,7 +4,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const themeStylesheet2 = document.getElementById("themeStylesheet2");
 
     const currentTheme = localStorage.getItem("theme") || "light";
-    themeStylesheet1.href = currentTheme === "dark" ? "/styles/discussion-dark.css" : "/styles/discussion.css";
+    themeStylesheet1.href = currentTheme === "dark" ? "/styles/ask-dark.css" : "/styles/ask.css";
     themeStylesheet2.href = currentTheme === "dark" ? "/styles/common-dark.css" : "/styles/common.css"
 });
 
@@ -36,6 +36,7 @@ askSb.addEventListener("click", (event) => {
     catch(error) { console.error("There was an error with the request:", error) }
 })
 
+//menu icon
 const user = document.querySelector(".user");
 user.addEventListener("click", (event) => {
     document.querySelector(".nav-menu").classList.toggle("active");
@@ -49,12 +50,51 @@ document.addEventListener("click", (event) => {
     }
 });
 
-//page control
+//add question
+const add = document.querySelector(".add-question");
+add.addEventListener("click", (event) => {
+    document.querySelector(".add-menu").classList.toggle("active");
+    event.stopPropagation(); 
+});
 
-if(sessionStorage.getItem("page") == undefined) {
-	sessionStorage.setItem("page", "1");
+const addMenu = document.querySelector(".add-menu");
+document.addEventListener("click", (event) => {
+    if (!addMenu.contains(event.target) && event.target !== user) {
+		document.querySelector(".add-message").textContent = ' ';
+        addMenu.classList.remove("active");
+    }
+});
+
+//add question form submission
+const form = document.querySelector('.add-menu');
+    
+form.addEventListener('submit', function (event) {
+	event.preventDefault(); 
+	const title = document.querySelector('.add-title').value;
+	const value = document.querySelector('.add-value').value;
+
+	const data = {
+		title: title,
+		value: value
+	};
+
+	axios.post('/discussion/add-question', data)
+		.then(response => {
+			console.log('Successfully added question:', response);
+			document.querySelector(".add-message").textContent = 'Question added successfully';
+			document.querySelector(".add-title").value = '';
+			document.querySelector(".add-value").value = '';
+		})
+		.catch(error => {
+			console.error('Error:', error);
+		});
+});
+
+//page control
+if(sessionStorage.getItem("pageQ") == undefined) {
+	sessionStorage.setItem("pageQ", "1");
 } 
-let page = sessionStorage.getItem("page");
+let page = sessionStorage.getItem("pageQ");
 
 document.querySelector(".current-page").textContent = page;
 
@@ -63,21 +103,19 @@ const nextButton = document.querySelector("#next")
 
 previousButton.addEventListener("click", (event) => {
 	event.preventDefault();
-	if (page != 1) sessionStorage.setItem("page", Number(--page));
+	if (page != 1) sessionStorage.setItem("pageQ", Number(--page));
 	// Reload the current page
 	location.reload();
-
 })
 
 nextButton.addEventListener("click", (event) => {
 	event.preventDefault();
-	sessionStorage.setItem("page", Number(++page));
+	sessionStorage.setItem("pageQ", Number(++page));
 	// Reload the current page
 	location.reload();
-
 })
 
-//blocks code used later
+//blocks of code used later
 const block1 = async function () {
 	const buttons = document.querySelectorAll(".show-answers");
 	const buttonsH = document.querySelectorAll(".hide-answers");
@@ -117,69 +155,66 @@ const block1 = async function () {
 	});
 }
 
-const block2 = async function () {
-	const buttons = document.querySelectorAll(".add-answer");
-	const addMenu = document.querySelector(".add-menu");
-	
-	Promise.resolve()
-	.then( () => {
-	buttons.forEach((button) => {
-		button.addEventListener('click', function (event) {
-			event.preventDefault();
-			sessionStorage.setItem("questionID", this.id);
-			addMenu.classList.toggle("active");
-			event.stopPropagation();
-		});
-	});
-	})
-	
-	.then( () => {
-		addMenu.addEventListener('submit', function (event) {
-			event.preventDefault();
-			const value = document.querySelector('.add-value').value;
-			const questionID = sessionStorage.getItem("questionID") 
-			const data = {
-				questionID: questionID,
-				value: value
-			};
-		
-			axios.post('/discussion/add-answer', data)
-				.then(response => {
-					console.log('Successfully added answer:', response);
-					document.querySelector(".add-message").textContent = 'Answer added successfully';
-					document.querySelector(".add-value").value = '';
-				})
-				.catch(error => {
-					console.error('Error:', error);
-				});
-			
-			event.stopPropagation(); 
-		});
-	})
-	
+const block2 = function () {
+	//delete question
+	const deleteButtons = document.querySelectorAll(".question-delete");
+	const deleteContainer = document.querySelector(".delete-container");
+	const cancelButton = document.querySelector(".cancel-button");
+	const deleteButton = document.querySelector(".delete-button");
+
 	document.addEventListener("click", (event) => {
-		if (!addMenu.contains(event.target) && event.target !== user) {
-			document.querySelector(".add-message").textContent = ' ';
-			sessionStorage.removeItem("questionID");
-			addMenu.classList.remove("active");
+		if (!deleteContainer.contains(event.target) && event.target !== deleteButton) {
+			deleteContainer.classList.remove("active");
+			sessionStorage.removeItem("delete")
+			document.querySelector(".delete-message").textContent = ""
 		}
 	});
+
+	deleteButtons.forEach((button) => {
+		button.addEventListener("click", (event) => {
+			event.stopPropagation();
+			deleteContainer.classList.toggle("active");
+			sessionStorage.setItem("delete", button.id)
+		});
+	});
+
+	cancelButton.addEventListener("click", (event) => {
+		deleteContainer.classList.remove("active");
+		sessionStorage.removeItem("delete")
+		document.querySelector(".delete-message").textContent = ""
+	})
+
+	deleteButton.addEventListener("click", (event) => {
+		const questionID = sessionStorage.getItem("delete");
+		axios.delete(`/discussion/delete-question?questionID=${questionID}`)
+			.then((res) => {
+				if(res.data.notFound) {
+					console.log("Question could not be deleted: ", res.data)
+					document.querySelector(".delete-message").textContent = "Question already deleted"
+				}
+				else {
+					console.log("Deleted question successfully: ", res.data)
+					document.querySelector(".delete-message").textContent = "Question deleted successfully"
+				}
+			})
+			.catch((error) => {console.error("Error deleting question: ",error)});
+	})
 }
 
 //load questions to the page
 
 const contentSection = document.querySelector(".main-section-2");
 
-axios.get(`/discussion/get-questions/?page=${page}`)
+axios.get(`/discussion/get-your-questions/?page=${page}`)
 .then((res) => {
-	contentSection.innerHTML = `<p class="your-questions">Latest Questions</p>`;
+	contentSection.innerHTML = `<p class="your-questions">Your Questions</p>`;
 	contentSection.innerHTML += res.data.map(question => `
 		<div class="question-block">
 			<p><span class="question-title">${question.title}</span> 
-			<p class="question-detail">Added by <span class="question-poster">${question.poster}</span> on <span class="question-date">${question.created.split('T')[0]}</span></p>
+			<p class="question-detail">Added on <span class="question-date">${question.created.split('T')[0]}</span></p>
 			</p>
+			<button class="question-delete" id=${question.id}><i class="fas fa-trash-alt"></i></button>
 			<p>${question.value}</p>
-			<button class="add-answer" id="${question.id}">Add Answer</button>
 			<p class="show-answers" id=${question.id}>Show Answers <i class="fas fa-angle-down"></i></p>
 			<p class="hide-answers" id=${question.id}>Hide Answers <i class="fas fa-angle-up"></i></p>
 		</div>
@@ -190,7 +225,7 @@ axios.get(`/discussion/get-questions/?page=${page}`)
 .then((res) => {
 	block2();
 })
-.catch((error) => console.error("Error fetching questions:", error));
+.catch((err) => console.error("Error fetching questions:", err));
 
 //search
 document.querySelector('.main-section-1').addEventListener('submit', async function (event) {
@@ -200,7 +235,7 @@ document.querySelector('.main-section-1').addEventListener('submit', async funct
 		await axios.get('/discussion/search', {
 			params: { 
 				item: query, 
-				page: sessionStorage.getItem("page")
+				page: sessionStorage.getItem("pageQ")
 			}
 		})
 		
@@ -214,10 +249,10 @@ document.querySelector('.main-section-1').addEventListener('submit', async funct
 			contentSection.innerHTML += res.data.map(question => `
 				<div class="question-block">
 					<p><span class="question-title">${question.title}</span> 
-					<p class="question-detail">Added by <span class="question-poster">${question.poster}</span> on <span class="question-date">${question.created.split('T')[0]}</span></p>
+					<p class="question-detail">Added on <span class="question-date">${question.created.split('T')[0]}</span></p>
 					</p>
+					<button class="question-delete" id=${question.id}><i class="fas fa-trash-alt"></i></button>
 					<p>${question.value}</p>
-					<button class="add-answer" id="${question.id}">Add Answer</button>
 					<p class="show-answers" id=${question.id}>Show Answers <i class="fas fa-angle-down"></i></p>
 					<p class="hide-answers" id=${question.id}>Hide Answers <i class="fas fa-angle-up"></i></p>
 				</div>
@@ -226,18 +261,35 @@ document.querySelector('.main-section-1').addEventListener('submit', async funct
 			block1();
 		})
 		.then((res) => {
-			const buttons = document.querySelectorAll(".add-answer");
-			const addMenu = document.querySelector(".add-menu");
+			//delete question
+			const deleteButtons = document.querySelectorAll(".question-delete");
+			const deleteContainer = document.querySelector(".delete-container");
+			const cancelButton = document.querySelector(".cancel-button");
+			const deleteButton = document.querySelector(".delete-button");
 
-			buttons.forEach((button) => {
-				button.addEventListener('click', function (event) {
-					event.preventDefault();
-					sessionStorage.setItem("questionID", this.id);
-					addMenu.classList.toggle("active");
+			document.addEventListener("click", (event) => {
+				if (!deleteContainer.contains(event.target) && event.target !== deleteButton) {
+					deleteContainer.classList.remove("active");
+					sessionStorage.removeItem("delete")
+					document.querySelector(".delete-message").textContent = ""
+				}
+			});
+
+			deleteButtons.forEach((button) => {
+				button.addEventListener("click", (event) => {
 					event.stopPropagation();
+					deleteContainer.classList.toggle("active");
+					sessionStorage.setItem("delete", button.id)
 				});
 			});
+
+			cancelButton.addEventListener("click", (event) => {
+				deleteContainer.classList.remove("active");
+				sessionStorage.removeItem("delete")
+				document.querySelector(".delete-message").textContent = ""
+			})
 		})
 		.catch ((error) => console.error('Error fetching search results:', error))
-	}
+    }
 });
+

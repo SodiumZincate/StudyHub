@@ -26,8 +26,12 @@ const userSchema = new mongoose.Schema({
         trim: true,
         maxlength: [4, 'Batch cannot be more than 4 characters']
     },
-    questions: Array,
-    answers: Array
+    questions: {
+        type: [String]
+    },
+    answers: {
+        type: [String]
+    }
 })
 
 module.exports = mongoose.model('User', userSchema)
