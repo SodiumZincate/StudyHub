@@ -24,23 +24,64 @@
             </div>
         </nav>
 
-        <div class="main-section">
-            <h2>Notices</h2>
-			<div id="notices-container"></div>
+        <div class="outermost-container">
+            <div class="main-section">
+                <div class="branch-sem">
+                    <h2>Notices</h2>
+                </div>
+                <div id="notices-container"></div>
+            </div>
         </div>
+
         <footer class="footer">
             <div class="copyright">© 2025 StudyHub</div>
         </footer>
+
         <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
         <script>
-            document.addEventListener("DOMContentLoaded", () => {
-            const themeStylesheet1 = document.getElementById("themeStylesheet1");
-            const themeStylesheet2 = document.getElementById("themeStylesheet2");
+            document.addEventListener("DOMContentLoaded", async function () {
+                try {
+                    const response = await fetch("/api/notices");
+                    const notices = await response.json();
 
-            const currentTheme = localStorage.getItem("theme") || "light";
-            themeStylesheet1.href = currentTheme === "dark" ? "/styles/notices-dark.css" : "/styles/notices.css";
-            themeStylesheet2.href = currentTheme === "dark" ? "/styles/common-dark.css" : "/styles/common.css"
-        });
+                    const noticesContainer = document.getElementById("notices-container");
+
+                    if (!notices || notices.length === 0) {
+                        noticesContainer.innerHTML = "<p>No notices available.</p>";
+                        return;
+                    }
+
+                    notices.forEach(notice => {
+                        const noticeElement = document.createElement("div");
+                        noticeElement.classList.add("notice");
+
+                        noticeElement.innerHTML = `
+                            <img src="${notice.image}" alt="Notice Image" class="notice-image">
+                            <div class="notice-content">
+                                <h3 class="notice-title">${notice.title}</h3>
+                                <p class="notice-description">${notice.description}</p>
+                                <p class="notice-date"><strong>Date:</strong> ${notice.date}</p>
+                                <a href="${notice.link}" target="_blank" class="notice-link">Read More</a>
+                            </div>
+                        `;
+
+                        noticesContainer.appendChild(noticeElement);
+                    });
+
+                } catch (error) {
+                    console.error("Error loading notices:", error);
+                    document.getElementById("notices-container").innerHTML = "<p>Failed to load notices.</p>";
+                }
+            });
+
+            document.addEventListener("DOMContentLoaded", () => {
+                const themeStylesheet1 = document.getElementById("themeStylesheet1");
+                const themeStylesheet2 = document.getElementById("themeStylesheet2");
+
+                const currentTheme = localStorage.getItem("theme") || "light";
+                themeStylesheet1.href = currentTheme === "dark" ? "/styles/notices-dark.css" : "/styles/notices.css";
+                themeStylesheet2.href = currentTheme === "dark" ? "/styles/common-dark.css" : "/styles/common.css"
+            });
         </script>
         <script src="/scripts/common.js"></script>
         <script src="/scripts/auth.js"></script>

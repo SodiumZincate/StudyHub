@@ -61,28 +61,28 @@ document.addEventListener("DOMContentLoaded", () => {
   
     // Check localStorage for theme preference
     const currentTheme = localStorage.getItem("theme") || "light";
-    themeStylesheet1.href = currentTheme === "dark" ? "/styles/index-dark.css" : "/styles/index.css";
+    themeStylesheet1.href = currentTheme === "dark" ? "/styles/dashboard-dark.css" : "/styles/dashboard.css";
     themeStylesheet2.href = currentTheme === "dark" ? "/styles/common-dark.css" : "/styles/common.css"
   
     // Toggle theme on button click
     toggleButton.addEventListener("click", () => {
-      if (themeStylesheet1.href.includes("/styles/index.css")) {
-        themeStylesheet1.href = "/styles/index-dark.css";
+      if (themeStylesheet1.href.includes("/styles/dashboard.css")) {
+        themeStylesheet1.href = "/styles/dashboard-dark.css";
         themeStylesheet2.href = "/styles/common-dark.css";
         localStorage.setItem("theme", "dark");
       } else {
-        themeStylesheet1.href = "/styles/index.css";
+        themeStylesheet1.href = "/styles/dashboard.css";
         themeStylesheet2.href = "/styles/common.css";
         localStorage.setItem("theme", "light");
       }
     });
     toggleButtonSb.addEventListener("click", () => {
-        if (themeStylesheet1.href.includes("/styles/index.css")) {
-          themeStylesheet1.href = "/styles/index-dark.css";
+        if (themeStylesheet1.href.includes("/styles/dashboard.css")) {
+          themeStylesheet1.href = "/styles/dashboard-dark.css";
           themeStylesheet2.href = "/styles/common-dark.css";
           localStorage.setItem("theme", "dark");
         } else {
-          themeStylesheet1.href = "/styles/index.css";
+          themeStylesheet1.href = "/styles/dashboard.css";
           themeStylesheet2.href = "/styles/common.css";
           localStorage.setItem("theme", "light");
         }
@@ -122,12 +122,12 @@ const discussion = document.querySelector("#discussion")
 const discussionSb = document.querySelector("#sb-discussion")
 discussion.addEventListener("click", (event) => {
   event.preventDefault();
-  try { window.location.href = '/api/home/discussion' }
+  try { window.location.href = '/api/discussion' }
   catch (error) { console.error("There was an error with the request:", error) }
 })
 discussionSb.addEventListener("click", (event) => {
   event.preventDefault();
-  try { window.location.href = '/api/home/discussion' }
+  try { window.location.href = '/api/discussion' }
   catch (error) { console.error("There was an error with the request:", error) }
 })
 

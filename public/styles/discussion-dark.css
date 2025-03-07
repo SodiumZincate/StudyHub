@@ -11,12 +11,12 @@
     width: 15%;
     padding: 10px 8px 0px 8px;
     border-radius: 10px;
-    background-color: rgb(215, 224, 236);
+    background-color: rgb(25,25,25);
 }
 
 .sidebar a {
     text-decoration: none;
-    color: rgb(80,80,80);
+    color: rgb(160,160,160) ;
     padding: 10px;
     font-size: 14px;
     display: flex;
@@ -24,7 +24,7 @@
 }
 
 .sidebar a:hover {
-    background-color: rgb(187, 194, 203);
+    background-color: rgb(40,40,40);
     border-radius: 5px;
 }
 
@@ -35,17 +35,16 @@
     right: 40px;
     width: 40px; 
     height: 30px; 
-    border: 1px solid grey;
+    border: 2px solid rgb(50,50,50) ;
     border-radius: 20px;
     outline: none;
-    color: black;
-    background-color: rgb(228, 233, 241);
+    color: rgb(130,130,130) ;
+    background-color: rgb(27,27,27);
     cursor: pointer;
 }
 
 .user:hover {
-    background-color: lightgray; 
-    box-shadow: 3px 3px 3px rgb(150, 150, 150);
+    background-color: rgb(20,20,20) ; 
 }
 
 .nav-menu {
@@ -55,7 +54,7 @@
     visibility: hidden;
     width: 150px;
     height: 80px;
-    background-color: rgb(228, 233, 241);
+    background-color: rgb(25,25,25);
     border-radius: 8px;
     display: flex;
     flex-direction: column;
@@ -65,13 +64,13 @@
 
 .nav-menu a {
     text-decoration: none;
-    color: black;
+    color: rgb(160,160,160) ;
     padding: 10px;
     font-size: 14px;
 }
 
 .nav-menu a:hover {
-    background-color: lightgray;
+    background-color: rgb(40,40,40);
     border-radius: 5px;
 }
 
@@ -90,7 +89,7 @@
     justify-content:flex-start;
     align-items:center;
     gap: 20px;
-    background-color: rgb(215, 224, 236);
+    background-color: rgb(30,30,30);
     font-size: 15px;
 }
 .main-section-1{
@@ -109,7 +108,7 @@
 	gap: 50px;
 }
 .navigation i {
-	color: #082748;
+	color: rgb(160,160,160)
 }
 .main-section-2{
 	width: 100%;
@@ -119,9 +118,8 @@
 	gap: 20px;
 }
 .question-block{
-	background-color: rgb(204, 211, 223);
+    background-color: rgb(20,20,20);
 	padding: 15px;
-	color: black;
 	border-radius: 5px;
 	font-weight: 300;
     display: flex;
@@ -139,12 +137,12 @@
 }
 .question-poster, .question-date, .answer-poster, .answer-date{
     font-weight: 400;
-    color: #082748;
+	color: rgb(150, 149, 149)
 }
 .add-answer{
     height: 30px;
     width: 100px;
-    background-color: #12375f;
+	background-color: rgb(56, 56, 64);
     color: rgb(215, 224, 236);
     border: none;
     outline: none;
@@ -153,12 +151,12 @@
 }
 .add-answer:hover{
     cursor: pointer;
-    background-color: #051629;
+	background-color: rgb(48, 48, 54);
 }
 .show-answers, .hide-answers{
     font-size: 12px;
     font-weight: 400;
-    color: #082748;
+	color: rgb(150, 149, 149);
     margin-top: 5px;
     margin-left: 5px;
     display: none;
@@ -180,34 +178,35 @@
 }
 .search-bar{
     width:80%;
-    border:0.5px solid grey;
+    border:1px solid rgb(50,50,50);
     border-radius:20px;
     height:38px;
     outline:none;
     text-align:left;
     padding-left:20px;
-    color:black;
-    background-color: rgb(228, 233, 241);
+    color: rgb(200,200,200);
+    background-color: rgb(40,40,40) ;
 }
 .search-button{
     width:40px;
     height:40px;
     border-radius:50%;
-    border:0.5px solid grey;  
+    border:0.5px solid #2E2E2E;  
     outline:none;
     margin-left: 10px;
-    background-color: rgb(228, 233, 241);
+    color: rgb(100,100,100) ;
+    background-color: rgb(40,40,40) ;
+    border: 1px solid rgb(50,50,50) ;
 }
 .search-button:hover{
     cursor:pointer; 
-    background-color: lightgray; 
-    box-shadow: 3px 3px 3px rgb(150, 150, 150);
+    background-color: rgb(25,25,25);
 }
 
 .add-menu {
     font-size: 15px;
     font-weight: 400px;
-    border: 1px solid gray;
+    border: 1px solid rgb(50,50,50);
     position: fixed;  
     top: 50%; 
     left: 50%;
@@ -215,7 +214,7 @@
     visibility: hidden;
     width: 1000px;
     height: 750px;
-    background-color: rgb(204, 211, 223);
+    background-color: rgb(25,25,25);
     border-radius: 8px;
     display: flex;
     flex-direction: column;
@@ -225,15 +224,15 @@
     z-index: 2;
 }
 .add-value {
-    border: 1px solid gray;
+    border: 1px solid rgb(50,50,50);
+    color: rgb(190, 196, 205);
     width: 100%;
     border-radius: 5px;
     height: 95%;
     outline: none;
     text-align: left;
     padding: 15px 15px;
-    color: rgb(50, 50, 50);
-    background-color: rgb(228, 233, 241);
+    background-color: rgb(40,40,40) ;
     font-size: 14px;
     line-height: 1.2;
     resize: vertical; 
@@ -244,8 +243,8 @@
 .add-button{
     height: 5%;
     width: 100%;
-    background-color: #082748;
-    color: rgb(215, 224, 236);
+	background-color: rgb(48, 48, 54);
+    color: rgb(190, 196, 205);
     outline: none;
     padding: 5px;
     border: none;
@@ -254,7 +253,7 @@
     cursor: pointer;
 }
 .add-button:hover{
-    background-color: #051629;
+	background-color: rgb(40, 40, 45);
 }
 
 .add-menu.active {
@@ -322,7 +321,6 @@
 
  @media (max-width: 600px) {
     .main-section{
-        background-color: rgb(215, 224, 236);
         width:100%;
         margin-top: 10px;
     }
@@ -333,15 +331,9 @@
     .main {
         padding: 0px 5px 20px 5px;
     }
-    .main-section{
-        background-color: rgb(204, 211, 223);
-    }
 	.search-bar{
 		width: 80%;
 	}
-    .question-block{
-        background-color: rgb(215, 224, 236);
-    }
     .add-menu {
         font-size: 14px;
         width: 400px;

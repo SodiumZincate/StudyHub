@@ -107,7 +107,7 @@ const discussionPage = async (req, res) => {
 };
 
 const homePage = async (req, res) => {
-    const filePath = path.join(__dirname, '../public/index.html');
+    const filePath = path.join(__dirname, '../public/dashboard.html');
     serveHtmlFile(res, filePath);
 };
 
@@ -146,7 +146,7 @@ module.exports = async (req, res) => {
                 return authenticateToken(req, res, () => getUserData(req, res));
             case '/api/home/todo-list':
                 return authenticateToken(req, res, () => todoListPage(req, res));
-            case '/api/home/discussion':
+            case '/api/discussion':
                 return authenticateToken(req, res, () => discussionPage(req, res));
             case '/api/home/home':
                 return homePage(req, res);

@@ -39,7 +39,7 @@ module.exports = async (req, res) => {
 
         try {
             const user = jwt.verify(refreshToken, process.env.REFRESH_TOKEN_SECRET);
-            return res.status(200).sendFile(path.join(__dirname, '../public/index.html'));
+            return res.status(200).sendFile(path.join(__dirname, '../public/dashboard.html'));
         } catch (err) {
             return res.status(403).json(err);
         }

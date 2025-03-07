@@ -1,8 +1,9 @@
-/* General layout */
+/* Overall page background */
 .outermost-container {
     display: flex;
     justify-content: center;
     padding: 60px 20px;
+    background-color: rgb(30, 30, 30); /* Dark background */
     min-height: 100vh;
 }
 
@@ -10,8 +11,8 @@
 .main-section {
     width: 100%;
     max-width: 1200px;
-    background-color: aliceblue;  /* Light background */
-    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.1);  /* Soft shadow */
+    background-color: rgb(40, 40, 40); /* Darker background */
+    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.5);
     border-radius: 10px;
     padding: 30px;
     display: flex;
@@ -26,14 +27,13 @@
     justify-content: space-between;
     margin-bottom: 20px;
     padding: 10px 15px;
-    background-color: #e9f5ff;  /* Light blue background */
-    border: 1px solid rgba(182, 182, 182, 0.4);  /* Light border */
+    background-color: rgb(50, 50, 50);
+    border: 1px solid #555;
     border-radius: 10px;
 }
 
-/* Back button styling */
 .back-button .bbutton {
-    background-color: #133b66;  /* Dark blue */
+    background-color: #4a90e2; /* Light blue */
     color: white;
     border: none;
     padding: 8px 12px;
@@ -43,14 +43,13 @@
 }
 
 .back-button .bbutton:hover {
-    background-color: #082748;  /* Darker blue on hover */
+    background-color: #377ac3;
 }
 
-/* Section 1 heading */
 .main-section-1 {
     font-size: 22px;
     font-weight: 500;
-    color: #133b66;  /* Dark blue text */
+    color: white; /* White text */
 }
 
 /* List of files */
@@ -63,17 +62,17 @@
 /* Loading state styling */
 .loading {
     font-size: 18px;
-    color: #133b66;  /* Dark blue text */
+    color: white;
     text-align: center;
     padding: 20px;
-    background-color: #e9f5ff;  /* Light blue background */
+    background-color: rgb(50, 50, 50); /* Dark background */
     border-radius: 10px;
 }
 
 /* Style for directory elements */
 .directory {
-    background-color: aliceblue;  /* Light background */
-    color: #133b66;  /* Dark blue text */
+    background-color: rgb(50, 50, 50); /* Darker background */
+    color: white; /* Text color */
     padding: 12px;
     margin-bottom: 10px;
     border-radius: 8px;
@@ -83,14 +82,14 @@
 
 /* Hover effect for directories */
 .directory:hover {
-    background-color: #e9f5ff;  /* Light blue hover effect */
-    transform: translateY(-2px);  /* Slightly elevate on hover */
+    background-color: rgb(60, 60, 60);
+    transform: translateY(-2px); /* Slightly elevate on hover */
 }
 
 /* Styling for directories that have subdirectories */
 .directory.has-subdirectories {
     font-weight: bold;
-    color: #4a90e2;  /* Light blue for directories with subdirectories */
+    color: #90caf9; /* Soft blue for directories with subdirectories */
 }
 
 /* File item styling */
@@ -99,22 +98,22 @@
     justify-content: space-between;
     align-items: center;
     padding: 12px 15px;
-    background-color: #ffffff;  /* White background */
-    border: 1px solid rgba(200, 200, 200, 0.5);  /* Light border */
+    background-color: rgb(50, 50, 50); /* Darker background */
+    border: 1px solid #444;
     border-radius: 8px;
-    box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.05);  /* Subtle shadow */
+    box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.3);
     transition: all 0.2s;
 }
 
 /* File item hover effect */
 .file-item:hover {
-    background-color: #e9f5ff;  /* Light blue background on hover */
-    transform: translateY(-2px);  /* Slightly elevate on hover */
+    background-color: rgb(60, 60, 60); /* Hover effect */
+    transform: translateY(-2px);
 }
 
 .file-item a {
     text-decoration: none;
-    color: #133b66;  /* Dark blue text */
+    color: #90caf9; /* Soft blue */
     font-weight: 500;
 }
 
@@ -123,9 +122,8 @@
     gap: 10px;
 }
 
-/* Action button inside file item */
 .file-item .action-btn {
-    background-color: #133b66;  /* Dark blue */
+    background-color: #4a90e2; /* Light blue */
     color: white;
     border: none;
     padding: 6px 10px;
@@ -134,26 +132,24 @@
     font-size: 14px;
 }
 
-/* Action button hover effect */
 .file-item .action-btn:hover {
-    background-color: #082748;  /* Darker blue on hover */
+    background-color: #377ac3;
 }
 
 /* Header navigation */
 .header {
-    background-color: #ffffff;  /* White background */
-    color: #133b66;  /* Dark blue text */
+    background-color: rgb(40, 40, 40);
+    color: white;
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 15px 30px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 .header-logo {
     font-size: 24px;
     font-weight: bold;
-    color: #133b66;  /* Dark blue logo */
+    color: white;
 }
 
 .header-menus {
@@ -163,21 +159,21 @@
 
 .menus a {
     text-decoration: none;
-    color: #133b66;  /* Dark blue text */
+    color: #ddd;
     font-weight: 500;
     transition: color 0.2s;
 }
 
 .menus a:hover {
-    color: #4a90e2;  /* Light blue on hover */
+    color: #90caf9;
 }
 
 /* Footer */
 footer {
     text-align: center;
     padding: 15px;
-    background-color: #ffffff;  /* White background */
-    color: #777;
+    background-color: rgb(40, 40, 40);
+    color: #ccc;
     font-size: 14px;
 }
 

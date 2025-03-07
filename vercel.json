@@ -24,8 +24,12 @@
 		"dest": "/api/login-route.js"
 	  },
 	  {
-		"src": "/api/home/(.*)",
+		"src": "/api/home(.*)",
 		"dest": "/api/home-route.js"
+	  },
+	  {
+		"src": "/api/discussion(.*)",
+		"dest": "/api/discussion-route.js"
 	  },
 	  {
 		"src": "/api/token(.*)",

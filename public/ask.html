@@ -4,7 +4,7 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>StudyHub</title>
-        <link id="themeStylesheet1" rel="stylesheet" href="/styles/discussion-dark.css">
+        <link id="themeStylesheet1" rel="stylesheet" href="/styles/ask-dark.css">
         <link id="themeStylesheet2" rel="stylesheet" href="/styles/common-dark.css">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
         <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -33,10 +33,20 @@
         </nav>
 
         <form class="add-menu">
+            <input type="text" class="add-title" name="title" placeholder="Title" required>
             <textarea type="text" class="add-value" name="value" placeholder="Content" required></textarea>
-            <button class="add-button" type="submit">Add Answer</button>
+            <button class="add-button" type="submit">Add Question</button>
             <p class="add-message"></p>
         </form>
+
+        <div class="delete-container">
+            <h3 class="delete-title">Delete this Question?</h3>
+            <div class="delete-form">
+                <button class="cancel-button" type="button">Cancel</button>
+                <button class="delete-button" type="button">Delete</button>
+            </div>
+            <p class="delete-message"></p>
+        </div>
         
         <div class="main">
             <aside class="sidebar">
@@ -55,16 +65,18 @@
                     <a id="next" href="#"><i class="fas fa-chevron-right"></i></a>
                 </div>
                 <div class="main-section-2">
-                    <p class="your-questions">Latest Questions</p>
+                    <p class="your-questions">Your Questions</p>
                 </div>
             </div>
+
+            <button class="add-question"><i class="fas fa-plus"></i></button>
         </div>
 
         <footer>
             <div class="copyright">© 2025 StudyHub</div>
         </footer>
         <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
-        <script src="/scripts/discussion.js"></script>
+        <script src="/scripts/ask.js"></script>
         <script src="/scripts/common.js"></script>
         <script src="/scripts/auth.js"></script>
     </body>
