@@ -16,5 +16,5 @@ def create_vercelkeep_in_leaf_dirs(directory):
                 print(f"Already exists: {vercelkeep_path}")
 
 if __name__ == "__main__":
-    folder_to_process = './sem2'  # Replace with the folder you want to process
+    folder_to_process = './sem4'  # Replace with the folder you want to process
     create_vercelkeep_in_leaf_dirs(folder_to_process)

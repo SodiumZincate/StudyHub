@@ -111,10 +111,25 @@
     transform: translateY(-2px);
 }
 
-.file-item a {
+/* Style for links in dark mode */
+.file-item a,
+.directory-link a {
     text-decoration: none;
-    color: #90caf9; /* Soft blue */
+    color: #ffffff; /* Set link color to white */
     font-weight: 500;
+}
+
+/* Remove visited state */
+.file-item a:visited,
+.directory-link a:visited {
+    color: #ffffff; /* Keep it white */
+}
+
+/* Hover effect for links */
+.file-item a:hover,
+.directory-link a:hover {
+    color: #90caf9; /* Set a hover color for better interaction */
+    text-decoration: underline; /* Optional: add underline for hover effect */
 }
 
 .file-item .file-actions {

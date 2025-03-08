@@ -14,7 +14,7 @@ def delete_files_except_directories(directory):
     return deleted_files
 
 if __name__ == "__main__":
-    folder_to_clean = './sem2'  # Replace with the folder you want to clean
+    folder_to_clean = './sem4'  # Replace with the folder you want to clean
     deleted_files = delete_files_except_directories(folder_to_clean)
     
     # Print the list of deleted files

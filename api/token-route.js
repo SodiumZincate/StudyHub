@@ -30,14 +30,14 @@ const createUser = async (req, res) => {
                 cookie.serialize('accessToken', accessToken, {
                     httpOnly: true,
                     secure: process.env.NODE_ENV === 'production', // Only send over HTTPS in production
-                    sameSite: 'strict',
+                    sameSite: 'Strict',
                     maxAge: 30 * 1000, // 30 seconds
                     path: '/'
                 }),
                 cookie.serialize('refreshToken', refreshToken, {
                     httpOnly: true,
                     secure: process.env.NODE_ENV === 'production',
-                    sameSite: 'strict',
+                    sameSite: 'Strict',
                     maxAge: 7 * 24 * 60 * 60 * 1000, // 7 days
                     path: '/'
                 })
@@ -52,7 +52,7 @@ const createUser = async (req, res) => {
 const refreshAccessToken = async (req, res) => {
     const cookies = cookie.parse(req.headers.cookie || '');
     const refreshToken = cookies.refreshToken;
-    if (!refreshToken) return res.sendStatus(401);
+    if (!refreshToken) return res.status(401);
 
     jwt.verify(refreshToken, process.env.REFRESH_TOKEN_SECRET, (err, user) => {
         if (err) return res.status(403).json(err);
@@ -63,7 +63,7 @@ const refreshAccessToken = async (req, res) => {
         res.setHeader('Set-Cookie', cookie.serialize('accessToken', accessToken, {
             httpOnly: true,
             secure: process.env.NODE_ENV === 'production',
-            sameSite: 'strict',
+            sameSite: 'Strict',
             maxAge: 30 * 1000, // 30 seconds
             path: '/'
         }));

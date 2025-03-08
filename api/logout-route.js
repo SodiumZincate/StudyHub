@@ -7,6 +7,8 @@ module.exports = async (req, res) => {
         const cookies = cookie.parse(req.headers.cookie || '');
         const accessToken = cookies.accessToken;
         const refreshToken = cookies.refreshToken;
+        
+        console.log("Called API, AccessToken:", accessToken, "RefreshToken:", refreshToken);
 
         // Check if both tokens exist
         if (!accessToken || !refreshToken) {
@@ -18,16 +20,20 @@ module.exports = async (req, res) => {
             cookie.serialize('accessToken', '', {
                 httpOnly: true,
                 secure: process.env.NODE_ENV === 'production',
-                sameSite: 'strict',
+                sameSite: 'Strict',
+                path: '/',
                 expires: new Date(0)
             }),
             cookie.serialize('refreshToken', '', {
                 httpOnly: true,
                 secure: process.env.NODE_ENV === 'production',
-                sameSite: 'strict',
+                sameSite: 'Strict',
+                path: '/',
                 expires: new Date(0)
             })
         ]);
+
+        console.log("Cookies cleared");
 
         // Respond with a success message and redirect URL
         return res.status(200).json({ redirectUrl: `/api/login` });

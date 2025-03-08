@@ -112,10 +112,25 @@
     transform: translateY(-2px);  /* Slightly elevate on hover */
 }
 
-.file-item a {
+/* Style for links in light mode */
+.file-item a,
+.directory-link a {
     text-decoration: none;
-    color: #133b66;  /* Dark blue text */
+    color: #000000; /* Set link color to black */
     font-weight: 500;
+}
+
+/* Remove visited state */
+.file-item a:visited,
+.directory-link a:visited {
+    color: #000000; /* Keep it black */
+}
+
+/* Hover effect for links */
+.file-item a:hover,
+.directory-link a:hover {
+    color: #4a90e2; /* Set a hover color for better interaction */
+    text-decoration: underline; /* Optional: add underline for hover effect */
 }
 
 .file-item .file-actions {
