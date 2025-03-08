@@ -1,16 +1,1184 @@
 {
-  "CHEM101/Assignment/Chapter 1_ Mole Concept": {
-    "url": "https://drive.google.com/file/d/1UTwLPEk848fknbgU8AzTfNJ9FvNGDv8x/view?usp=drive_link",
-    "name": "Chapter 1: Mole Concept"
-  },
-  "EDRG101": [
-    {
-      "url": "https://drive.google.com/file/d/1ivV_Fvy6QvoUAB_WaHnLApME6B_Gxjoe/view?usp=drive_link",
-      "name": "Engineering Drawing - 101"
-    },
-    {
-      "url": "https://drive.google.com/file/d/1ivV_Fvy6QvoUAB_WaHnLApME6B_Gxjoe/view?usp=drive_link",
-      "name": "Engineering Drawing - 102"
-    }
-  ]
-}
+	"COMP202/Assignments": [
+	  {
+		"url": "https://drive.google.com/file/d/1c44WItT3ff7c0zeAq4iSiXYkU-Gn78II/view?usp=drive_link",
+		"name": "1. Assignment 1.pdf"
+	  },
+	  {
+		"url": "https://drive.google.com/file/d/1ojnN35LkG0qYsimtiC1WNj1cyhC509uA/view?usp=drive_link",
+		"name": "2. Assignment 2.pdf"
+	  },
+	  {
+		"url": "https://drive.google.com/file/d/1S74BXbaK8QZavpe-qmr5zYLzwH18uva-/view?usp=drive_link",
+		"name": "3. Assignment 3.pdf"
+	  },
+	  {
+		"url": "https://drive.google.com/file/d/1JN7tSY6yuwX2lQg9HB2N3eJ7pVunRz1O/view?usp=drive_link",
+		"name": "5. Assignment 5.pdf"
+	  }
+	],
+	"COMP202/Slides (Rajani Ma_am)": [
+	  {
+		"url": "https://drive.google.com/file/d/1ttsb5bgE8IzGu2Tu8rpwgeKlZt6kZzfl/view?usp=drive_link",
+		"name": "C++ Revision.pdf"
+	  },
+	  {
+		"url": "https://drive.google.com/file/d/1nngDFSHe-7aPwW1ma8EHQn-nvM1623sn/view?usp=drive_link",
+		"name": "Chapter 0.pdf"
+	  },
+	  {
+		"url": "https://drive.google.com/file/d/1RVvdz39HvcG0rpBK7o00KlGZ5FtjDsyb/view?usp=drive_link",
+		"name": "Chapter 1_ Introduction to Algorithms.pdf"
+	  },
+	  {
+		"url": "https://drive.google.com/file/d/1I1vBaQhv2RpJdAh7bCf0RBTmEVJEntdQ/view?usp=drive_link",
+		"name": "Chapter 2_ Stack (1).pdf"
+	  },
+	  {
+		"url": "https://drive.google.com/file/d/1ppgzMrW7XEEwcIHcLuMs9OJoALA4k4mv/view?usp=drive_link",
+		"name": "Chapter 3_ Queue.pdf"
+	  },
+	  {
+		"url": "https://drive.google.com/file/d/1T0wyJh07CBHXxeLVtjEFZdWhENPkrL9q/view?usp=drive_link",
+		"name": "Chapter 4_ Linked List (Part I).pdf"
+	  },
+	  {
+		"url": "https://drive.google.com/file/d/1EyvVGAq9IpKUudPRaaA62xDIO2gsdG23/view?usp=drive_link",
+		"name": "Chapter 4_ Linked List (Part II).pdf"
+	  },
+	  {
+		"url": "https://drive.google.com/file/d/1KGSB6wzDq3tTPFhjqmUyBcfJJCOXFmdZ/view?usp=drive_link",
+		"name": "Chapter 5_ Tree (Part I)-Updated.pdf"
+	  },
+	  {
+		"url": "https://drive.google.com/file/d/1C61fG8UNjldgOY3YRVDyJfSb7elcOFc3/view?usp=drive_link",
+		"name": "Chapter 5_ Tree (Part II).pdf"
+	  },
+	  {
+		"url": "https://drive.google.com/file/d/1iLnc1kRqYf6MgsyOE8Kuh9B-PoTh48qk/view?usp=drive_link",
+		"name": "Chapter 6_ Graphs.pdf"
+	  },
+	  {
+		"url": "https://drive.google.com/file/d/1NP6trQ5C9-6-OisUAxNeopl4BKiM9AEm/view?usp=drive_link",
+		"name": "Chapter 7_ Sorting.pdf"
+	  },
+	  {
+		"url": "https://drive.google.com/file/d/1q-DbyIvshfB--AfcY1gxSbcWO4Nl-YZN/view?usp=drive_link",
+		"name": "Chapter 8_ Searching and Hashing.pdf"
+	  }
+	],
+	"COMP202/Notes": [
+	  {
+		"url": "https://drive.google.com/file/d/1llUBWiFLZp6E3Nt5lVSVrgLrpwbazTyy/view?usp=drive_link",
+		"name": "2.b. Stack.pdf"
+	  }
+	],
+	"COMP202": [
+	  {
+		"url": "https://drive.google.com/file/d/1qkFo4kxypREDJT5pdJHV3H-ga8w9-6Ip/view?usp=drive_link",
+		"name": "Syllabus.pdf"
+	  }
+	],
+	"MCSC201": [
+	  {
+		"url": "https://drive.google.com/file/d/1K1W2jpggLwPMobHm56XZdxD5pMT_tHE2/view?usp=drive_link",
+		"name": "MCSC_201_Discrete_Mathematics_(II-I)1581325620.pdf"
+	  }
+	],
+	"EEEG202/Assignments": [
+	  {
+		"url": "https://drive.google.com/file/d/1Gpw8uapHiMGEbSwT4FIj6ICCRxlb9kNl/view?usp=drive_link",
+		"name": "3. Tutorial 3.pdf"
+	  }
+	],
+	"EEEG202/Slides": [
+	  {
+		"url": "https://drive.google.com/file/d/1kdl9HQiVJE1KQfToEGVMeDVkf3mWW39Q/view?usp=drive_link",
+		"name": "ClassNote (1).pdf"
+	  },
+	  {
+		"url": "https://drive.google.com/file/d/1oNXQRnTKS15Y-dMk7Yks5XGw-kJitDNs/view?usp=drive_link",
+		"name": "ClassNote.pdf"
+	  },
+	  {
+		"url": "https://drive.google.com/file/d/1lDzZvm94jX7Qu45HghfNkMI_ORLSswn0/view?usp=drive_link",
+		"name": "EEEG202-SOP_POS.pdf"
+	  },
+	  {
+		"url": "https://drive.google.com/file/d/1qr55cWRWTxBNyazFRD4RzKiPGy6b1ima/view?usp=drive_link",
+		"name": "EEEG202_L5.pdf"
+	  }
+	],
+	"EEEG202": [
+	  {
+		"url": "https://drive.google.com/file/d/15lJffs71NOlAB_KpPT5HsHtUtVeyI0HK/view?usp=drive_link",
+		"name": "EEEG202 Syallabus.pdf"
+	  }
+	],
+	"MATH208/Slides": [
+	  {
+		"url": "https://drive.google.com/file/d/1cCSwfEg2EEW8iiRP43-BHP4w7gxRat5L/view?usp=drive_link",
+		"name": "Lecture-1-Data Representation.pdf"
+	  },
+	  {
+		"url": "https://drive.google.com/file/d/1wvrw5_2dl5Z5iS2p6CjrJdFt7duBVT8T/view?usp=drive_link",
+		"name": "Lecture-10-Binomial-Poisson Distribution.pdf"
+	  },
+	  {
+		"url": "https://drive.google.com/file/d/1UMJI6ZZNbcwG1j7x9JCIrDzxZ7MHu3os/view?usp=drive_link",
+		"name": "Lecture-11-Normal Distribution-I.pdf"
+	  },
+	  {
+		"url": "https://drive.google.com/file/d/1cp5UpF6Ic80VLDJaOjeDvhpoRILss0MV/view?usp=drive_link",
+		"name": "Lecture-12-Normal Distribution-II.pdf"
+	  },
+	  {
+		"url": "https://drive.google.com/file/d/171W7QRxzLZ8CgPQXjUQ7UZsXZKlEzCXy/view?usp=drive_link",
+		"name": "Lecture-13-Sampling Theory.pdf"
+	  },
+	  {
+		"url": "https://drive.google.com/file/d/1RIx5Asf4p_QFwNjrLqAjgQ7EeB8XYMtd/view?usp=drive_link",
+		"name": "Lecture-14-Interval Estimation-I.pdf"
+	  },
+	  {
+		"url": "https://drive.google.com/file/d/1t6Xwfr2l53lExPLXRcFJfWmx54dzNtOb/view?usp=drive_link",
+		"name": "Lecture-16-Test of Hypothesis.pdf"
+	  },
+	  {
+		"url": "https://drive.google.com/file/d/19Ib97nfWKaJYkuWdRG_cR2d0QY-jd6o-/view?usp=drive_link",
+		"name": "Lecture-4-Probability-I.pdf"
+	  },
+	  {
+		"url": "https://drive.google.com/file/d/1wMo_ZCcb5P15tZV8f7Tlc2RElS6P9Gnh/view?usp=drive_link",
+		"name": "Lecture-5-Probability-II.pdf"
+	  },
+	  {
+		"url": "https://drive.google.com/file/d/19MYpzwUSM5BLOLK3rFU6-QCkKH7NOZB9/view?usp=drive_link",
+		"name": "Lecture-6-Probability-III.pdf"
+	  },
+	  {
+		"url": "https://drive.google.com/file/d/1t8qtqNlJXu5vJXyJoSVEIDHXxisjPWJ8/view?usp=drive_link",
+		"name": "Lecture-7-Random Variable-I.pdf"
+	  },
+	  {
+		"url": "https://drive.google.com/file/d/1W8MqyXb_oHdUmtD90Ibb3YGPZ7mF8mbD/view?usp=drive_link",
+		"name": "Lecture-8-Random Variable-II.pdf"
+	  },
+	  {
+		"url": "https://drive.google.com/file/d/1s_IFL7URZuudq894mU8dylKpLnC5-L5_/view?usp=drive_link",
+		"name": "Lecture-9-RV-III and Bin-Distr.pdf"
+	  }
+	],
+	"MATH208": [
+	  {
+		"url": "https://drive.google.com/file/d/11UAr7L7zCLozBTRap5ebKKRo3HvdQpTi/view?usp=drive_link",
+		"name": "Syllabus_Math 208.pdf"
+	  }
+	],
+	"EEEG211": [
+	  {
+		"url": "https://drive.google.com/file/d/1_TMkcM0_KU0KuyeZlOJpcWxJGXYJUJ7E/view?usp=drive_link",
+		"name": "EEEG211 syllabus.pdf"
+	  }
+	],
+	"PHYS102/Assignment": [
+	  {
+		"url": "https://drive.google.com/file/d/1tc4a2W3hlGk3Bs6vOaCDyhhvr-ueWIle/view?usp=drive_link",
+		"name": "2. Chapter 2.pdf"
+	  },
+	  {
+		"url": "https://drive.google.com/file/d/1I2kES4dOc1WnwtUOPO8zuh-1xN-6bA_B/view?usp=drive_link",
+		"name": "3. Chapter 3.pdf"
+	  },
+	  {
+		"url": "https://drive.google.com/file/d/1rYD78M4TmmnFdIvwBs7BwMBjByYEMfww/view?usp=drive_link",
+		"name": "4. Chapter 4.pdf"
+	  },
+	  {
+		"url": "https://drive.google.com/file/d/1uoCpAT1koDpJjUrZcm3TFTq5JCkh1zLB/view?usp=drive_link",
+		"name": "5. Chapter 5.pdf"
+	  },
+	  {
+		"url": "https://drive.google.com/file/d/16Pd7FIRMk-sFsqJGO9E6n_XFFkiig1jC/view?usp=drive_link",
+		"name": "6. Chapter 6.pdf"
+	  },
+	  {
+		"url": "https://drive.google.com/file/d/1gFg1p3iXoV0PMM0AVjm2aiSzVuQqh3Rj/view?usp=drive_link",
+		"name": "7. Modern Physics.pdf"
+	  }
+	],
+	"PHYS102/Practicals": [
+	  {
+		"url": "https://drive.google.com/file/d/19SQPDwRc7LtPqlhTblYdYuYslGlU2b_v/view?usp=drive_link",
+		"name": "1. Carey-Foster.pdf"
+	  },
+	  {
+		"url": "https://drive.google.com/file/d/1RDWOlXrg3zprEYZBJEB3z0nbwz1VTHe8/view?usp=drive_link",
+		"name": "2. Flywheel.pdf"
+	  },
+	  {
+		"url": "https://drive.google.com/file/d/1X294ve_rRFJhQ_2d2_RizusqDmaZFZV7/view?usp=drive_link",
+		"name": "3. Surface Tension.pdf"
+	  },
+	  {
+		"url": "https://drive.google.com/file/d/1gblsVyn205TivjvLxCQH-Wbm1IYatQw4/view?usp=drive_link",
+		"name": "4. Laser Light.pdf"
+	  },
+	  {
+		"url": "https://drive.google.com/file/d/14XMMd-mBH_mnduCN7LwUHdileYWOJdYQ/view?usp=drive_link",
+		"name": "8. Specific Charge.pdf"
+	  }
+	],
+	"PHYS102/PDFs/Slides ( Keshav Sigdel )": [
+	  {
+		"url": "https://drive.google.com/file/d/1y28CXiiFcc-46m_JRPQ1JfeTRTHFfwWN/view?usp=drive_link",
+		"name": "Lecture01.pdf"
+	  },
+	  {
+		"url": "https://drive.google.com/file/d/11rnrJqD68myg_djfgBGHfe5Gpubcm3eZ/view?usp=drive_link",
+		"name": "Lecture02.pdf"
+	  },
+	  {
+		"url": "https://drive.google.com/file/d/1lBIXoX7uNPui_SuWFmGOylcmvGDM4V3a/view?usp=drive_link",
+		"name": "Lecture03.pdf"
+	  },
+	  {
+		"url": "https://drive.google.com/file/d/16McKwV2v4Pm_9ds8lLK8fXj3K9Vi7Xrp/view?usp=drive_link",
+		"name": "Lecture04.pdf"
+	  },
+	  {
+		"url": "https://drive.google.com/file/d/1rfmpVgqqIvYKFBqkKgJjkD96nWW75a4s/view?usp=drive_link",
+		"name": "Lecture05.pdf"
+	  },
+	  {
+		"url": "https://drive.google.com/file/d/1gIhGdgmYz7YToX-TadA4HjOkNbxJApIr/view?usp=drive_link",
+		"name": "Lecture06.pdf"
+	  },
+	  {
+		"url": "https://drive.google.com/file/d/1CQ65k6eERWHtd4tfLMKh0mgJWcD83vbw/view?usp=drive_link",
+		"name": "Lecture07.pdf"
+	  },
+	  {
+		"url": "https://drive.google.com/file/d/1pNI_VarZeIm44iYYCS6LUsmu8zMp12mI/view?usp=drive_link",
+		"name": "Lecture08.pdf"
+	  },
+	  {
+		"url": "https://drive.google.com/file/d/1KFRX_Z6ABL73mmJukINxH1N4VqKweYn_/view?usp=drive_link",
+		"name": "Lecture09.pdf"
+	  },
+	  {
+		"url": "https://drive.google.com/file/d/1fOLNxA4VsHkXS3NZaIQgR9FhnkqyjLbw/view?usp=drive_link",
+		"name": "Lecture10.pdf"
+	  },
+	  {
+		"url": "https://drive.google.com/file/d/1kG5tJNtJXZdvT1OS0NQkF6A5xpjlhrXA/view?usp=drive_link",
+		"name": "Lecture12.pdf"
+	  },
+	  {
+		"url": "https://drive.google.com/file/d/1-QlHydwdGowPPaEnwC7tGBZeCmRfN9TI/view?usp=drive_link",
+		"name": "Lecture13.pdf"
+	  },
+	  {
+		"url": "https://drive.google.com/file/d/1pojQItpcd0nMdtVJA61-rOwSgD-yj5em/view?usp=drive_link",
+		"name": "Lecture14.pdf"
+	  },
+	  {
+		"url": "https://drive.google.com/file/d/1hWSJQ-Z5oC2Fo1HRa4diU-c2MKuxaXLW/view?usp=drive_link",
+		"name": "Lecture15.pdf"
+	  },
+	  {
+		"url": "https://drive.google.com/file/d/1NTtuiSpge3sc8gpH4a8WindPxn33kjN2/view?usp=drive_link",
+		"name": "Lecture16.pdf"
+	  },
+	  {
+		"url": "https://drive.google.com/file/d/1arZgl2HoptQFdETyNpfIRBH2BBrvvpa3/view?usp=drive_link",
+		"name": "Lecture18.pdf"
+	  }
+	],
+	"PHYS102/PDFs": [
+	  {
+		"url": "https://drive.google.com/file/d/1vhWNp8nFAvRO0HC2a2jJRlkUU67vbRQi/view?usp=drive_link",
+		"name": "SYLLABUS PHYS 102.pdf"
+	  }
+	],
+	"PHYS102": [
+	  {
+		"url": "https://drive.google.com/file/d/1PO13BCbeFfwlaZQt7tGgaVa9YCgX2nNY/view?usp=drive_link",
+		"name": "SYLLABUS PHYS 102.pdf"
+	  }
+	],
+	"COMP116/Assignment": [
+	  {
+		"url": "https://drive.google.com/file/d/1gYv41iTMtI9IdgyqRbn1X24npg2ME-wO/view?usp=drive_link",
+		"name": "1. Assignment 1.pdf"
+	  },
+	  {
+		"url": "https://drive.google.com/file/d/18E3E2-VMGGQ8fP4F_gk8-XHnowfnVMgm/view?usp=drive_link",
+		"name": "2. Assignment 2.pdf"
+	  },
+	  {
+		"url": "https://drive.google.com/file/d/1hgZKvVsP43KPtQKsy6qkEAq7YqL8ja1p/view?usp=drive_link",
+		"name": "3 Assignment 3.pdf"
+	  },
+	  {
+		"url": "https://drive.google.com/file/d/1PNevanNrMdB1sazVyD6_azCS-ajWbZF-/view?usp=drive_link",
+		"name": "4. Assignnment4.pdf"
+	  }
+	],
+	"COMP116/Notes": [
+	  {
+		"url": "https://drive.google.com/file/d/1HJnlZxd2Pd5sBsq2jv56ogQ5ocsZaZMx/view?usp=drive_link",
+		"name": "2. b. Intro to C++.pdf"
+	  },
+	  {
+		"url": "https://drive.google.com/file/d/10xZEdn0d99FteecUl4Ep5-Tqfl0-vzF1/view?usp=drive_link",
+		"name": "3. Classes and Objects.pdf"
+	  },
+	  {
+		"url": "https://drive.google.com/file/d/1VXOn4-FEhaYd-IkwGQR-dP9WEJa_e8VZ/view?usp=drive_link",
+		"name": "4. Constructors and Destructors.pdf"
+	  },
+	  {
+		"url": "https://drive.google.com/file/d/1Th9ZgOZ3zCqRsohkgGcZZiyb5xsYwqt-/view?usp=drive_link",
+		"name": "5. Operator Overloading.pdf"
+	  },
+	  {
+		"url": "https://drive.google.com/file/d/1nXQrdQpoL6KrQWL0_y-jceWWE9oW3J14/view?usp=drive_link",
+		"name": "6. Inheritance.pdf"
+	  },
+	  {
+		"url": "https://drive.google.com/file/d/1p6FloozZaLivOFR3T3XkJHSzt_83lmif/view?usp=drive_link",
+		"name": "7. Polymorphism.pdf"
+	  },
+	  {
+		"url": "https://drive.google.com/file/d/14pmTFOHdTTJUb3ELEfNRTZzj05W-39un/view?usp=drive_link",
+		"name": "8. Templates.pdf"
+	  },
+	  {
+		"url": "https://drive.google.com/file/d/1dWovLTVfooubE7REeodWGnBEtmGS_Jiq/view?usp=drive_link",
+		"name": "9. Exception Handling.pdf"
+	  }
+	],
+	"COMP116/Report": [
+	  {
+		"url": "https://drive.google.com/file/d/1PM9GtURrhhkQ66PBBMIyi1Z8-PwS6fIj/view?usp=drive_link",
+		"name": "2. Lab Report 2.pdf"
+	  },
+	  {
+		"url": "https://drive.google.com/file/d/1FngSXUY-EC27gvhYw-2fzhFQ05v3bFq8/view?usp=drive_link",
+		"name": "3. Lab Report 3.pdf"
+	  },
+	  {
+		"url": "https://drive.google.com/file/d/1CPDLctALmsVEXr_GhUOMjmMnEHjLyByI/view?usp=drive_link",
+		"name": "4. Lab Report 4.pdf"
+	  },
+	  {
+		"url": "https://drive.google.com/file/d/1xVSlWMAhfAetF-ZLC-Xwa7hCY7HwLrFq/view?usp=drive_link",
+		"name": "5. Lab Report 5.pdf"
+	  },
+	  {
+		"url": "https://drive.google.com/file/d/1Pi1yef7BIs4hnCkrEK8hx5257El0ToVR/view?usp=drive_link",
+		"name": "6. Lab Report 6.pdf"
+	  },
+	  {
+		"url": "https://drive.google.com/file/d/1ooMM46iEdqeay2QxNz4Um-57b18C-ukZ/view?usp=drive_link",
+		"name": "7. Lab Report 7.pdf"
+	  }
+	],
+	"MATH104/Assignments/File": [
+	  {
+		"url": "https://drive.google.com/file/d/1wFIdKwCHv62ZjAULNWbbVQD_v0UcyPqh/view?usp=drive_link",
+		"name": "MATH 104_I.pdf"
+	  },
+	  {
+		"url": "https://drive.google.com/file/d/15qdomO6FeVKqBHfjNRu1TAhKZ1ja1bGf/view?usp=drive_link",
+		"name": "MATH 104_II.pdf"
+	  },
+	  {
+		"url": "https://drive.google.com/file/d/1A2HQ2cCCAYmBLQfeHzz_-Iul17gU-iGo/view?usp=drive_link",
+		"name": "MATH 104_III.pdf"
+	  },
+	  {
+		"url": "https://drive.google.com/file/d/1YhS9rIXvppdAyspf-dolOLsBrUaGBQsc/view?usp=drive_link",
+		"name": "MATH104_IV.pdf"
+	  },
+	  {
+		"url": "https://drive.google.com/file/d/1OlWOEqi95au8LqwyVo4M_OIesCjUieET/view?usp=drive_link",
+		"name": "MATH104_V.pdf"
+	  }
+	],
+	"MATH104/Notes/1. Coordinate System": [
+	  {
+		"url": "https://drive.google.com/file/d/1kiEPhnpOuaSJJLSdzzg3DZBVsGZtMYCU/view?usp=drive_link",
+		"name": "1. Polar Coordinates.pdf"
+	  },
+	  {
+		"url": "https://drive.google.com/file/d/1sOnb97j0v3f8bvMhBWnk1TAtqoVr7Pup/view?usp=drive_link",
+		"name": "5. Straight line and circle.pdf"
+	  }
+	],
+	"MATH104/Notes/5. Vector Functions Derivatives": [
+	  {
+		"url": "https://drive.google.com/file/d/1tXtn0jLGbFUWLNQAahbhYJNLSDdNcaUT/view?usp=drive_link",
+		"name": "3. Upto Torsion.pdf"
+	  }
+	],
+	"MATH104/Practice sets": [
+	  {
+		"url": "https://drive.google.com/file/d/1mWrZmQNl70gb3-mLJAMVVEs5fM4j-_Go/view?usp=drive_link",
+		"name": "Practice Set - Polar Coordinates.pdf"
+	  }
+	],
+	"MATH104/Slides/1. Coordinate system": [
+	  {
+		"url": "https://drive.google.com/file/d/1wDrj5NSRdTlmcO5zK_AX_v3KvSwz46-O/view?usp=drive_link",
+		"name": "1.pdf"
+	  },
+	  {
+		"url": "https://drive.google.com/file/d/1oKen6a8NNyfP2PK6WrJnH0Gc7jSrUDju/view?usp=drive_link",
+		"name": "4.pdf"
+	  }
+	],
+	"MATH104/Slides/4. Beta and Gamma Functions": [
+	  {
+		"url": "https://drive.google.com/file/d/1SR3t2cnTg4NlQbbbbKfv4wUVZeGSgHtr/view?usp=drive_link",
+		"name": "1.pdf"
+	  }
+	],
+	"MATH104/Slides/7. Fournier Series": [
+	  {
+		"url": "https://drive.google.com/file/d/17YXMqCz7SXF9hN444vCMmT9KlLyc4-0T/view?usp=drive_link",
+		"name": "1.pdf"
+	  }
+	],
+	"MATH104": [
+	  {
+		"url": "https://drive.google.com/file/d/1AyLwcatcn2XYUpmy9p-3tauYA2qnrxtl/view?usp=drive_link",
+		"name": "Updated Syllabus of MATH 104.pdf"
+	  }
+	],
+	"ENVE101/Slides/Chapter 1_ Introduction": [
+	  {
+		"url": "https://drive.google.com/file/d/1sZudHw4ptHBAvgDvzyAxx6UaGUE7BTN8/view?usp=drive_link",
+		"name": "Chapter_I_Part_II.pptx"
+	  },
+	  {
+		"url": "https://drive.google.com/file/d/1OAnHtPPZ5_nA9bdysp45PuY6QkkJ1kmR/view?usp=drive_link",
+		"name": "ENVE 101_Chapter_1_2023_24.pdf"
+	  }
+	],
+	"ENVE101/Slides/Chapter 2_ Ecosystem": [
+	  {
+		"url": "https://drive.google.com/file/d/14nCD_J-XNvXGHKq_XOByV9PRDxpiasV8/view?usp=drive_link",
+		"name": "ENVE 101_Chapter_2.pdf"
+	  }
+	],
+	"ENVE101/Slides/Chapter 4_ Water Quality Paramters": [
+	  {
+		"url": "https://drive.google.com/file/d/10pUPQMdPONRlugjEqmp0DbYQXSB9LV5g/view?usp=drive_link",
+		"name": "Chapter_4_1.pdf"
+	  },
+	  {
+		"url": "https://drive.google.com/file/d/1dwXnWvljBjA2po9c0Pg1718q3xFXFAXj/view?usp=drive_link",
+		"name": "Chapter_4_2.pdf"
+	  }
+	],
+	"ENVE101/Slides/Chapter 7_ EMS and Green Engineering": [
+	  {
+		"url": "https://drive.google.com/file/d/1Pwcbge20GwPTquQN7QXd0Bvwax9IkPTU/view?usp=drive_link",
+		"name": "Chapter_7.pdf"
+	  }
+	],
+	"ENVE101/Slides/Chapter 6_ Solid Waste Management and Resource Recovery": [
+	  {
+		"url": "https://drive.google.com/file/d/1Alk0FbYjQSziXc1jbfIjNlOEuSDQU3uD/view?usp=drive_link",
+		"name": "Chapter_6.pdf"
+	  }
+	],
+	"ENVE101/Slides/Chapter 3_ Mass Transfer": [
+	  {
+		"url": "https://drive.google.com/file/d/1BmKiKGwldrrSDSFZTKeF2kTEe8s944eI/view?usp=drive_link",
+		"name": "ChapterIII_Mass Transfer.pdf"
+	  },
+	  {
+		"url": "https://drive.google.com/file/d/1V4URJTsJNY570TPUBAiIp5oFd5GoMtnO/view?usp=drive_link",
+		"name": "ENVE 101_Chapter_3_new.pdf"
+	  }
+	],
+	"ENGT105/Texts": [
+	  {
+		"url": "https://drive.google.com/file/d/1oDzcr1j3VpBFXmp1_YKgBMPumC-7MX6C/view?usp=drive_link",
+		"name": "FreudEinstein-Letters.pdf"
+	  },
+	  {
+		"url": "https://drive.google.com/file/d/1mFiaP1P60B-WBEegcODMI6b4Hz0eWJ80/view?usp=drive_link",
+		"name": "FreudEinstein-Letters.pdf"
+	  },
+	  {
+		"url": "https://drive.google.com/file/d/1kRCdY77tBIGi-0dq1a2EF2g_A3vEqsHT/view?usp=drive_link",
+		"name": "Letter to Einstein.pdf"
+	  },
+	  {
+		"url": "https://drive.google.com/file/d/1r-TuOz5buJe5t42ZHYVrXRYdptSZz_V5/view?usp=drive_link",
+		"name": "Letter to Einstein.pdf"
+	  },
+	  {
+		"url": "https://drive.google.com/file/d/1WNqRnpKkpbwHcdibRbcwg9ul1IKlTM6G/view?usp=drive_link",
+		"name": "Swansong.pdf"
+	  },
+	  {
+		"url": "https://drive.google.com/file/d/1_Pdg0vhH0B8lns7E0TkkwEK-9qKdUesN/view?usp=drive_link",
+		"name": "Swansong.pdf"
+	  },
+	  {
+		"url": "https://drive.google.com/file/d/1bIhpxptrV7XS-knNeELuLcr85-Ap_R9r/view?usp=drive_link",
+		"name": "The Allegory of the Cave(1).pdf"
+	  },
+	  {
+		"url": "https://drive.google.com/file/d/1AeBeelQaGgZgOih7Hg9giu3u0PaDdVtU/view?usp=drive_link",
+		"name": "The Allegory of the Cave(1).pdf"
+	  },
+	  {
+		"url": "https://drive.google.com/file/d/1ckQznC75uN1uiwddZNOUrMPo3zA2QgdZ/view?usp=drive_link",
+		"name": "The Allegory of the Cave.pdf"
+	  },
+	  {
+		"url": "https://drive.google.com/file/d/1zlicLoMXdIS-DcXlkFFxHp__cAg9g4bG/view?usp=drive_link",
+		"name": "The Burden of Skepticism_Carl Sagan.pdf"
+	  },
+	  {
+		"url": "https://drive.google.com/file/d/1TCD0hIXpzKWf_JZ0RZIiK05_pUXVlc9N/view?usp=drive_link",
+		"name": "The Diamond as Big as the Ritz(1).pdf"
+	  },
+	  {
+		"url": "https://drive.google.com/file/d/1M7d8gyuT_hIBfklJNKOd3K187oGaQxRC/view?usp=drive_link",
+		"name": "The Diamond as Big as the Ritz.pdf"
+	  },
+	  {
+		"url": "https://drive.google.com/file/d/1WJthU3_TTQWq1lb1P1M7sFDAE6mvUGfz/view?usp=drive_link",
+		"name": "The Making of a Scientists- Summary.pdf"
+	  },
+	  {
+		"url": "https://drive.google.com/file/d/10koE84GSSE50eH2uAPGqmz-9h2jFqSPd/view?usp=drive_link",
+		"name": "The Myth Of Sisyphus.pdf"
+	  },
+	  {
+		"url": "https://drive.google.com/file/d/1CwV3R8V2QFyewhNaUqi8Y2yhdV-USSeF/view?usp=drive_link",
+		"name": "The Road Not Taken.jpg"
+	  },
+	  {
+		"url": "https://drive.google.com/file/d/1QZz5jo7xM_Dq3lStrA1Pj4oD4IbipdgT/view?usp=drive_link",
+		"name": "The Swan Song.pdf"
+	  },
+	  {
+		"url": "https://drive.google.com/file/d/11G2T5vDjdYaNb9chr2WW6A4sg6yN1wLt/view?usp=drive_link",
+		"name": "We are All Scientists.pdf"
+	  },
+	  {
+		"url": "https://drive.google.com/file/d/1tigPm6zWo94Ji8yppCpRYNzHJJ8hHHUX/view?usp=drive_link",
+		"name": "We are All Scientists.pdf"
+	  }
+	],
+	"ENGT105/Journal": [
+	  {
+		"url": "https://drive.google.com/file/d/1LX124UfTHR72bfvq54jdn6fyILacuDsy/view?usp=drive_link",
+		"name": "4. Week 5.pdf"
+	  },
+	  {
+		"url": "https://drive.google.com/file/d/1buY6DosPSbw-nOjYHQEG7BvKFmOgpg83/view?usp=drive_link",
+		"name": "4. Week 5.pdf"
+	  }
+	],
+	"ENGT105/Notes/Texts": [
+	  {
+		"url": "https://drive.google.com/file/d/1VZ_zjlDNnzwrX9C_uQ1PCmIvj57_R6i1/view?usp=drive_link",
+		"name": "The Burden of Skepticism.pdf"
+	  },
+	  {
+		"url": "https://drive.google.com/file/d/1KR9nbs4Bh4X_CZzWQdHoNxo6aUEmpA_r/view?usp=drive_link",
+		"name": "The Making of a Scientist.pdf"
+	  },
+	  {
+		"url": "https://drive.google.com/file/d/1a6U4QkOsSMra8QRSCF9BTkQabrH9U-iK/view?usp=drive_link",
+		"name": "The Myth of Sisyphus.pdf"
+	  },
+	  {
+		"url": "https://drive.google.com/file/d/1OzBmUycqiICyXcqs_g0QLtpIgL2L7Dii/view?usp=drive_link",
+		"name": "The Road Not Taken.pdf"
+	  },
+	  {
+		"url": "https://drive.google.com/file/d/1AjM1X2LH2A8rEjNf_2HTm0a1U1DChae0/view?usp=drive_link",
+		"name": "We Are All Scientists.pdf"
+	  }
+	],
+	"ENGG112/Assignment": [
+	  {
+		"url": "https://drive.google.com/file/d/1wPKKdYA2vVXfuBMqYt5NO1Rvk47qSzI3/view?usp=drive_link",
+		"name": "Solutions-Tutorial-8.pdf"
+	  },
+	  {
+		"url": "https://drive.google.com/file/d/1XYZH-_FihhqqQDz8Dg2kWSxshqMBK6ko/view?usp=drive_link",
+		"name": "solutions-Tutorial-7.pdf"
+	  },
+	  {
+		"url": "https://drive.google.com/file/d/1VQxlFacBwUrEXKEgmTEyu7PsFIbx__63/view?usp=drive_link",
+		"name": "solutions-Tutorial4.pdf"
+	  },
+	  {
+		"url": "https://drive.google.com/file/d/1VOoedOnqs2wj921dh3Rsx_xl4yXoVVFz/view?usp=drive_link",
+		"name": "solutions-Tutorial5.pdf"
+	  }
+	],
+	"ENGG112/Notes/1. DC Circuit": [
+	  {
+		"url": "https://drive.google.com/file/d/16OwISbn7H-xIf2QixgdRA6gA7HnvFSOi/view?usp=drive_link",
+		"name": "3. DC Notes.pdf"
+	  },
+	  {
+		"url": "https://drive.google.com/file/d/10Jkgzu4LgECQcyXOAF8QgNGb5p4K4VjV/view?usp=drive_link",
+		"name": "6. DC Notes.pdf"
+	  },
+	  {
+		"url": "https://drive.google.com/file/d/1li2nGynOS4gtmFdNKqe-ZOsfmhRKDsER/view?usp=drive_link",
+		"name": "7. DC Notes.pdf"
+	  }
+	],
+	"ENGG112/Notes/4. DC Machines": [
+	  {
+		"url": "https://drive.google.com/file/d/1_e3erT2E3JLCwbiAtvhysNmIILLSTa1q/view?usp=drive_link",
+		"name": "4. DC Machines.pdf"
+	  }
+	],
+	"ENGG112/Numericals/1. DC Circuits": [
+	  {
+		"url": "https://drive.google.com/file/d/1Hib4JwMA1h8sOHyvzZTBKx2DR5SU9Wnj/view?usp=drive_link",
+		"name": "1. DC numericals.pdf"
+	  },
+	  {
+		"url": "https://drive.google.com/file/d/1Df6qQprfPn-li1pbm5mmsKnFYIxiqOph/view?usp=drive_link",
+		"name": "4. DC Numericals.pdf"
+	  }
+	],
+	"COMP102/Slides/COMP 102 _ 2022/COMP103": [
+	  {
+		"url": "https://drive.google.com/file/d/1bnM7jq8PT032EDE7R37xhVIyjQn4qkwN/view?usp=drive_link",
+		"name": "COMP 103.pdf"
+	  },
+	  {
+		"url": "https://drive.google.com/file/d/1b8XapWvSdnBKLO1UC8YZVh1LCwTiZuF4/view?usp=drive_link",
+		"name": "Chapter 1 [Compatibility Mode].pdf"
+	  },
+	  {
+		"url": "https://drive.google.com/file/d/1ol7FLon2o_O77i7-ny_3pgOfYKJwHcEg/view?usp=drive_link",
+		"name": "Chapter 2 [Compatibility Mode].pdf"
+	  },
+	  {
+		"url": "https://drive.google.com/file/d/1E2OvjeoR1yQTeuUYmgLnMxUmIlslaaGG/view?usp=drive_link",
+		"name": "Chapter 3 [Compatibility Mode].pdf"
+	  },
+	  {
+		"url": "https://drive.google.com/file/d/17CRzRvNIvEAfQbjnDLw59K0bYTLX9TP4/view?usp=drive_link",
+		"name": "Chapter 4 [Compatibility Mode].pdf"
+	  },
+	  {
+		"url": "https://drive.google.com/file/d/18ZUasivxBlsXL10jfYmOMAI00nAPYtAU/view?usp=drive_link",
+		"name": "Chapter 5 [Compatibility Mode].pdf"
+	  },
+	  {
+		"url": "https://drive.google.com/file/d/1PYjkPZDvVPE1mHqGxPjn9B-vy0c6DuV-/view?usp=drive_link",
+		"name": "Copy of l7-pointers.pdf"
+	  },
+	  {
+		"url": "https://drive.google.com/file/d/1_ur24ZUiigHAVkKUm-7F5F1p0CxuBNWP/view?usp=drive_link",
+		"name": "Pointers [Compatibility Mode].pdf"
+	  },
+	  {
+		"url": "https://drive.google.com/file/d/1hJSjG383_9Kwxrv-TJuOUcmmLz-FkDFY/view?usp=drive_link",
+		"name": "Storage Class.pdf"
+	  }
+	],
+	"COMP102/Slides/COMP 102 _ 2022": [
+	  {
+		"url": "https://drive.google.com/file/d/1qgURFf-FPZtVXsA1Q3VJJVloZ8i9ULoB/view?usp=drive_link",
+		"name": "COMP 102 Syllabus.pdf"
+	  },
+	  {
+		"url": "https://drive.google.com/file/d/1LpvOCKR72tCb5O-bIqgoprwAIAp_meNK/view?usp=drive_link",
+		"name": "COMP 102_Syllabus (1).pdf"
+	  },
+	  {
+		"url": "https://drive.google.com/file/d/1zn5mrSS8tjVImOzCsNlGkojNUfgdIryN/view?usp=drive_link",
+		"name": "COMP102CE_2023 - Sheet5.pdf"
+	  },
+	  {
+		"url": "https://drive.google.com/file/d/1QL_7eZ4XrHrPOn-CtYeWgWgmIulIZ53t/view?usp=drive_link",
+		"name": "COMP102_Assignment I (1).pdf"
+	  },
+	  {
+		"url": "https://drive.google.com/file/d/1ziMrQx_XawdpHgktu989YRcJIvkNmFju/view?usp=drive_link",
+		"name": "Chapter1.pdf"
+	  },
+	  {
+		"url": "https://drive.google.com/file/d/1vG0GzHJDT0VVzLvTGbXbzV1gUxRStGgg/view?usp=drive_link",
+		"name": "Lecture Array.pdf"
+	  },
+	  {
+		"url": "https://drive.google.com/file/d/1yFz1ppGzECSAF50iAKvRpNGLgiu2mSR8/view?usp=drive_link",
+		"name": "Lecture5 comp102_Control Statement.pdf"
+	  },
+	  {
+		"url": "https://drive.google.com/file/d/1tjrfY1XB5VOU_YUDgls9vpnw5Ylm09Mn/view?usp=drive_link",
+		"name": "comp 102 lecture 7 Function.pdf"
+	  },
+	  {
+		"url": "https://drive.google.com/file/d/1XWk5n5ynyYh9LaPgvUTfj9Fff6jJu2Sd/view?usp=drive_link",
+		"name": "lecture 1 Comp102.pdf"
+	  },
+	  {
+		"url": "https://drive.google.com/file/d/1PMsGt6DwBeyn7Dyb7-F489S5BwHj1qI0/view?usp=drive_link",
+		"name": "lecture 2 Comp102.pdf"
+	  },
+	  {
+		"url": "https://drive.google.com/file/d/1soxd9IxoN9R3e4HgIgE23m7oBqmA8kDE/view?usp=drive_link",
+		"name": "lecture 3 Comp102.pdf"
+	  },
+	  {
+		"url": "https://drive.google.com/file/d/18IOfqtx4934jaqfIysKv3VCT30r67fVf/view?usp=drive_link",
+		"name": "lecture 6_Loops.pdf"
+	  },
+	  {
+		"url": "https://drive.google.com/file/d/1OKRb3FMsPFw6233ubQRiKeTVJGPIc1z6/view?usp=drive_link",
+		"name": "lecture5-Array_revised.pdf"
+	  },
+	  {
+		"url": "https://drive.google.com/file/d/1jF9Z0Yg4uHzhFNR1sMV1LKyVznRlMGRR/view?usp=drive_link",
+		"name": "lecture6_function_revised.pdf"
+	  }
+	],
+	"COMP102/Report": [
+	  {
+		"url": "https://drive.google.com/file/d/1tMQrQFaMNbxJQ0alyMAzRAoD-2rCwg91/view?usp=drive_link",
+		"name": "5. Lab Report.pdf"
+	  },
+	  {
+		"url": "https://drive.google.com/file/d/11EerXiw1IlxszEZxbkt4ZbuykGhYlIDD/view?usp=drive_link",
+		"name": "Extra Report 1.pdf"
+	  }
+	],
+	"COMP102/Notes": [
+	  {
+		"url": "https://drive.google.com/file/d/1auZq0lkfagti1-Y8hXHdeK-mMu_jQ7i0/view?usp=drive_link",
+		"name": "10. Structures in C.pdf"
+	  },
+	  {
+		"url": "https://drive.google.com/file/d/19YrU_bpMUdtE9ond8fC7iCq0a0xu_PlM/view?usp=drive_link",
+		"name": "5. c. Break,continue and goto.pdf"
+	  },
+	  {
+		"url": "https://drive.google.com/file/d/1NgX5__1lixBQzZ5-h5W-2M1ARWvt_Mmr/view?usp=drive_link",
+		"name": "7. Storage Class.pdf"
+	  }
+	],
+	"COMP102/Assignment": [
+	  {
+		"url": "https://drive.google.com/file/d/1B9luNG_L5hnjXx6hRobYyaFSNYZv4RDS/view?usp=drive_link",
+		"name": "2. Branching, looping.pdf"
+	  },
+	  {
+		"url": "https://drive.google.com/file/d/1mjvhlbkgWJNuLT1WQEqpMDlWp8gVeUdE/view?usp=drive_link",
+		"name": "3. Functions.pdf"
+	  },
+	  {
+		"url": "https://drive.google.com/file/d/1AxX6JES95pVmF1cEQhw6KukTLGGuJ08V/view?usp=drive_link",
+		"name": "4. Array.pdf"
+	  },
+	  {
+		"url": "https://drive.google.com/file/d/1Z6w1CNANcabqLT10lERfa9U9AVz6VTD-/view?usp=drive_link",
+		"name": "5. Structure and Pointers.pdf"
+	  }
+	],
+	"MATHS101/1. Chapter 1_Functions, Limit and Continuity": [
+	  {
+		"url": "https://drive.google.com/file/d/1eSQxX2cbWsm5wue5sJCpMXFr4RCBBcIW/view?usp=drive_link",
+		"name": "4. Discontinutiy.pdf"
+	  }
+	],
+	"MATHS101/Assignment": [
+	  {
+		"url": "https://drive.google.com/file/d/1VgWeNHbReF7XwH15A__UaZ_PXwjP51jG/view?usp=drive_link",
+		"name": "1. Assignment no.1.pdf"
+	  },
+	  {
+		"url": "https://drive.google.com/file/d/1lpnkbBZvTCr2KS5QKDgzX_3W6qU8LmKJ/view?usp=drive_link",
+		"name": "2. Assignment No 2.pdf"
+	  },
+	  {
+		"url": "https://drive.google.com/file/d/1up1V7rUodJeJkcRlddavb9kZRfLzHSpj/view?usp=drive_link",
+		"name": "3. Assignment 3.pdf"
+	  },
+	  {
+		"url": "https://drive.google.com/file/d/1CTwnUCF9TtGyI1qBxOLr181uizKcvJe5/view?usp=drive_link",
+		"name": "4. Assignment 4.pdf"
+	  }
+	],
+	"MATHS101/8. Ch8_ Vector Space and Linear Transformation": [
+	  {
+		"url": "https://drive.google.com/file/d/1b_d-JdA84-Ld0un6rzgINKzKG4vGtOiD/view?usp=drive_link",
+		"name": "1. Vector eqn and Linear Combinations.pdf"
+	  },
+	  {
+		"url": "https://drive.google.com/file/d/1qixhVrhnv6KD2bTjporJc5D68ZtxV4kg/view?usp=drive_link",
+		"name": "2. Span.pdf"
+	  },
+	  {
+		"url": "https://drive.google.com/file/d/1qRQLwRdasvy5OHhTfIoazsT_Ebc-qZBj/view?usp=drive_link",
+		"name": "3. Linear Dependent and Independent.pdf"
+	  },
+	  {
+		"url": "https://drive.google.com/file/d/1TJ3sRUSVdTfgiGzLN0pezH-7fvDp3E8C/view?usp=drive_link",
+		"name": "4. Subspace.pdf"
+	  },
+	  {
+		"url": "https://drive.google.com/file/d/1i20h_eFk6I-DpSeoGj61inEDFSrgOJtK/view?usp=drive_link",
+		"name": "5. Column Space.pdf"
+	  },
+	  {
+		"url": "https://drive.google.com/file/d/13tCY16u2NQ-AcsdfMIYHY6XAcJS-E9iY/view?usp=drive_link",
+		"name": "6. Null space.pdf"
+	  },
+	  {
+		"url": "https://drive.google.com/file/d/1S-SUiW4kgmu_dI2g_g_SbdIH7rQwDuEa/view?usp=drive_link",
+		"name": "7. Basis Vectors.pdf"
+	  },
+	  {
+		"url": "https://drive.google.com/file/d/1uNHrAlEfQ_y0Y2h4OYD-JhU16DF-OKXX/view?usp=drive_link",
+		"name": "8. Dimensions, Rank, Nullity.pdf"
+	  },
+	  {
+		"url": "https://drive.google.com/file/d/1wUgkq1IIIW47Qg2jWcdwapOxZELMPagj/view?usp=drive_link",
+		"name": "9. Linear Transformation.pdf"
+	  }
+	],
+	"MATHS101/4. Chapter 4_ Integration": [
+	  {
+		"url": "https://drive.google.com/file/d/1I4fLC0zWQCgpx5NlwpYS0FpbZ4wfveAO/view?usp=drive_link",
+		"name": "4. Integration.pdf"
+	  }
+	],
+	"MATHS101/6. Chapter 6_ Sequence and Series/Proper notes": [
+	  {
+		"url": "https://drive.google.com/file/d/1V-FpwaC37ODLRyvvjfsi_4tzzM5FZV1o/view?usp=drive_link",
+		"name": "2. Infinite series, Partial Sums, Infinite Geometric Series.pdf"
+	  },
+	  {
+		"url": "https://drive.google.com/file/d/1vaaNEfX8ZzHqjTMIAPP1Ope3WtJnLXw8/view?usp=drive_link",
+		"name": "3. nth term test for divergence.pdf"
+	  },
+	  {
+		"url": "https://drive.google.com/file/d/15c16LyYqzMN0gACTuXFHhtYBRFaZAYPR/view?usp=drive_link",
+		"name": "4. Integral test.pdf"
+	  },
+	  {
+		"url": "https://drive.google.com/file/d/1VQRqNaBDQVhHsSdyYebcSfzuddp9aDst/view?usp=drive_link",
+		"name": "5. Ratio and Root test.pdf"
+	  }
+	],
+	"MATHS101/6. Chapter 6_ Sequence and Series": [
+	  {
+		"url": "https://drive.google.com/file/d/1V1-DdhmNM6wpvVgr4zKmXdqUpwUmyY5b/view?usp=drive_link",
+		"name": "6. Sequence and Series.pdf"
+	  }
+	],
+	"MATHS101/7. Ch7_ System of Linear equations": [
+	  {
+		"url": "https://drive.google.com/file/d/1b3QLXfvnetor54cAXZYX533ME_2uc4pl/view?usp=drive_link",
+		"name": "7. System of Linear Equations.pdf"
+	  }
+	],
+	"MATHS101/5. Chapter 5_ Application of definite integrals": [
+	  {
+		"url": "https://drive.google.com/file/d/1bVE0vJF66odCuaU5C3nDzMMHqkQ1kcm_/view?usp=drive_link",
+		"name": "5. Application of Integration.pdf"
+	  }
+	],
+	"MATHS101/9. Ch9_ Eigen-values,vectors,space": [
+	  {
+		"url": "https://drive.google.com/file/d/18sXIg-sMqZg164dSO73KVHfKmLJSDErD/view?usp=drive_link",
+		"name": "Eigen.pdf"
+	  }
+	],
+	"ENGG111/Slides/Survey": [
+	  {
+		"url": "https://drive.google.com/file/d/1S1YWRJ7CEIPQMmI3Jjs-YTwwpFSvOZI_/view?usp=drive_link",
+		"name": "Screen Shot 2023-06-08 at 8.33.07 PM.png"
+	  }
+	],
+	"ENGG111/Slides/Mechanics": [
+	  {
+		"url": "https://drive.google.com/file/d/1OgTE3Lp0EZP9PlHYbgifuj2TsRHg2e7o/view?usp=drive_link",
+		"name": "Assignment (Engineering Mechanics) (1).pdf"
+	  },
+	  {
+		"url": "https://drive.google.com/file/d/1vBvGiuk2wTxK12YLP2mF4T-dVAxtC1ea/view?usp=drive_link",
+		"name": "Assignment (Fluid).pdf"
+	  },
+	  {
+		"url": "https://drive.google.com/file/d/12QBNIF5FUlE05NAtjN2VN1AIO8YRgQ-A/view?usp=drive_link",
+		"name": "Assignment (Thermodynamics).pdf"
+	  }
+	],
+	"CHEM101/Slides": [
+	  {
+		"url": "https://drive.google.com/file/d/1AzH-soaVK511dQriOiGGKSydWEB5x5dk/view?usp=drive_link",
+		"name": "CHem101_Assignment_Mole Concept.docx"
+	  }
+	],
+	"PHYS101_Practicals": [
+	  {
+		"url": "https://drive.google.com/file/d/1SXEXYBnjWDhj_a93z4AZ4y_Cs-qz2jka/view?usp=drive_link",
+		"name": "1. Compound pendulum.pdf"
+	  },
+	  {
+		"url": "https://drive.google.com/file/d/1PJfIsw5KTdU_cuqX-1lkdEziRfHtPZ-x/view?usp=drive_link",
+		"name": "2. Newtons ring.pdf"
+	  },
+	  {
+		"url": "https://drive.google.com/file/d/1J6puahVeoUx6hxg2Jgd3HbM-xR8tPYRp/view?usp=drive_link",
+		"name": "3. Youngs Modulus.pdf"
+	  },
+	  {
+		"url": "https://drive.google.com/file/d/10hp93Y8pb1UvrLPwzs6SmDRhq7DOCxbi/view?usp=drive_link",
+		"name": "4. Refractive Index.pdf"
+	  },
+	  {
+		"url": "https://drive.google.com/file/d/1MfqHjVCLb3IweeIiXX3nDNwReZBoEDkr/view?usp=drive_link",
+		"name": "5. Coefficient of Viscocity.pdf"
+	  },
+	  {
+		"url": "https://drive.google.com/file/d/16D_Pl9ubC0hcOPLghGSfr4LS95e3lITD/view?usp=drive_link",
+		"name": "6. Wavelength by Diffraction Grating.pdf"
+	  },
+	  {
+		"url": "https://drive.google.com/file/d/1Br4LTstL4AAZ5LDhS5pZ1PhUR12rLdAB/view?usp=drive_link",
+		"name": "7. Lee_s Apparatus.pdf"
+	  },
+	  {
+		"url": "https://drive.google.com/file/d/1rsN3ULhexe1s3FrwwFO9Mwlp108FdYRo/view?usp=drive_link",
+		"name": "8. Polarimeter.pdf"
+	  }
+	],
+	"PHYS101/Ch10_ Heat Transfer/Assignment": [
+	  {
+		"url": "https://drive.google.com/file/d/1UgMikXGEHsxPdqNm_QsPA-pBh6KTJbWL/view?usp=drive_link",
+		"name": "Heat Transfer Numericals.pdf"
+	  }
+	],
+	"PHYS101/Ch7_ Diffraction/Assignment": [
+	  {
+		"url": "https://drive.google.com/file/d/1rQ4sEnfOhUlopQ-J8xzX5eMZt7bVWdvC/view?usp=drive_link",
+		"name": "Diffraction.pdf"
+	  }
+	],
+	"PHYS101/Ch4_ Elasticity/Assignment": [
+	  {
+		"url": "https://drive.google.com/file/d/13WbX3d51NtDudg50RCoCD7VM_MGhSZIG/view?usp=drive_link",
+		"name": "Elasticitiy.pdf"
+	  }
+	],
+	"PHYS101/Ch9_ LASER": [
+	  {
+		"url": "https://drive.google.com/file/d/1NI09z-tSNp2YiNUlk8fbyh_HrJKAuML9/view?usp=drive_link",
+		"name": "LASER.pdf"
+	  }
+	],
+	"PHYS101/Ch5_ Viscocity/Assignment": [
+	  {
+		"url": "https://drive.google.com/file/d/1nj_fR8GtMDEMA7w5jUWteI0P3Moc-Utu/view?usp=drive_link",
+		"name": "Viscocityy.pdf"
+	  }
+	],
+	"PHYS101/Ch8_ Polarization/Assignmemt": [
+	  {
+		"url": "https://drive.google.com/file/d/1ubFLbJZEi189oAWu2D0a5s2I_1JmRFBX/view?usp=drive_link",
+		"name": "polarization numericals.pdf"
+	  }
+	],
+	"PHYS101/Slides [Ganesh sir]": [
+	  {
+		"url": "https://drive.google.com/file/d/17Vmm2WcDmBUsWDZtTYNhejJP13AT3OXK/view?usp=drive_link",
+		"name": "Heat Transfer.pdf"
+	  },
+	  {
+		"url": "https://drive.google.com/file/d/1fnaYffrKM-pRq_Yndzz5vh7mNPQh3Kgl/view?usp=drive_link",
+		"name": "LASER.pdf"
+	  },
+	  {
+		"url": "https://drive.google.com/file/d/1dGAC8PqW1HP5PZhCk4hCi7WgIz9Ej0g4/view?usp=drive_link",
+		"name": "Lecture  2  Dynamics of System of Particles 22.pdf"
+	  },
+	  {
+		"url": "https://drive.google.com/file/d/1kD90w8hm6LZzKNwMj_e4WNeE4IVrPQJu/view?usp=drive_link",
+		"name": "Lecture 1 Dynamics of System of Particles.pdf"
+	  },
+	  {
+		"url": "https://drive.google.com/file/d/1yPTJxDBE_O_vCLwUDE0gOWF6ylblizTZ/view?usp=drive_link",
+		"name": "Lecture 3  Dynamics of System of Particles  -CE, CIVIL -Final- (2).pdf"
+	  },
+	  {
+		"url": "https://drive.google.com/file/d/19zrZPnef9vu924JYdBFzsL4RdrnnfGAB/view?usp=drive_link",
+		"name": "Lecture on Diffraction -Modified-.pdf"
+	  },
+	  {
+		"url": "https://drive.google.com/file/d/1UxYoo6c-lvzHlIB35XWcKd4hhMvL0On7/view?usp=drive_link",
+		"name": "Lecture on Elasticity.pdf"
+	  },
+	  {
+		"url": "https://drive.google.com/file/d/1equSqkV0vCntjSXoWkdT7uRgf4YbXjke/view?usp=drive_link",
+		"name": "Lecture on Interference.pdf"
+	  },
+	  {
+		"url": "https://drive.google.com/file/d/1UY2l6eRawHyZVmou8m2N-dR3IPoa-Ls4/view?usp=drive_link",
+		"name": "Lecture on Viscosity.pdf"
+	  },
+	  {
+		"url": "https://drive.google.com/file/d/1nUMMNSgZsEXCZkK0OT8njWhJs_P9kzaG/view?usp=drive_link",
+		"name": "Polarization.pdf"
+	  },
+	  {
+		"url": "https://drive.google.com/file/d/1A1ZHOh3iWyqgVapFQs9q1TeUdqSgM8bj/view?usp=drive_link",
+		"name": "Rotational Dynamics PDF.pdf"
+	  },
+	  {
+		"url": "https://drive.google.com/file/d/1PIk_Gd_E0_Oh0UWmGMdTSyr5_1YAP9JL/view?usp=drive_link",
+		"name": "Wave and Oscillation.pdf"
+	  }
+	],
+	"PHYS101/Ch2_ Rotational Dynamics/Notes": [
+	  {
+		"url": "https://drive.google.com/file/d/19ic7dMT9Mq2tt18gmCEgZpL_UbTLuQTi/view?usp=drive_link",
+		"name": "3. Till MI of sphere.pdf"
+	  }
+	],
+	"PHYS101/Ch2_ Rotational Dynamics/Assignmemt": [
+	  {
+		"url": "https://drive.google.com/file/d/1jiks6_EqE49vVzzQfMECuklfn2N2VIht/view?usp=drive_link",
+		"name": "1. Rotational Dynamics Assignment.pdf"
+	  }
+	],
+	"PHYS101/Slides [Keshav Sir]": [
+	  {
+		"url": "https://drive.google.com/file/d/1MIvHbSPbint6gybvebBcPx3GaoWNDwXP/view?usp=drive_link",
+		"name": "Assignment_PHYS101.pdf"
+	  },
+	  {
+		"url": "https://drive.google.com/file/d/1YMsmZjh3GqIR9PFMhBN52PJoXAaAk9dy/view?usp=drive_link",
+		"name": "PHYS101Lecture04.pdf"
+	  },
+	  {
+		"url": "https://drive.google.com/file/d/1dE0J0-ad8MGnFBi5YJKGR-29CjH9Il3g/view?usp=drive_link",
+		"name": "PHYS101Lecture05.pdf"
+	  },
+	  {
+		"url": "https://drive.google.com/file/d/1IVuMtZYDAUwzW2qXdRKf6hLu4k4b-y7f/view?usp=drive_link",
+		"name": "PHYS101Lecture06.pdf"
+	  },
+	  {
+		"url": "https://drive.google.com/file/d/1MZ6Hk6vrQQuoMgu6wAT-JRBsLRF637KA/view?usp=drive_link",
+		"name": "PHYS101Lecture07.pdf"
+	  },
+	  {
+		"url": "https://drive.google.com/file/d/1a5I1KPhjdKPmN9CDt-0xc7w_cNjNgHe8/view?usp=drive_link",
+		"name": "PHYS101Lecture08.pdf"
+	  },
+	  {
+		"url": "https://drive.google.com/file/d/1Y3aUYA_Qwtur-l7kQ4jduOEdA3881bHa/view?usp=drive_link",
+		"name": "PHYS101Lecture09.pdf"
+	  },
+	  {
+		"url": "https://drive.google.com/file/d/1j4zvIPUUcWi1EdIuU1dMVdeWyj6XtbBE/view?usp=drive_link",
+		"name": "PHYS101Lecture10.pdf"
+	  },
+	  {
+		"url": "https://drive.google.com/file/d/1RnJsX9LzD48MHchca0Tg9n9vNffqPY9c/view?usp=drive_link",
+		"name": "PHYS101Lecture11.pdf"
+	  },
+	  {
+		"url": "https://drive.google.com/file/d/1G32RxjyH4gcmrsOKhA84F_igzWwPBpmw/view?usp=drive_link",
+		"name": "PHYS101Lecture12.pdf"
+	  },
+	  {
+		"url": "https://drive.google.com/file/d/1uCyDN3J2avx_Dh30YpQZkX3LdHAAgTK_/view?usp=drive_link",
+		"name": "PHYS101Lecture13.pdf"
+	  },
+	  {
+		"url": "https://drive.google.com/file/d/1xkzyEpovB2h9OflEf0c-Ox2eMtVCto3I/view?usp=drive_link",
+		"name": "PHYS101Lecture14.pdf"
+	  },
+	  {
+		"url": "https://drive.google.com/file/d/15SgWGkrU1ZYmQlQvqCGb0UNVrZQIVqIw/view?usp=drive_link",
+		"name": "PHYS101Lecture15.pdf"
+	  },
+	  {
+		"url": "https://drive.google.com/file/d/1dXljrv4YlwUeXE-nPFbXrV3spML03NQy/view?usp=drive_link",
+		"name": "PHYS101Lecture16.pdf"
+	  },
+	  {
+		"url": "https://drive.google.com/file/d/1mDB2CA3_J1SGaFxMw6Uq3V4dVyewKSt7/view?usp=drive_link",
+		"name": "PHYS101Lecture17.pdf"
+	  },
+	  {
+		"url": "https://drive.google.com/file/d/1hraVl3pmOI0e4tpp3z9ENMrhlhZwZv1i/view?usp=drive_link",
+		"name": "PHYS101Lecture18.pdf"
+	  },
+	  {
+		"url": "https://drive.google.com/file/d/1I5ZbFnzpbFMN18XdigwV_uILHEow2zE0/view?usp=drive_link",
+		"name": "PHYS101Lecture19.pdf"
+	  },
+	  {
+		"url": "https://drive.google.com/file/d/1XPQibMzekRvSdMc5u3RjJSK4buX4jq9Y/view?usp=drive_link",
+		"name": "PHYS101Lecture20.pdf"
+	  },
+	  {
+		"url": "https://drive.google.com/file/d/16UouUG4omM_ao9IvPCnqjxGlNToxqevi/view?usp=drive_link",
+		"name": "PHYS101Lecture21.pdf"
+	  },
+	  {
+		"url": "https://drive.google.com/file/d/1iFqTf7-mkKqWkhQVAw1Ny99ept47eARS/view?usp=drive_link",
+		"name": "PHYS101Lecture22.pdf"
+	  },
+	  {
+		"url": "https://drive.google.com/file/d/1PFWCHrxWVLgjwxCBCaz1IdKMnYehWSNv/view?usp=drive_link",
+		"name": "PHYS101_Lecture01.pdf"
+	  },
+	  {
+		"url": "https://drive.google.com/file/d/13ITNwpxj9UHI4NeyoBQ2cR7j73SKktMx/view?usp=drive_link",
+		"name": "PHYS101_Lecture02.pdf"
+	  },
+	  {
+		"url": "https://drive.google.com/file/d/16tJUP5UQu3H1bTs0bXTetJ1wMfjJ0q8d/view?usp=drive_link",
+		"name": "PHYS101_Lecture03.pdf"
+	  },
+	  {
+		"url": "https://drive.google.com/file/d/1p9bbm6j_uy5hvNMbJoXY8hyYlOxg23im/view?usp=drive_link",
+		"name": "Syllabus_PHYS_101.pdf"
+	  }
+	],
+	"PHYS101/Ch3_ Waves and Oscillation/Assignment": [
+	  {
+		"url": "https://drive.google.com/file/d/15IccmcQ1Kcae-6hN5M0oWxmeODZG3Kf5/view?usp=drive_link",
+		"name": "3. Waves and Oscillation Numericals.pdf"
+	  }
+	],
+	"ENGG101": [
+	  {
+		"url": "https://drive.google.com/file/d/13Yfjxu6dTsaJITp9ljrdzNbUi47LiS9L/view?usp=drive_link",
+		"name": "Things to include in report.pdf"
+	  }
+	],
+	"EDRG101": [
+	  {
+		"url": "https://drive.google.com/file/d/1j9Uv26Fl8anwSRnPT6SGhxWpd54imulE/view?usp=drive_link",
+		"name": "EDRG 101 & 102.pdf"
+	  }
+	]
+  }

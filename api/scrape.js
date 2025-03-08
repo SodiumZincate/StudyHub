@@ -1,6 +1,7 @@
 const puppeteer = require('puppeteer-core');
 const chromium = require('@sparticuz/chromium');
 const { MongoClient } = require('mongodb');
+require('dotenv').config(); // Load environment variables
 
 async function scrapeNotices() {
   try {

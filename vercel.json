@@ -44,6 +44,10 @@
 		"dest": "/api/notices.js"
 	  },
 	  {
+		"src": "/api/resources",
+		"dest": "/api/resources.js"
+	  },
+	  {
 		"src": "/api/directories(.*)",
 		"dest": "/api/server.js"
 	  },
