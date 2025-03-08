@@ -49,7 +49,7 @@
 	  },
 	  {
 		"src": "/api/directories(.*)",
-		"dest": "/api/server.js"
+		"dest": "/api/directories.js"
 	  },
 	  {
 		"src": "/(.*)",
