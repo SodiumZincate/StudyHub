@@ -33,7 +33,7 @@
 }
 
 .back-button .bbutton {
-    background-color: #4a90e2; /* Light blue */
+    background-color: rgb(200, 200, 200); /* Light blue */
     color: white;
     border: none;
     padding: 8px 12px;
@@ -43,7 +43,7 @@
 }
 
 .back-button .bbutton:hover {
-    background-color: #377ac3;
+    background-color: rgb(200, 200, 200);
 }
 
 .main-section-1 {
@@ -134,52 +134,6 @@
 
 .file-item .action-btn:hover {
     background-color: #377ac3;
-}
-
-/* Header navigation */
-.header {
-    background-color: rgb(40, 40, 40);
-    color: white;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 15px 30px;
-}
-
-.header-logo {
-    font-size: 24px;
-    font-weight: bold;
-    color: white;
-}
-
-.header-menus {
-    display: flex;
-    gap: 20px;
-}
-
-.menus a {
-    text-decoration: none;
-    color: #ddd;
-    font-weight: 500;
-    transition: color 0.2s;
-}
-
-.menus a:hover {
-    color: #90caf9;
-}
-
-/* Footer */
-footer {
-    text-align: center;
-    padding: 15px;
-    background-color: rgb(40, 40, 40);
-    color: #ccc;
-    font-size: 14px;
-}
-
-.copyright {
-    margin: 0;
-    color: #bbb;
 }
 
 /* Responsive tweaks */

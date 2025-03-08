@@ -139,53 +139,6 @@
     background-color: #082748;  /* Darker blue on hover */
 }
 
-/* Header navigation */
-.header {
-    background-color: #ffffff;  /* White background */
-    color: #133b66;  /* Dark blue text */
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 15px 30px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-}
-
-.header-logo {
-    font-size: 24px;
-    font-weight: bold;
-    color: #133b66;  /* Dark blue logo */
-}
-
-.header-menus {
-    display: flex;
-    gap: 20px;
-}
-
-.menus a {
-    text-decoration: none;
-    color: #133b66;  /* Dark blue text */
-    font-weight: 500;
-    transition: color 0.2s;
-}
-
-.menus a:hover {
-    color: #4a90e2;  /* Light blue on hover */
-}
-
-/* Footer */
-footer {
-    text-align: center;
-    padding: 15px;
-    background-color: #ffffff;  /* White background */
-    color: #777;
-    font-size: 14px;
-}
-
-.copyright {
-    margin: 0;
-    color: #bbb;
-}
-
 /* Responsive tweaks */
 @media (max-width: 1100px) {
     .main-section {
