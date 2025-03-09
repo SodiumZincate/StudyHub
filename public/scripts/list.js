@@ -1,18 +1,16 @@
-let directoryLinks = {}; // Initialize an empty object to hold the directory links
+let directoryLinks = {};
 
-// Load directory links from MongoDB via API
+// Load directory links from MongoDB
 fetch('/api/fetch/resources')
   .then(response => response.json())
   .then(data => {
-    // Populate the directoryLinks object with the data from MongoDB
     directoryLinks = data;
 	if (Array.isArray(directoryLinks)) {
 		console.log("directoryLinks is an array! Converting...");
 		
 		// Convert array into an object where keys are the paths
-		directoryLinks = directoryLinks[0];  // Assuming the object is inside the first element
+		directoryLinks = directoryLinks[0];
 	}		
-    console.log('Loaded directory links:', directoryLinks); // Log the loaded links for debugging
   })
   .catch(error => {
     console.error('Error loading directory links from MongoDB:', error);
@@ -26,44 +24,32 @@ let currentPathStr = '';
 function fetchDirectories(semester, path) {
 	let url = `/api/directories?semester=${semester}`;
 	if (path.length > 0) {
-	  url += `&directory=${path.join('/')}`; // Append the current path to the API call
+	  url += `&directory=${path.join('/')}`;
 	}
   
 	// Show loading state while fetching directories
 	const fileListDiv = document.getElementById('file-list');
-	fileListDiv.innerHTML = '<div class="loading">Loading...</div>'; // Loading message
-  
-	console.log('Fetching directories for path:', path); // Log the current path
-  
+	fileListDiv.innerHTML = '<div class="loading">Loading...</div>';
+    
 	fetch(url)
 	  .then(response => response.json())
 	  .then(directories => {
-		console.log('API Response:', directories); // Log the response from the API
   
-		fileListDiv.innerHTML = ''; // Clear previous loading message
+		fileListDiv.innerHTML = '';
   
 		if (directories && directories.length > 0) {
 		  directories.forEach(directory => {
 			const directoryDiv = document.createElement('div');
 			directoryDiv.classList.add('directory');
 			directoryDiv.textContent = directory;
-  
-			// Add a pointer cursor for clickable directories
 			directoryDiv.style.cursor = 'pointer';
-  
-			// Highlight directories with subdirectories
-			directoryDiv.classList.toggle('has-subdirectories', directory.includes('/')); // Example: if the directory name has a '/' (could be adjusted)
-  
-			// Add click event to navigate into the subdirectory
+			directoryDiv.classList.toggle('has-subdirectories', directory.includes('/'));
 			directoryDiv.addEventListener('click', () => navigateToSubdirectory(directory));
   
-			// Append the directory div to the fileListDiv
 			fileListDiv.appendChild(directoryDiv);
 		  });
   
-		  // After the directories are appended, check for the link for this path
 		  currentPathStr = path.join('/');
-		  console.log('Checking for link at:', currentPathStr); // Log the current path being checked
   
 		  // Check if a link exists for the current directory path
 		  if (directoryLinks[currentPathStr]) {
@@ -75,12 +61,11 @@ function fetchDirectories(semester, path) {
   
 				const link = document.createElement('a');
 				link.href = linkInfo.url;
-				link.textContent = linkInfo.name; // Use custom name for the link
-				link.target = '_blank'; // Open in a new tab
+				link.textContent = linkInfo.name; // custom name
+				link.target = '_blank';
   
 				linkDiv.appendChild(link);
   
-				// Add the link below the directory structure
 				fileListDiv.appendChild(linkDiv);
 			  });
 			} else {
@@ -90,12 +75,11 @@ function fetchDirectories(semester, path) {
   
 			  const link = document.createElement('a');
 			  link.href = directoryLinks[currentPathStr].url;
-			  link.textContent = directoryLinks[currentPathStr].name; // Use custom name for the link
-			  link.target = '_blank'; // Open in a new tab
+			  link.textContent = directoryLinks[currentPathStr].name; // custom name
+			  link.target = '_blank';
   
 			  linkDiv.appendChild(link);
   
-			  // Add the link below the directory structure
 			  fileListDiv.appendChild(linkDiv);
 			}
 		  }
@@ -110,12 +94,11 @@ function fetchDirectories(semester, path) {
   
 				const link = document.createElement('a');
 				link.href = linkInfo.url;
-				link.textContent = linkInfo.name; // Use custom name for the link
-				link.target = '_blank'; // Open in a new tab
+				link.textContent = linkInfo.name; // custom name
+				link.target = '_blank';
   
 				linkDiv.appendChild(link);
   
-				// Add the link below the directory structure
 				fileListDiv.appendChild(linkDiv);
 			  });
 			} else {
@@ -125,12 +108,11 @@ function fetchDirectories(semester, path) {
   
 			  const link = document.createElement('a');
 			  link.href = directoryLinks[currentPathStr].url;
-			  link.textContent = directoryLinks[currentPathStr].name; // Use custom name for the link
-			  link.target = '_blank'; // Open in a new tab
+			  link.textContent = directoryLinks[currentPathStr].name; // custom name
+			  link.target = '_blank';
   
 			  linkDiv.appendChild(link);
   
-			  // Add the link below the directory structure
 			  fileListDiv.appendChild(linkDiv);
 			}
 		  } else {
@@ -146,17 +128,15 @@ function fetchDirectories(semester, path) {
 
 // Navigate to a subdirectory by adding it to the current path
 function navigateToSubdirectory(subdirectory) {
-  currentPath.push(subdirectory); // Add the subdirectory to the path
-  fetchDirectories(currentSemester, currentPath); // Fetch subdirectories
+  currentPath.push(subdirectory);
+  fetchDirectories(currentSemester, currentPath);
 
   // Now, check for the link related to the subdirectory after navigation
   currentPathStr = currentPath.join('/');
-  console.log('Checking for link at:', currentPathStr); // Log the current path being checked
 
-  // Get the fileListDiv where the directories are listed
   const fileListDiv = document.getElementById('file-list');
 
-  updatePageTitle(); // Update the title with the current path
+  updatePageTitle();
 }
 
 // Go back to the previous directory in the path
@@ -165,14 +145,14 @@ function goBack() {
     window.history.back();
   }
 
-  currentPath.pop(); // Remove the last directory in the path
+  currentPath.pop();
 
   // Temporarily display a loading state while fetching
   const fileListDiv = document.getElementById('file-list');
   fileListDiv.innerHTML = '<div class="loading">Loading...</div>';
 
-  fetchDirectories(currentSemester, currentPath); // Fetch directories for the parent directory
-  updatePageTitle(); // Update the page title
+  fetchDirectories(currentSemester, currentPath);
+  updatePageTitle();
 }
 
 // Update the page title to show the current path
@@ -187,5 +167,5 @@ function updatePageTitle() {
 
 if (currentSemester) {
   updatePageTitle();
-  fetchDirectories(currentSemester, []);  // Start from the root directory of the semester
+  fetchDirectories(currentSemester, []);
 }

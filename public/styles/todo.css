@@ -75,8 +75,6 @@
     width:65%;
 }
 
-/* javascript classes */
-
 .todo{
     background-color: var(--card-background);
     display:flex;

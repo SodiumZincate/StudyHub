@@ -13,7 +13,7 @@ const connectToDatabase = async () => {
         console.log("MongoDB connected successfully (Home Routes)");
     } catch (error) {
         console.error("MongoDB connection failed in home-route:", error);
-        process.exit(1); // Exit if DB fails
+        process.exit(1);
     }
 };
 
@@ -142,7 +142,6 @@ module.exports = async (req, res) => {
             case '/api/home/personal-details':
                 return personalDetailsForm(req, res);
             case '/api/home/user-data':
-                // Apply authenticateToken middleware
                 return authenticateToken(req, res, () => getUserData(req, res));
             case '/api/home/todo-list':
                 return authenticateToken(req, res, () => todoListPage(req, res));

@@ -7,7 +7,7 @@ require('dotenv').config();
 // Create User (POST)
 const createUser = async (req, res) => {
     const cookies = cookie.parse(req.headers.cookie || '');
-    const verifiedToken = cookies.verifiedToken;  // Parse cookies from the request headers
+    const verifiedToken = cookies.verifiedToken;
     if (!verifiedToken) {
         return res.status(200).json({
             error: "Verification expired.",
@@ -29,16 +29,16 @@ const createUser = async (req, res) => {
             res.setHeader('Set-Cookie', [
                 cookie.serialize('accessToken', accessToken, {
                     httpOnly: true,
-                    secure: process.env.NODE_ENV === 'production', // Only send over HTTPS in production
+                    secure: process.env.NODE_ENV === 'production',
                     sameSite: 'Strict',
-                    maxAge: 30 * 1000, // 30 seconds
+                    maxAge: 30 * 1000,
                     path: '/'
                 }),
                 cookie.serialize('refreshToken', refreshToken, {
                     httpOnly: true,
                     secure: process.env.NODE_ENV === 'production',
                     sameSite: 'Strict',
-                    maxAge: 7 * 24 * 60 * 60 * 1000, // 7 days
+                    maxAge: 7 * 24 * 60 * 60 * 1000,
                     path: '/'
                 })
             ]);
@@ -64,7 +64,7 @@ const refreshAccessToken = async (req, res) => {
             httpOnly: true,
             secure: process.env.NODE_ENV === 'production',
             sameSite: 'Strict',
-            maxAge: 30 * 1000, // 30 seconds
+            maxAge: 30 * 1000,
             path: '/'
         }));
 
@@ -72,7 +72,6 @@ const refreshAccessToken = async (req, res) => {
     });
 };
 
-// Export handler for Vercel
 module.exports = async (req, res) => {
 	await connectDB(process.env.MONGO_URI);
 

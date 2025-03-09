@@ -1,7 +1,7 @@
 const puppeteer = require('puppeteer-core');
 const chromium = require('@sparticuz/chromium');
 const { MongoClient } = require('mongodb');
-require('dotenv').config(); // Load environment variables
+require('dotenv').config();
 
 async function scrapeNotices() {
   try {
@@ -13,7 +13,7 @@ async function scrapeNotices() {
 
     const browser = await puppeteer.launch({
       args: chromium.args,
-      executablePath: executablePath || '/usr/bin/chromium-browser', // Fallback path
+      executablePath: executablePath || '/usr/bin/chromium-browser',
       headless: chromium.headless,
       ignoreHTTPSErrors: true,
       timeout: 30000 // 30 seconds timeout for launching Puppeteer
@@ -24,7 +24,7 @@ async function scrapeNotices() {
     const url = 'https://ku.edu.np/news-app?search_category=3&search_school=10&search_site_name=kuhome&show_on_home=0';
     console.log('Navigating to the URL:', url);
     
-    await page.goto(url, { waitUntil: 'networkidle2', timeout: 30000 }); // Wait for the page to load, with a timeout
+    await page.goto(url, { waitUntil: 'networkidle2', timeout: 30000 }); // timeout
     console.log('Page loaded successfully');
 
     const notices = await page.evaluate(() => {
@@ -47,7 +47,6 @@ async function scrapeNotices() {
 
     console.log(`Scraped ${notices.length} notices`);
 
-    // Ensure MongoDB URI is provided
     const uri = process.env.MONGO_URI;
     if (!uri) {
       throw new Error('MongoDB URI is missing!');
@@ -61,11 +60,11 @@ async function scrapeNotices() {
     const collection = db.collection('notices');
     
     // Clear the collection and insert only the latest 10 notices
-    await collection.deleteMany({});  // Delete all documents to overwrite
+    await collection.deleteMany({});
     console.log('Existing notices deleted from MongoDB');
 
-    // Insert the scraped notices into MongoDB (only 10 notices)
-    await collection.insertMany(notices.slice(0, 10));  // Insert only the first 10 notices
+    // Insert the scraped notices into MongoDB
+    await collection.insertMany(notices.slice(0, 10));
     console.log('Notices inserted into MongoDB');
 
     await browser.close();

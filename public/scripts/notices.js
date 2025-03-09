@@ -1,12 +1,11 @@
 document.addEventListener("DOMContentLoaded", async function () {
     try {
         // Fetch notices from the Vercel API endpoint
-        const response = await fetch("/api/notices");  // Fetches data from the API endpoint
-        const notices = await response.json();  // Notice should be an array
+        const response = await fetch("/api/notices");
+        const notices = await response.json();
 
         const noticesContainer = document.getElementById("notices-container");
 
-        // If no notices found, display a message
         if (!notices || notices.length === 0) {
             noticesContainer.innerHTML = "<p>No notices available.</p>";
             return;

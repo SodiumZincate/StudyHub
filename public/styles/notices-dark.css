@@ -1,16 +1,15 @@
-/* General Layout */
 .outermost-container {
     display: flex;
     justify-content: center;
     padding: 60px 20px;
-    background-color: rgb(30, 30, 30); /* Dark background */
+    background-color: rgb(30, 30, 30);
     min-height: 100vh;
 }
 
 .main-section {
     width: 100%;
     max-width: 1200px;
-    background-color: rgb(40, 40, 40); /* Darker background */
+    background-color: rgb(40, 40, 40);
     box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.5);
     border-radius: 10px;
     padding: 30px;
@@ -19,7 +18,6 @@
     gap: 20px;
 }
 
-/* Notice Styling */
 #notices-container {
     display: flex;
     flex-direction: column;
@@ -72,7 +70,6 @@
     text-decoration: underline;
 }
 
-/* Footer */
 footer {
     text-align: center;
     padding: 15px;
@@ -85,7 +82,6 @@ footer {
     color: #bbb;
 }
 
-/* Responsive */
 @media (max-width: 1100px) {
     .main-section {
         padding: 20px;

@@ -10,7 +10,6 @@ async function uploadFunFactsToMongoDB() {
     const rawData = fs.readFileSync(jsonFilePath, 'utf8');
     const funFactsData = JSON.parse(rawData);
 
-    // MongoDB URI from environment variables
     const MONGO_URI = process.env.MONGO_URI;
     if (!MONGO_URI) {
       throw new Error('MongoDB URI is missing! Please check your .env file.');
@@ -23,7 +22,7 @@ async function uploadFunFactsToMongoDB() {
     const db = client.db('studyhub');
     const collection = db.collection('fun-facts');
 
-    // Clear existing data before inserting new data (optional, depending on your use case)
+    // Clear existing data before inserting new data
     await collection.deleteMany({});
 
     // Insert fun facts into MongoDB one by one
@@ -31,7 +30,6 @@ async function uploadFunFactsToMongoDB() {
       await collection.insertOne(fact);
     }
 
-    // Close MongoDB connection
     await client.close();
 
     console.log(`Fun facts uploaded successfully.`);

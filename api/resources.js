@@ -20,7 +20,6 @@ export default async function handler(req, res) {
     const db = client.db('studyhub');
     
     if (req.url.startsWith("/api/fetch/resources")) {
-      // Handling /api/fetch/resources route
       const collection = db.collection('directoryList');
       const resources = await collection.find().toArray();
 
@@ -32,7 +31,6 @@ export default async function handler(req, res) {
     }
 
     if (req.url.startsWith("/api/fetch/fun-facts")) {
-      // Handling /api/fetch/fun-facts route
       const collection = db.collection('fun-facts');
       const randomFactCursor = collection.aggregate([{ $sample: { size: 1 } }]);
       const randomFact = await randomFactCursor.toArray();

@@ -1,4 +1,3 @@
-/* General layout */
 .outermost-container {
     display: flex;
     justify-content: center;
@@ -6,12 +5,11 @@
     min-height: 100vh;
 }
 
-/* Main container */
 .main-section {
     width: 100%;
     max-width: 1200px;
-    background-color: aliceblue;  /* Light background */
-    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.1);  /* Soft shadow */
+    background-color: aliceblue;
+    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.1);
     border-radius: 10px;
     padding: 30px;
     display: flex;
@@ -19,21 +17,19 @@
     gap: 20px;
 }
 
-/* Top section with back button and heading */
 .branch-sem {
     display: flex;
     align-items: center;
     justify-content: space-between;
     margin-bottom: 20px;
     padding: 10px 15px;
-    background-color: #e9f5ff;  /* Light blue background */
-    border: 1px solid rgba(182, 182, 182, 0.4);  /* Light border */
+    background-color: #e9f5ff;
+    border: 1px solid rgba(182, 182, 182, 0.4);
     border-radius: 10px;
 }
 
-/* Back button styling */
 .back-button .bbutton {
-    background-color: #133b66;  /* Dark blue */
+    background-color: #133b66;
     color: white;
     border: none;
     padding: 8px 12px;
@@ -43,37 +39,33 @@
 }
 
 .back-button .bbutton:hover {
-    background-color: #082748;  /* Darker blue on hover */
+    background-color: #082748;
 }
 
-/* Section 1 heading */
 .main-section-1 {
     font-size: 22px;
     font-weight: 500;
-    color: #133b66;  /* Dark blue text */
+    color: #133b66;
 }
 
-/* List of files */
 .main-section-2 {
     display: flex;
     flex-direction: column;
     gap: 15px;
 }
 
-/* Loading state styling */
 .loading {
     font-size: 18px;
-    color: #133b66;  /* Dark blue text */
+    color: #133b66;
     text-align: center;
     padding: 20px;
-    background-color: #e9f5ff;  /* Light blue background */
+    background-color: #e9f5ff;
     border-radius: 10px;
 }
 
-/* Style for directory elements */
 .directory {
-    background-color: aliceblue;  /* Light background */
-    color: #133b66;  /* Dark blue text */
+    background-color: aliceblue;
+    color: #133b66;
     padding: 12px;
     margin-bottom: 10px;
     border-radius: 8px;
@@ -81,56 +73,49 @@
     transition: background-color 0.2s ease, transform 0.2s ease;
 }
 
-/* Hover effect for directories */
 .directory:hover {
-    background-color: #e9f5ff;  /* Light blue hover effect */
-    transform: translateY(-2px);  /* Slightly elevate on hover */
+    background-color: #e9f5ff;
+    transform: translateY(-2px);
 }
 
-/* Styling for directories that have subdirectories */
 .directory.has-subdirectories {
     font-weight: bold;
-    color: #4a90e2;  /* Light blue for directories with subdirectories */
+    color: #4a90e2;
 }
 
-/* File item styling */
 .file-item {
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 12px 15px;
-    background-color: #ffffff;  /* White background */
-    border: 1px solid rgba(200, 200, 200, 0.5);  /* Light border */
+    background-color: #ffffff;
+    border: 1px solid rgba(200, 200, 200, 0.5);
     border-radius: 8px;
-    box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.05);  /* Subtle shadow */
+    box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.05);
     transition: all 0.2s;
 }
 
-/* File item hover effect */
 .file-item:hover {
-    background-color: #e9f5ff;  /* Light blue background on hover */
-    transform: translateY(-2px);  /* Slightly elevate on hover */
+    background-color: #e9f5ff;
+    transform: translateY(-2px);
 }
 
-/* Style for links in light mode */
 .file-item a,
 .directory-link a {
     text-decoration: none;
-    color: #000000; /* Set link color to black */
+    color: #000000;
     font-weight: 500;
 }
 
-/* Remove visited state */
 .file-item a:visited,
 .directory-link a:visited {
-    color: #000000; /* Keep it black */
+    color: #000000;
 }
 
-/* Hover effect for links */
 .file-item a:hover,
 .directory-link a:hover {
-    color: #4a90e2; /* Set a hover color for better interaction */
-    text-decoration: underline; /* Optional: add underline for hover effect */
+    color: #4a90e2;
+    text-decoration: underline;
 }
 
 .file-item .file-actions {
@@ -138,9 +123,8 @@
     gap: 10px;
 }
 
-/* Action button inside file item */
 .file-item .action-btn {
-    background-color: #133b66;  /* Dark blue */
+    background-color: #133b66;
     color: white;
     border: none;
     padding: 6px 10px;
@@ -149,12 +133,10 @@
     font-size: 14px;
 }
 
-/* Action button hover effect */
 .file-item .action-btn:hover {
-    background-color: #082748;  /* Darker blue on hover */
+    background-color: #082748;
 }
 
-/* Responsive tweaks */
 @media (max-width: 1100px) {
     .main-section {
         padding: 20px;

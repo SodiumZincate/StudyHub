@@ -1,5 +1,4 @@
 const jwt = require('jsonwebtoken')
-const mongoose = require('mongoose')
 const path = require('path')
 const fs = require('fs')
 const connectDB = require('./login/connect');
@@ -16,11 +15,11 @@ const connectToDatabase = async () => {
         console.log("MongoDB connected successfully (Discussion Routes)");
     } catch (error) {
         console.error("MongoDB connection failed in home-route:", error);
-        process.exit(1); // Exit if DB fails
+        process.exit(1);
     }
 };
 
-// Helper to parse cookies manually (Vercel doesn't have cookie-parser)
+// Helper to parse cookies manually
 function parseCookies(req) {
     const cookies = {}
     if (req.headers.cookie) {
@@ -41,7 +40,7 @@ async function authenticateToken(req) {
     try {
         const user = jwt.verify(accessToken, process.env.ACCESS_TOKEN_SECRET)
         req.email = user.email
-        return null // No error, valid token
+        return null
     } catch (err) {
         return { error: 'Invalid Token' }
     }
@@ -207,7 +206,7 @@ module.exports = async (req, res) => {
 		'/api/discussion/search'
 	];
 
-	// Use `some()` to allow for query params and flexible matching
+	// some() for flexible matching
 	if (protectedRoutes.some(route => pathname.startsWith(route))) {
 		const authError = await authenticateToken(req);
 		if (authError) {
