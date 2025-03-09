@@ -1,85 +1,113 @@
 //selectors
-const todoInput=document.querySelector('.todo-input');
-const todoButton=document.querySelector('.add-button');
-const todoList=document.querySelector('.todo-list');
-
+const todoInput = document.querySelector('.todo-input');
+const todoButton = document.querySelector('.add-button');
+const todoList = document.querySelector('.todo-list');
 
 //event listeners
 todoButton.addEventListener('click', addTodo);
-todoInput.addEventListener('keydown',handleKeyDown);
-todoList.addEventListener('click',buttonOperation);
+todoInput.addEventListener('keydown', handleKeyDown);
+todoList.addEventListener('click', buttonOperation);
 
-//retriving from local storage
+//retrieving from local storage
 showTask();
 
-
 //functions
-function handleKeyDown(event){
-    if(event.key==='Enter'){
+function handleKeyDown(event) {
+    if (event.key === 'Enter') {
         addTodo(event);
     }
 }
 
-function addTodo(event){
-    event.preventDefault();//prevents form from submitting
-    const todoDiv=document.createElement('div');
+function addTodo(event) {
+    event.preventDefault(); //prevents form from submitting
+    const todoDiv = document.createElement('div');
     todoDiv.classList.add('todo');
-    const newTodo=document.createElement('li');
-    let todoInput=document.querySelector('.todo-input');
-    
-    
+    const newTodo = document.createElement('li');
     newTodo.classList.add('todo-item');
+
     //buttons
-    const completedButton=document.createElement('button');
-    completedButton.innerHTML='<i class="fa-solid fa-check"></i>';
+    const completedButton = document.createElement('button');
+    completedButton.innerHTML = '<i class="fa-solid fa-check"></i>';
     completedButton.classList.add('complete-btn');
 
-    const trashButton=document.createElement('button');
-    trashButton.innerHTML='<i class="fa-solid fa-trash"></i>';
+    const trashButton = document.createElement('button');
+    trashButton.innerHTML = '<i class="fa-solid fa-trash"></i>';
     trashButton.classList.add('trash-button');
 
-    //appending to parent div
-    
-    if(todoInput.value.trim()===''){
-        alert('no task detected');
-        
-        todoInput.value='';
-        saveData();
-        
-    }
-    else{
-        newTodo.innerText=todoInput.value;
+    //validation and adding task
+    if (todoInput.value.trim() === '') {
+        alert('No task detected');
+        todoInput.value = '';
+    } else {
+        newTodo.innerText = todoInput.value;
         todoDiv.appendChild(completedButton);
         todoDiv.appendChild(newTodo);
         todoDiv.appendChild(trashButton);
-        todoList.appendChild(todoDiv);  
-        
+        todoList.appendChild(todoDiv);
+
+        // Save data after adding the task
         saveData();
 
-        todoInput.value='';
+        todoInput.value = '';
     }
-      
 }
 
-function buttonOperation(event){
+function buttonOperation(event) {
+    const button = event.target;
 
-    const button=event.target;
-
-    if(button.classList[0]==='trash-button'){
+    if (button.classList[0] === 'trash-button') {
         button.parentElement.remove();
         saveData();
-    }
-    else if(button.classList[0]==='complete-btn'){
+    } else if (button.classList[0] === 'complete-btn') {
         button.classList.toggle('complete-btn-checked');
         button.parentElement.children[1].classList.toggle('cross-text');
         button.parentElement.classList.toggle('illuminate-div');
-        saveData();        
+        saveData();
     }
 }
 
-function saveData(){
-    localStorage.setItem("todo-task",JSON.stringify(todoList.innerHTML));
+function saveData() {
+    const todos = [];
+    // Collect all todo items
+    const todoItems = document.querySelectorAll('.todo');
+    todoItems.forEach(todo => {
+        const text = todo.querySelector('.todo-item').innerText;
+        const completed = todo.querySelector('.complete-btn').classList.contains('complete-btn-checked');
+        todos.push({ text, completed });
+    });
+
+    // Save the todos array in localStorage
+    localStorage.setItem("todo-tasks", JSON.stringify(todos));
 }
-function showTask(){
-    todoList.innerHTML=JSON.parse(localStorage.getItem('todo-task'));
+
+function showTask() {
+    const savedTasks = JSON.parse(localStorage.getItem('todo-tasks'));
+
+    if (savedTasks) {
+        savedTasks.forEach(task => {
+            const todoDiv = document.createElement('div');
+            todoDiv.classList.add('todo');
+            const newTodo = document.createElement('li');
+            newTodo.classList.add('todo-item');
+            newTodo.innerText = task.text;
+
+            //buttons
+            const completedButton = document.createElement('button');
+            completedButton.innerHTML = '<i class="fa-solid fa-check"></i>';
+            completedButton.classList.add('complete-btn');
+            if (task.completed) {
+                completedButton.classList.add('complete-btn-checked');
+                newTodo.classList.add('cross-text');
+            }
+
+            const trashButton = document.createElement('button');
+            trashButton.innerHTML = '<i class="fa-solid fa-trash"></i>';
+            trashButton.classList.add('trash-button');
+
+            todoDiv.appendChild(completedButton);
+            todoDiv.appendChild(newTodo);
+            todoDiv.appendChild(trashButton);
+            todoList.appendChild(todoDiv);
+        });
+    }
 }
