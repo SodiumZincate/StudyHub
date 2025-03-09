@@ -44,16 +44,12 @@
 		"dest": "/api/notices.js"
 	  },
 	  {
-		"src": "/api/resources",
-		"dest": "/api/resources.js"
+		"src": "/api/fetch(.*)",
+		"dest": "/api/fetch/resources.js"
 	  },
 	  {
 		"src": "/api/directories(.*)",
 		"dest": "/api/directories.js"
-	  },
-	  {
-		"src": "/api/fun-facts(.*)",
-		"dest": "/api/fun-facts.js"
 	  },
 	  {
 		"src": "/(.*)",

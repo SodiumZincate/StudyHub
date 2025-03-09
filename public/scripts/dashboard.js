@@ -94,7 +94,7 @@ document.addEventListener("DOMContentLoaded", async () => {
 
     try {
         // Replace this URL with your actual API endpoint URL
-        const response = await fetch("/api/fun-facts");
+        const response = await fetch("/api/fetch/fun-facts");
 
         // Check if the response is OK (status 200)
         if (!response.ok) {

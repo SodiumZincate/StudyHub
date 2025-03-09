@@ -1,7 +1,7 @@
 let directoryLinks = {}; // Initialize an empty object to hold the directory links
 
 // Load directory links from MongoDB via API
-fetch('/api/resources')
+fetch('/api/fetch/resources')
   .then(response => response.json())
   .then(data => {
     // Populate the directoryLinks object with the data from MongoDB

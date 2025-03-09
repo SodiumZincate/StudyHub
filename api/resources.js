@@ -1,4 +1,5 @@
-import { MongoClient } from 'mongodb';
+const { MongoClient } = require('mongodb');
+require('dotenv').config();
 
 let client;
 
@@ -7,7 +8,7 @@ async function connectToDatabase() {
     return client;
   }
 
-  const uri = process.env.MONGO_URI; // Ensure this is set in Vercel environment variables
+  const uri = process.env.MONGO_URI;
   client = new MongoClient(uri);
   await client.connect();
   return client;
@@ -16,19 +17,37 @@ async function connectToDatabase() {
 export default async function handler(req, res) {
   try {
     const client = await connectToDatabase();
-    const db = client.db('studyhub'); // Replace with your actual database name
-    const collection = db.collection('directoryList'); // Replace with your collection name
+    const db = client.db('studyhub');
+    
+    if (req.url.startsWith("/api/fetch/resources")) {
+      // Handling /api/fetch/resources route
+      const collection = db.collection('directoryList');
+      const resources = await collection.find().toArray();
 
-    // Fetch all resources
-    const resources = await collection.find().toArray();
-
-    if (resources.length > 0) {
-      res.status(200).json(resources);
-    } else {
-      res.status(404).json({ message: 'No resources found' });
+      if (resources.length > 0) {
+        return res.status(200).json(resources);
+      } else {
+        return res.status(404).json({ message: 'No resources found' });
+      }
     }
-  } catch (error) {
-    console.error('Error fetching from MongoDB:', error);
-    res.status(500).json({ error: 'Failed to fetch data from MongoDB' });
+
+    if (req.url.startsWith("/api/fetch/fun-facts")) {
+      // Handling /api/fetch/fun-facts route
+      const collection = db.collection('fun-facts');
+      const randomFactCursor = collection.aggregate([{ $sample: { size: 1 } }]);
+      const randomFact = await randomFactCursor.toArray();
+
+      if (randomFact.length === 0) {
+        return res.status(200).json({ fact: null });
+      }
+
+      return res.status(200).json({ fact: randomFact[0] });
+    }
+
+    // If the URL doesn't match either route
+    return res.status(404).json({ error: "Not Found" });
+  } catch (err) {
+    console.error("Error:", err);
+    return res.status(500).json({ error: 'Failed to fetch data from MongoDB' });
   }
 }
