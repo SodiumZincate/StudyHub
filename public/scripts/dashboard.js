@@ -89,6 +89,36 @@ document.addEventListener("DOMContentLoaded", () => {
       });
 });
 
+document.addEventListener("DOMContentLoaded", async () => {
+    const factText = document.getElementById("fun-fact-text");
+
+    try {
+        // Replace this URL with your actual API endpoint URL
+        const response = await fetch("/api/fun-facts");
+
+        // Check if the response is OK (status 200)
+        if (!response.ok) {
+            throw new Error("Failed to fetch fun facts");
+        }
+
+        const data = await response.json();
+        console.log(data);
+
+        const fact = data.fact;
+
+        // Check if a fact was returned and display it
+        if (fact) {
+            factText.textContent = fact.fact;
+        } else {
+            factText.textContent = "No fun facts available at the moment.";
+        }
+
+    } catch (error) {
+        console.error("Error fetching fun facts:", error);
+        factText.textContent = "Oops! Couldn't load a fun fact.";
+    }
+});
+
 //user details
 const userDetails = document.querySelector("#user-details")
 const userDetailsSb = document.querySelector("#sb-user-details")

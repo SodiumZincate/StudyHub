@@ -52,6 +52,10 @@
 		"dest": "/api/directories.js"
 	  },
 	  {
+		"src": "/api/fun-facts(.*)",
+		"dest": "/api/fun-facts.js"
+	  },
+	  {
 		"src": "/(.*)",
 		"dest": "/public/$1"
 	  }
