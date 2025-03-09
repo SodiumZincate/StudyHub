@@ -4,7 +4,7 @@ const answerSchema = new mongoose.Schema({
     value: {
         type: String,
         trim: true,
-        maxlength: [500, 'Answer cannot be more than 500 characters']
+        maxlength: [1000, 'Answer cannot be more than 500 characters']
     },
     question: String,
     id: String,
