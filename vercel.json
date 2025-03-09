@@ -45,7 +45,7 @@
 	  },
 	  {
 		"src": "/api/fetch(.*)",
-		"dest": "/api/fetch/resources.js"
+		"dest": "/api/resources.js"
 	  },
 	  {
 		"src": "/api/directories(.*)",
