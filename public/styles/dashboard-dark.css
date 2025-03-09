@@ -98,32 +98,55 @@
     flex-direction: row;
     justify-content: center;
 }
-.search-bar{
-    width:80%;
-    border:1px solid rgb(50,50,50);
-    border-radius:20px;
-    height:38px;
-    outline:none;
-    text-align:left;
-    padding-left:20px;
-    color: rgb(130,130,130) ;
-    background-color: rgb(40,40,40) ;
+.fun-facts {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 60%;
+    padding: 20px;
+    border-radius: 12px;
+    background: rgb(45, 45, 45);
+    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.4);
+    position: relative;
+    text-align: center;
+    color: rgb(220, 220, 220);
+    font-size: 20px;
+    font-weight: 500;
+    animation: fadeIn 1s ease-in-out;
+    transition: transform 0.3s ease-in-out;
 }
-.search-button{
-    width:40px;
-    height:40px;
-    border-radius:50%;
-    border:0.5px solid #2E2E2E;  
-    outline:none;
-    margin-left: 10px;
-    color: rgb(100,100,100) ;
-    background-color: rgb(40,40,40) ;
-    border: 1px solid rgb(50,50,50) ;
+
+.fun-facts:hover {
+    transform: scale(1.05);
+    box-shadow: 0px 5px 20px rgba(0, 0, 0, 0.5);
 }
-.search-button:hover{
-    cursor:pointer; 
-    background-color: rgb(25,25,25);
+
+.fun-facts::before {
+    content: "💡 Fun Fact!";
+    position: absolute;
+    top: -25px;
+    background: rgb(38, 38, 38);
+    color: rgb(200, 200, 200);
+    font-weight: bold;
+    padding: 10px 15px;
+    border-radius: 10px;
+    font-size: 16px;
+    box-shadow: 0px 3px 8px rgba(0, 0, 0, 0.3);
 }
+
+.fun-fact-text {
+    font-family: 'Manrope', sans-serif;
+    padding: 15px;
+    line-height: 1.5;
+    text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.2);
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
 .logout-container {
     position: fixed;  
     top: 50%; 
